@@ -1,8 +1,10 @@
-@import "tailwindcss";
-
+/* Import Google Fonts first */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Create custom CSS classes for the font */
+/* Then import Tailwind */
+@import "tailwindcss";
+
+/* Custom font classes */
 .recoleta-font {
   font-family: "Recoleta", serif;
 }

@@ -6,15 +6,24 @@ import Landingpage from "./Pages/Landingpage/Landingpage";
 
 function App() {
   return (
-    <div className="min-h-screen  ">
-      {/* Nav stays at the top */}
-      <Nav />
-
-      {/* Page routes */}
+    <div>
       <Routes>
+        {/* Pages WITHOUT Nav */}
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Landingpage />} />
+
+        {/* Pages WITH Nav */}
+        <Route
+          path="*"
+          element={
+            <div className="min-h-screen">
+              <Nav />
+              <Routes>
+                <Route path="/" element={<Landingpage />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            </div>
+          }
+        />
       </Routes>
     </div>
   );
