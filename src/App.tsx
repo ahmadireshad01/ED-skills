@@ -10,6 +10,7 @@ function App() {
       <Routes>
         {/* Pages WITHOUT Nav */}
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
         {/* Pages WITH Nav */}
         <Route
@@ -19,7 +20,6 @@ function App() {
               <Nav />
               <Routes>
                 <Route path="/" element={<Landingpage />} />
-                <Route path="/signup" element={<Signup />} />
               </Routes>
             </div>
           }
