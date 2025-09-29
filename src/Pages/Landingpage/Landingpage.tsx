@@ -1,4 +1,4 @@
-export default function HomePage() {
+export default function Landingpage() {
   const row1 = [
     {
       title: "All Subject",
@@ -74,16 +74,17 @@ export default function HomePage() {
       {row.map((subject, index) => (
         <div
           key={index}
-          className={`rounded-2xl flex flex-col items-center justify-center p-6 w-40 transition-transform duration-300 ease-in-out cursor-pointer
-          ${index % 2 === 0 ? "bg-[#E4E4DD]" : "bg-white"}
-          shadow-md hover:shadow-xl hover:scale-105`}
+          className={`rounded-2xl border border-[#E5E5E5] shadow-[0_6px_0_0_#B1B1AC4D] 
+        flex flex-col items-center justify-center p-6 w-40 
+        transition-transform duration-300 ease-in-out 
+        hover:shadow-xl hover:scale-105 
+        ${index % 2 === 0 ? "bg-[#F9F9F3]" : "bg-white"}`}
         >
           <div
             className={`rounded-full flex items-center justify-center mb-3 px-[32px] py-[17px] ${subject.color} transition-all duration-300`}
           >
             <img src={subject.icon} alt={subject.title} className="w-6 h-6" />
           </div>
-
           <p className="text-base font-medium text-gray-700 text-center transition-colors duration-300">
             {subject.title}
           </p>
@@ -93,7 +94,7 @@ export default function HomePage() {
   );
 
   return (
-    <div className="px-[124px] relative">
+    <div className="min-h-screen w-full bg-[#F9F9F3] px-[124px]">
       {/* Hero Section */}
       <div className="relative flex justify-center items-center">
         <img
@@ -110,7 +111,7 @@ export default function HomePage() {
             Designed to Build Essential Skills for Future Success
           </p>
           <div className="flex justify-center mt-9">
-            <button className="py-4 px-[77px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold shadow-md shadow-red-500/50 hover:shadow-lg transition">
+            <button className="py-4 px-[77px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition">
               Get Started
             </button>
           </div>
@@ -163,7 +164,7 @@ export default function HomePage() {
           </p>
         </div>
         <div>
-          <button className="py-3 px-8 bg-[#FF3400] rounded-full text-white text-[18px] font-semibold shadow-md shadow-red-500/50 hover:shadow-lg transition">
+          <button className="py-3 px-8 bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition">
             Join now
           </button>
         </div>
@@ -191,18 +192,19 @@ export default function HomePage() {
         {renderRow(row3)}
       </div>
 
-      <div className="flex gap-[63px] mt-[176px] absolute">
-        <div>
+      {/* Last Section */}
+      <div className="flex gap-[63px] mt-[176px]">
+        <div className="relative">
           <img src="/public/images/Cart2/backimg.svg" alt="" />
-          <div className="relative top-[-440px]">
-            <h1 className="Recoleta font-bold text-[56px] leading-[60px] tracking-[-1px]">
+          <div className="absolute inset-0 top-[170px] flex flex-col items-start justify-center ">
+            <h1 className="Recoleta font-bold  text-[56px] leading-[60px] tracking-[-1px]">
               Experience <br /> Learning Like <br /> Never Before
             </h1>
             <p className="font-medium text-[18px] leading-[30px] tracking-[-0.22px] mt-[24px] ">
               Discover Personalized, AI-Powered <br /> Learning That Prepares
               Students for <br /> Success in the Real World
             </p>
-            <button className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold shadow-md shadow-red-500/50 hover:shadow-lg transition">
+            <button className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition">
               Start Your Journey
             </button>
           </div>
@@ -216,6 +218,26 @@ export default function HomePage() {
             <img src="/public/images/Cart2/img2.svg" alt="" />
             <img src="/public/images/Cart2/img3.svg" alt="" />
           </div>
+        </div>
+      </div>
+
+      <div className="mt-20 relative w-full">
+        {/* Background Image */}
+        <img
+          src="/images/community/bgimg.svg"
+          alt="background"
+          className="w-full h-auto"
+        />
+
+        {/* Content centered on the image using flex */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+          <img src="/images/community/icon.svg" alt="icon" className="mb-4" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold  mb-8 leading-[60px]">
+            Join Our <br /> Community <br /> Banner
+          </h1>
+          <button className="py-3 px-8 bg-[#FF3400] rounded-full cursor-pointer text-white text-[18px] font-semibold  hover:shadow-[0_6px_0_0_#C52800]  transition">
+            Join now
+          </button>
         </div>
       </div>
     </div>
