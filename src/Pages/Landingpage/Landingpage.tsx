@@ -102,16 +102,16 @@ export default function Landingpage() {
           alt="banner"
           className="w-full h-auto"
         />
-        <div className="absolute flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-0">
-          <h1 className="font-bold Recoleta mt-16 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-snug sm:leading-tight lg:leading-[1.1] tracking-[-0.5px]">
+        <div className="absolute flex flex-col justify-center items-center text-center">
+          <h1 className="font-bold Recoleta mt-[64px] text-[72px] leading-[70px] tracking-[-1%]">
             AI-Powered Learning <br /> for Tomorrow&apos;s Leaders
           </h1>
-          <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-6 sm:leading-7 md:leading-8 tracking-[-0.2px] text-[#474645] mt-4 sm:mt-6 lg:mt-8">
+          <p className="text-[18px] font-medium leading-[28px] tracking-[-0.22px] text-[#474645] mt-4">
             Empowering Students with Personalized, Interactive Learning <br />
             Designed to Build Essential Skills for Future Success
           </p>
-          <div className="flex justify-center mt-6 sm:mt-8 lg:mt-10">
-            <button className="py-3 px-6 sm:py-4 sm:px-12 md:px-[77px] bg-[#FF3400] rounded-full text-white text-[14px] sm:text-[16px] md:text-[18px] font-semibold shadow-md shadow-red-500/50 hover:shadow-lg transition">
+          <div className="flex justify-center mt-9">
+            <button className="py-4 px-[77px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition">
               Get Started
             </button>
           </div>
@@ -164,7 +164,7 @@ export default function Landingpage() {
           </p>
         </div>
         <div>
-          <button className="py-3 px-8 bg-[#FF3400] rounded-full text-white text-[18px] font-semibold shadow-md shadow-red-500/50 hover:shadow-lg transition">
+          <button className="py-3 px-8 bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition">
             Join now
           </button>
         </div>
@@ -196,15 +196,15 @@ export default function Landingpage() {
       <div className="flex gap-[63px] mt-[176px]">
         <div className="relative">
           <img src="/public/images/Cart2/backimg.svg" alt="" />
-          <div className="absolute inset-0 flex flex-col items-start justify-center px-10">
-            <h1 className="Recoleta font-bold text-[56px] leading-[60px] tracking-[-1px]">
+          <div className="absolute inset-0 top-[170px] flex flex-col items-start justify-center ">
+            <h1 className="Recoleta font-bold  text-[56px] leading-[60px] tracking-[-1px]">
               Experience <br /> Learning Like <br /> Never Before
             </h1>
             <p className="font-medium text-[18px] leading-[30px] tracking-[-0.22px] mt-[24px] ">
               Discover Personalized, AI-Powered <br /> Learning That Prepares
               Students for <br /> Success in the Real World
             </p>
-            <button className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold shadow-md shadow-red-500/50 hover:shadow-lg transition">
+            <button className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition">
               Start Your Journey
             </button>
           </div>
@@ -218,6 +218,26 @@ export default function Landingpage() {
             <img src="/public/images/Cart2/img2.svg" alt="" />
             <img src="/public/images/Cart2/img3.svg" alt="" />
           </div>
+        </div>
+      </div>
+
+      <div className="mt-20 relative w-full">
+        {/* Background Image */}
+        <img
+          src="/images/community/bgimg.svg"
+          alt="background"
+          className="w-full h-auto"
+        />
+
+        {/* Content centered on the image using flex */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+          <img src="/images/community/icon.svg" alt="icon" className="mb-4" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold  mb-8 leading-[60px]">
+            Join Our <br /> Community <br /> Banner
+          </h1>
+          <button className="py-3 px-8 bg-[#FF3400] rounded-full cursor-pointer text-white text-[18px] font-semibold  hover:shadow-[0_6px_0_0_#C52800]  transition">
+            Join now
+          </button>
         </div>
       </div>
     </div>
