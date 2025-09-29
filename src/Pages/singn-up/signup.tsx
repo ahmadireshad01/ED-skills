@@ -43,19 +43,13 @@ export default function Signup() {
       submit?: string;
     } = {};
 
-    if (!formData.username) {
-      newErrors.username = 'Username is required';
-    }
-
+    if (!formData.username) newErrors.username = 'Username is required';
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please provide a valid email address';
     }
-
-    if (!formData.password) {
-      newErrors.password = 'Password is required';
-    }
+    if (!formData.password) newErrors.password = 'Password is required';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -63,54 +57,32 @@ export default function Signup() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setLoading(true);
     setErrors({});
-
     try {
       const response = await fetch('http://localhost:2040/users/signup', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
-
       if (!response.ok) {
-        if (data.error) {
-          setErrors({ submit: data.error });
-        } else if (data.details) {
-          const backendErrors: {
-            username?: string;
-            email?: string;
-            password?: string;
-            submit?: string;
-          } = {};
+        if (data.error) setErrors({ submit: data.error });
+        else if (data.details) {
+          const backendErrors: { [key: string]: string } = {};
           data.details.forEach((detail: any) => {
-            backendErrors[detail.path[0] as keyof typeof backendErrors] =
-              detail.message;
+            backendErrors[detail.path[0]] = detail.message;
           });
           setErrors(backendErrors);
-        } else {
-          setErrors({ submit: 'Signup failed. Please try again.' });
-        }
+        } else setErrors({ submit: 'Signup failed. Please try again.' });
         return;
       }
 
-      console.log('Signup successful:', data);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-
       alert('Signup successful!');
     } catch (error) {
       console.error('Signup error:', error);
@@ -121,34 +93,36 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      {/* Left red div */}
-      <div className="bg-[#FF613E] m-[10px] py-[100px] rounded-2xl w-full h-full">
-        <div className="m-auto flex flex-col justify-center items-center">
-          <div className="flex flex-col gap-[48px]">
-            <div className="flex flex-col gap-[24px]">
-              <img src={star} alt="" className="m-auto" />
-              <p className="text-[40px] font-semibold text-white leading-[40px] tracking-[0px] text-center">
-                Watch Your Child's <br />
-                Knowledge Grow
-              </p>
-            </div>
-            <img src={group} alt="" />
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Left red div - hidden on mobile, smaller on desktop */}
+      <div className="hidden md:flex bg-[#FF613E] m-[10px] py-[80px] rounded-2xl rounded-tr-sm rounded-br-sm w-2/5 items-center justify-center">
+        <div className="flex flex-col gap-[40px] items-center text-center px-6 md:px-0">
+          <div className="flex flex-col gap-[20px]">
+            <img src={star} alt="" className="mx-auto w-[60px] md:w-auto" />
+            <p className="text-[28px] md:text-[36px] font-semibold text-white leading-[34px] md:leading-[40px]">
+              Watch Your Child's <br />
+              Knowledge Grow
+            </p>
           </div>
+          <img
+            src={group}
+            alt=""
+            className="w-[80%] max-w-[300px] md:max-w-none mx-auto"
+          />
         </div>
       </div>
 
       {/* Right form div */}
-      <div className="p-[46px] w-full flex flex-col">
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex items-center gap-[14px]">
-            <img src={starb} alt="" />
-            <p className="font-bold leading-[15px]">
+      <div className="p-6 md:p-[46px] w-full md:w-3/5 flex flex-col">
+        <div className="flex justify-between items-center mb-6 md:mb-8">
+          <div className="flex items-center gap-[10px] md:gap-[14px]">
+            <img src={starb} alt="" className="w-[28px] md:w-auto" />
+            <p className="font-bold text-sm md:text-base leading-[15px]">
               EDTECH <br /> SKILLS
             </p>
           </div>
-          <div className="border-[2px] rounded-full flex items-center justify-center p-[14px] border-[#DEE0E3]">
-            <X />
+          <div className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3]">
+            <X size={18} className="md:size-5" />
           </div>
         </div>
 
@@ -157,7 +131,7 @@ export default function Signup() {
             onSubmit={handleSubmit}
             className="flex flex-col justify-center items-center gap-4 w-full max-w-md"
           >
-            <p className="font-semibold text-[24px] text-center mb-4">
+            <p className="font-semibold text-[20px] md:text-[24px] text-center mb-4">
               Signup to Edtech
             </p>
 
@@ -197,7 +171,7 @@ export default function Signup() {
               )}
             </div>
 
-            {/* Password input with eye icon */}
+            {/* Password input */}
             <div className="relative w-full">
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -223,6 +197,7 @@ export default function Signup() {
               )}
             </div>
 
+            {/* Submit button */}
             <button
               type="submit"
               disabled={loading}
@@ -239,26 +214,26 @@ export default function Signup() {
 
             <div className="flex items-center w-full">
               <hr className="flex-grow border-t border-gray-300" />
-              <span className="px-4 text-gray-500 whitespace-nowrap">
+              <span className="px-2 md:px-4 text-gray-500 text-sm md:text-base whitespace-nowrap">
                 Or AUTHorize with
               </span>
               <hr className="flex-grow border-t border-gray-300" />
             </div>
 
-            <div className="flex gap-[8px]">
+            <div className="flex flex-col md:flex-row gap-3 w-full">
               <button
                 type="button"
-                className="px-[72px] py-[14px] border border-[#DFE1E6] rounded-[12px] cursor-pointer flex gap-[5px] hover:bg-gray-50"
+                className="flex-1 py-[12px] md:py-[14px] border border-[#DFE1E6] rounded-[12px] cursor-pointer flex justify-center items-center gap-[5px] hover:bg-gray-50"
               >
-                <img src={apple} alt="" />
+                <img src={apple} alt="" className="w-[20px] md:w-auto" />
                 Apple
               </button>
 
               <button
                 type="button"
-                className="px-[72px] py-[14px] border border-[#DFE1E6] rounded-[12px] cursor-pointer flex gap-[5px] hover:bg-gray-50"
+                className="flex-1 py-[12px] md:py-[14px] border border-[#DFE1E6] rounded-[12px] cursor-pointer flex justify-center items-center gap-[5px] hover:bg-gray-50"
               >
-                <img src={google} alt="" />
+                <img src={google} alt="" className="w-[20px] md:w-auto" />
                 Google
               </button>
             </div>
