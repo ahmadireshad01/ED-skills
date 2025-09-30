@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/singn-up/signup";
+import OnBoardingPage from "./Pages/OnBoardingPage/OnBoardingPage";
 import Landingpage from "./Pages/Landingpage/Landingpage";
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
               <Nav />
               <Routes>
                 <Route path="/" element={<Landingpage />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/onboarding" element={<OnBoardingPage />} />
               </Routes>
             </div>
           }
