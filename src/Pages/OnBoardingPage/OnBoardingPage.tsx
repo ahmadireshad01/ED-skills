@@ -27,7 +27,7 @@ export default function OnBoardingPage() {
 
                     <div className="w-[434px] h-[92px] rounded-2xl border-[#B1B1AC4D] shadow-[0_6px_0_0_#B1B1AC4D] border flex flex-col justify-center items-start px-6 hover:bg-[#B1B1AC4D] cursor-pointer hover:shadow-[0_7px_3px_3px_#B1B1AC4D] transition ease-in-out duration-300">
                         <p className="font-intertight font-medium text-[18px] leading-[24px] tracking-[-0.2px]">Learner</p>
-                        <p className="font-intertight font-normal text-[16px] leading-[24px] tracking-[0px] text-[#666D80]">SignUp for a free account, and Start learning </p>
+                        <p className="font-intertight font-normal text-[16px] leading-[24px] tracking-[0px] text-[#666D80]">SignUp for a free account, and Start learning  </p>
                     </div>
                 </div>
                 
