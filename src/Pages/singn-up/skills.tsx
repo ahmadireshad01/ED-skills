@@ -7,7 +7,9 @@ import ProgressBar from '../../Components/progress';
 import star from '../../../public/images/signup/star.svg';
 
 export default function Skills() {
-  const [selected, setSelected] = useState<'parent' | 'teacher' | 'learner' | null>(null);
+  const [selected, setSelected] = useState<
+    'parent' | 'teacher' | 'learner' | null
+  >(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -77,17 +79,28 @@ export default function Skills() {
 
   return (
     <div className="relative min-h-screen">
+      {/* Decorative Images */}
       <div>
-        <img src={left} alt="left decoration" className="fixed left-0 top-[60%] -translate-y-1/2" />
-        <img src={right} alt="right decoration" className="fixed right-0 top-[60%] -translate-y-1/2" />
+        <img
+          src={left}
+          alt="left decoration"
+          className="fixed left-0 top-[60%] -translate-y-1/2"
+        />
+        <img
+          src={right}
+          alt="right decoration"
+          className="fixed right-0 top-[60%] -translate-y-1/2"
+        />
       </div>
-
       <div className="mt-[57px]">
         <ProgressBar progress={100} />
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen px-4">
-        <form onSubmit={handleContinue} className="flex items-center justify-center flex-col w-full max-w-[550px]">
+        <form
+          onSubmit={handleContinue}
+          className="flex items-center justify-center flex-col w-full max-w-[550px]"
+        >
           <img src={flower} alt="flower" />
           <h1 className="font-semibold text-[40px] leading-[40px] text-center mt-4">
             What are you hoping to <br /> Achieve with EdTech Skills?
@@ -99,6 +112,7 @@ export default function Skills() {
             <img src={star} alt="" />
           </div>
 
+          {/* Options */}
           <div className="mt-[16px] flex flex-col gap-[10px] w-full">
             <button
               type="button"
@@ -149,7 +163,9 @@ export default function Skills() {
               type="submit"
               disabled={!selected || loading}
               className={`py-[12px] mt-[26px] rounded-2xl w-full text-white transition-colors ${
-                selected ? 'bg-[#FF613E] hover:bg-[#e55532]' : 'bg-gray-300 cursor-not-allowed'
+                selected
+                  ? 'bg-[#FF613E] hover:bg-[#e55532]'
+                  : 'bg-gray-300 cursor-not-allowed'
               }`}
             >
               {loading ? 'Submitting...' : 'Continue'}
