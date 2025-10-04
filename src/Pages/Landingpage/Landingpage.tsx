@@ -278,7 +278,7 @@ export default function Landingpage() {
         <img
           src="/images/community/bgimg.svg"
           alt="background"
-          className="w-full h-auto"
+          className="w-full relative bottom-[-6px]"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
           <img src="/images/community/icon.svg" alt="icon" className="mb-4" />
