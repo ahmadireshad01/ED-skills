@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import flower from '../../../public/images/signup/flower.svg';
 import left from '../../../public/images/signup/Group 2 (1).png';
 import right from '../../../public/images/signup/Group 3.png';
@@ -27,6 +28,15 @@ const interests = [
 
 export default function Interestpage() {
   const [selected, setSelected] = useState<string[]>([]);
+  const navigate = useNavigate();
+
+  // ✅ Ensure user has gone through signup & age
+  useEffect(() => {
+    const signupData = localStorage.getItem('signupData');
+    if (!signupData) {
+      navigate('/signup'); // redirect if no signup data
+    }
+  }, [navigate]);
 
   const toggleInterest = (interest: string) => {
     if (selected.includes(interest)) {
@@ -46,7 +56,14 @@ export default function Interestpage() {
       alert('Please select at least 2 interests.');
       return;
     }
-    alert(`You selected: ${selected.join(', ')}`);
+
+    // ✅ Save selected interests to localStorage
+    const existingData = JSON.parse(localStorage.getItem('signupData') || '{}');
+    const updatedData = { ...existingData, interests: selected };
+    localStorage.setItem('signupData', JSON.stringify(updatedData));
+
+    // Navigate to the next page (Skills)
+    navigate('/skills');
   };
 
   return (
@@ -73,10 +90,8 @@ export default function Interestpage() {
         onSubmit={handleContinue}
         className="flex flex-col items-center justify-center w-full max-w-[700px] px-6 text-center mt-20"
       >
-        {/* Flower icon */}
         <img src={flower} alt="flower" className="mb-6" />
 
-        {/* Title */}
         <h1 className="font-semibold text-2xl sm:text-3xl leading-snug text-[#1D1D1F]">
           Pick your interests from the <br /> list above and start learning
         </h1>
@@ -93,7 +108,7 @@ export default function Interestpage() {
                 className={`flex items-center gap-2 px-[24px] py-2 rounded-xl border text-sm font-medium transition min-w-[160px] justify-center whitespace-nowrap
                   ${
                     selected.includes(label)
-                      ? ' border-[#FF613E]'
+                      ? 'border-[#FF613E]'
                       : 'border-[#DFE1E6] text-gray-700 hover:bg-gray-100'
                   }`}
               >
@@ -133,7 +148,7 @@ export default function Interestpage() {
                 className={`flex items-center gap-2 px-[4px] py-2 rounded-xl border text-sm font-medium transition min-w-[220px] sm:min-w-[250px] justify-center whitespace-nowrap
                   ${
                     selected.includes(label)
-                      ? '  border-[#FF613E]'
+                      ? 'border-[#FF613E]'
                       : 'border-[#DFE1E6] text-gray-700 hover:bg-gray-100'
                   }`}
               >
