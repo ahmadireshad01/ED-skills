@@ -1,6 +1,6 @@
-"use client";
-import { useState } from "react";
-import { Search } from "lucide-react";
+'use client';
+import { useState } from 'react';
+import { Search } from 'lucide-react';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ export default function Nav() {
               alt="logo"
               className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8"
             />
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-[27px] font-bold leading-[26.7px] tracking-[-2%]">
+            <h1 className=" text-lg sm:text-xl md:text-2xl lg:text-[27px] font-bold leading-[26.7px] tracking-[-2%]">
               MyEdSkills
             </h1>
           </div>
@@ -56,7 +56,7 @@ export default function Nav() {
                 strokeLinejoin="round"
                 strokeWidth={2}
                 d={
-                  menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'
                 }
               />
             </svg>
