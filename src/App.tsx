@@ -14,8 +14,13 @@ function App() {
       <Routes>
         {/* Pages WITHOUT Nav */}
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/age" element={<Agepage />} />
+        <Route path="/interests" element={<Interestpage />} />
+        <Route path="/skills" element={<Skills />} />
+
+        {/* Paged signup step routes */}
         <Route path="/signup/1" element={<Skills />} />
         <Route path="/signup/2" element={<Agepage />} />
         <Route path="/signup/3" element={<Interestpage />} />
