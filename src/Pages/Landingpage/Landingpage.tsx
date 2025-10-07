@@ -56,9 +56,6 @@ export default function Landingpage() {
       color: 'bg-[#E8E2FF]',
       icon: '/public/images/subjects/img10.svg',
     },
-  ];
-
-  const row3 = [
     {
       title: 'Mathematics',
       color: 'bg-[#E8E2FF]',
@@ -71,20 +68,35 @@ export default function Landingpage() {
     },
   ];
 
+  const row3 = [];
+
   // Helper function to render rows
   const renderRow = row => (
-    <div className="flex gap-6">
+    <div
+      className="
+      flex flex-wrap justify-center gap-6
+      md:grid md:grid-cols-3 md:gap-6
+      sm:grid sm:grid-cols-3 sm:gap-4
+      xs:grid xs:grid-cols-2 xs:gap-3
+    "
+    >
       {row.map((subject, index) => (
         <div
           key={index}
-          className={`rounded-2xl border border-[#E5E5E5] shadow-[0_6px_0_0_#B1B1AC4D] 
-        flex flex-col items-center justify-center p-6 w-40 
-        transition-transform duration-300 ease-in-out 
-        hover:shadow-xl hover:scale-105 
-        ${index % 2 === 0 ? 'bg-[#F9F9F3]' : 'bg-white'}`}
+          className={`
+          rounded-2xl border border-[#E5E5E5] shadow-[0_6px_0_0_#B1B1AC4D]
+          flex flex-col items-center justify-center
+          p-6 w-40 sm:w-32 md:w-auto
+          transition-transform duration-300 ease-in-out
+          hover:shadow-xl hover:scale-105
+          ${index % 2 === 0 ? 'bg-[#F9F9F3]' : 'bg-white'}
+        `}
         >
           <div
-            className={`rounded-full flex items-center justify-center mb-3 px-[32px] py-[17px] ${subject.color} transition-all duration-300`}
+            className={`
+            rounded-full flex items-center justify-center mb-3 px-[32px] py-[17px]
+            ${subject.color} transition-all duration-300
+          `}
           >
             <img src={subject.icon} alt={subject.title} className="w-6 h-6" />
           </div>
@@ -105,18 +117,20 @@ export default function Landingpage() {
           alt="banner"
           className="w-full h-auto"
         />
-        <div className="absolute flex flex-col justify-center items-center text-center">
-          <h1 className="font-bold Recoleta mt-[64px] text-[72px] leading-[70px] tracking-[-1%]">
-            AI-Powered Learning <br /> for Tomorrow&apos;s Leaders
+        <div className="absolute flex flex-col justify-center items-center text-center w-full px-4">
+          <h1 className="font-bold Recoleta mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-[64px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[72px] leading-6 sm:leading-8 md:leading-10 lg:leading-[60px] xl:leading-[70px] tracking-[-0.5%] sm:tracking-[-0.7%] xl:tracking-[-1%]">
+            AI-Powered Learning <br className="hidden sm:block" />
+            for Tomorrow&apos;s Leaders
           </h1>
-          <p className="text-[18px] font-medium leading-[28px] tracking-[-0.22px] text-[#474645] mt-4">
-            Empowering Students with Personalized, Interactive Learning <br />
+          <p className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium leading-5 sm:leading-6 md:leading-7 lg:leading-[26px] xl:leading-[28px] tracking-[-0.1px] sm:tracking-[-0.15px] lg:tracking-[-0.2px] xl:tracking-[-0.22px] text-[#474645] mt-3 sm:mt-4 lg:mt-4 xl:mt-4">
+            Empowering Students with Personalized, Interactive Learning{' '}
+            <br className="hidden lg:block" />
             Designed to Build Essential Skills for Future Success
           </p>
-          <div className="flex justify-center mt-9">
+          <div className="flex justify-center mt-6 sm:mt-7 lg:mt-8 xl:mt-9">
             <button
               onClick={() => navigate('/login')}
-              className="py-4 px-[77px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition"
+              className="py-3 sm:py-3 lg:py-4 xl:py-4 px-12 sm:px-14 lg:px-16 xl:px-[77px] bg-[#FF3400] rounded-full text-white text-[14px] sm:text-[15px] lg:text-[16px] xl:text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800] transition"
             >
               Get Started
             </button>
@@ -125,141 +139,170 @@ export default function Landingpage() {
       </div>
 
       {/* Banner images */}
-      <div className="flex gap-5 mt-8">
-        <div className="relative ">
-          {/* Background Image */}
-          <img
-            src="/public/images/Banner/img1.svg"
-            alt="banner"
-            className="w-full h-auto"
-          />
+      <div className="w-full md:mt-[70px] flex justify-center overflow-hidden">
+        <div className="w-[1440px] max-w-full scale-100 md:scale-100 sm:scale-[0.9] xs:scale-[0.8] origin-top">
+          <div className="flex gap-5 mt-8">
+            <div className="">
+              <div>
+                <div className="relative">
+                  {/* Background Image */}
+                  <img
+                    src="/public/images/Banner/img1.svg"
+                    alt="banner"
+                    className="w-full h-auto"
+                  />
 
-          {/* Content Centered on Image */}
-          <div className="absolute left-[210px] bottom-[130px] inset-0 flex flex-col justify-center items-center text-center px-4">
-            <span className="text-[22px] leading-[20.96px] tracking-[-2%] font-extrabold">
-              Learn anytime, <br /> anywhere with our <br /> online courses.
-            </span>
-            <div className="flex gap-1 items-baseline mt-2">
-              <img src="/public/images/Banner/icon.svg" alt="icon" />
-              <h1 className="font-bold text-[11px] leading-[10px] tracking-[-0.02em]">
-                MyEdSkills
-              </h1>
+                  {/* Content */}
+                  <div
+                    className="absolute left-[210px] bottom-[130px] inset-0 flex flex-col justify-center items-center text-center px-4
+                  lg:left-[210px] lg:bottom-[130px] md:left-[180px] md:bottom-[110px]"
+                  >
+                    <span className="lg:text-[20px] lg:leading-[20px]  md:text-[17px] md:leading-[19px] leading-[20.96px] tracking-[-2%] font-extrabold">
+                      Learn anytime, <br /> anywhere with our <br /> online
+                      courses.
+                    </span>
+                    <div className="flex  gap-1 items-baseline md:mt-2 mt-2">
+                      <img
+                        className="md:h-[14px]"
+                        src="/public/images/Banner/icon.svg"
+                        alt="icon"
+                      />
+                      <h1 className="font-bold md:text-[14px] text-[11px] leading-[10px] tracking-[-0.02em]">
+                        MyEdSkills
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:flex md:mt-6">
+                <div className="flex flex-col justify-between">
+                  <div className="relative w-full">
+                    {/* Background Image */}
+                    <img
+                      src="/public/images/Banner/img2.svg"
+                      alt="background"
+                      className="w-full h-auto"
+                    />
+
+                    {/* Content on top of image */}
+                    <div className="absolute   inset-0 md:top-[90px]  md:flex md:flex-col md:justify-end md:items-center  text-center pb-5 ">
+                      <div className="flex items-center gap-2  md:relative md:bottom-[-10px] ">
+                        <h1 className="font-bold text-[31.01px] md:text-[30px] leading-[31.5px] tracking-[-0.04em]">
+                          Professional
+                        </h1>
+                        <img
+                          className="md:h-[30px]"
+                          src="/public/images/Banner/img6.svg"
+                          alt="icon"
+                        />
+                      </div>
+
+                      <div className="flex items-center gap-2  md:gap-2 md:relative md:bottom-[-17px]">
+                        <img
+                          className="md:h-[20px]"
+                          src="/public/images/Banner/img5.svg"
+                          alt="icon"
+                        />
+                        <h1 className="font-bold text-[31.01px] md:text-[31px] leading-[31.5px] tracking-[-0.04em]">
+                          Teachers
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative top-[-8px]">
+                    {/* Background image */}
+                    <img
+                      src="/public/images/Banner/img3.svg"
+                      alt="background"
+                    />
+
+                    {/* Text on top of the image */}
+                    <h1 className="absolute md:text-[27px] md:leading-[27px]  inset-0 flex pl-[23px] items-start  mt-6 font-bold text-[25.67px] leading-[25.67px] tracking-[-0.02em]">
+                      Every child <br /> deserves the <br /> chance to <br />{' '}
+                      learn
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="relative flex justify-center items-center">
+                  {/* Background image */}
+                  <div className="relative  w-full max-w-sm rounded-2xl overflow-hidden">
+                    <img
+                      src="/public/images/Banner/img4.svg"
+                      alt="course"
+                      className="w-full h-auto object-cover pl-1 relative md:top-[-10px] "
+                    />
+
+                    {/* Bottom info bar */}
+                    <div className="absolute bottom-4 left-5 md:bottom-[20px]  flex items-center justify-center px-[28] py-4  ">
+                      {/* Left: Course info */}
+                      <div className="pl-[21px] md:px-[12px] pr-[28px] ">
+                        <span className="font-extrabold md:text-[20px] md:leading-[12px] text-[23.67px] tracking-[-0.02em]">
+                          Math
+                        </span>
+                        <br />
+                        <span className="font-medium text-[14.94px] md:text-[17px] md:leading-[-125px]  leading-[22.64px] tracking-[-0.02em] text-[#434343]">
+                          For Beginner
+                        </span>
+                      </div>
+
+                      {/* Middle: Button */}
+                      <div className="pt-3 pr-3">
+                        <img
+                          src="/public/images/Banner/ButtonR.svg"
+                          alt="button"
+                        />
+                      </div>
+
+                      {/* Right: Duration */}
+                      <div className="text-right pl-[34px]">
+                        <span className="font-extrabold pr-[22px] text-[23.67px] text-start tracking-[-0.02em]">
+                          12
+                        </span>
+                        <br />
+                        <span className="font-medium text-[14.94px] leading-[22.64px] tracking-[-0.02em] text-[#434343]">
+                          Weeks
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Centered image */}
+                  <div className="absolute bottom-[100px] inset-0 flex justify-center  items-end">
+                    <img
+                      className="bg-[#DFF25D] rounded-full"
+                      src="/public/images/Banner/img7.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-between">
-          <div className="relative w-full">
-            {/* Background Image */}
-            <img
-              src="/public/images/Banner/img2.svg"
-              alt="background"
-              className="w-full h-auto"
-            />
-
-            {/* Content on top of image */}
-            <div className="absolute inset-0 flex flex-col justify-end items-center text-center pb-5 ">
-              <div className="flex items-center gap-2">
-                <h1 className="font-bold text-[31.01px] leading-[31.5px] tracking-[-0.04em]">
-                  Professional
-                </h1>
-                <img
-                  src="/public/images/Banner/img6.svg"
-                  alt="icon"
-                  // className="w-6 h-6"
-                />
-              </div>
-
-              <div className="flex items-center gap-2">
-                <img
-                  src="/public/images/Banner/img5.svg"
-                  alt="icon"
-                  // className="w-6 h-6"
-                />
-                <h1 className="font-bold text-[31.01px] leading-[31.5px] tracking-[-0.04em]">
-                  Teachers
-                </h1>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative">
-            {/* Background image */}
-            <img
-              src="/public/images/Banner/img3.svg"
-              alt="background"
-              // className="w-full h-auto"
-            />
-
-            {/* Text on top of the image */}
-            <h1 className="absolute inset-0 flex pl-[23px] items-start  mt-6 font-bold text-[25.67px] leading-[25.67px] tracking-[-0.02em]">
-              Every child <br /> deserves the <br /> chance to <br /> learn
-            </h1>
-          </div>
-        </div>
-
-        <div className="relative flex justify-center items-center">
-          {/* Background image */}
-          <div className="relative w-full max-w-sm rounded-2xl overflow-hidden">
-            {/* Background image */}
-            <img
-              src="/public/images/Banner/img4.svg"
-              alt="course"
-              className="w-full h-auto object-cover pl-1"
-            />
-
-            {/* Bottom info bar */}
-            <div className="absolute bottom-4 left-5  flex items-center justify-center px-[28] py-4  ">
-              {/* Left: Course info */}
-              <div className="pl-[21px] pr-[28px]">
-                <span className="font-extrabold text-[23.67px] tracking-[-0.02em]">
-                  Math
-                </span>
-                <br />
-                <span className="font-medium text-[14.94px] leading-[22.64px] tracking-[-0.02em] text-[#434343]">
-                  For Beginner
-                </span>
-              </div>
-
-              {/* Middle: Button */}
-              <div className="pt-3 pr-3">
-                <img src="/public/images/Banner/ButtonR.svg" alt="button" />
-              </div>
-
-              {/* Right: Duration */}
-              <div className="text-right pl-[34px]">
-                <span className="font-extrabold pr-[22px] text-[23.67px] text-start f tracking-[-0.02em]">
-                  12
-                </span>
-                <br />
-                <span className="font-medium text-[14.94px] leading-[22.64px] tracking-[-0.02em] text-[#434343]">
-                  Weeks
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Centered image */}
-          <div className="absolute bottom-[100px] inset-0 flex justify-center  items-end">
-            <img
-              className="bg-[#DFF25D] rounded-full"
-              src="/public/images/Banner/img7.svg"
-              alt=""
-            />
           </div>
         </div>
       </div>
 
       {/* Company Stats */}
-      <div className="mt-[77px]">
+      <div className="mt-[77px] md:mt-[65px]">
         <div className="flex justify-center relative">
-          <img src="/public/images/company/patern.svg" alt="patern1" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <h1 className="font-semibold text-[24px] text-center text-[#03041666] leading-[32px] tracking-[-1%]">
+          {/* Background pattern */}
+          <img
+            src="/public/images/company/patern.svg"
+            alt="pattern"
+            className="w-full  h-auto  max-w-[1440px]"
+          />
+
+          {/* Centered content */}
+          <div className="absolute top-[40px] inset-0 flex flex-col items-center justify-center px-4">
+            <h1 className="font-semibold text-[24px] md:text-[18px] sm:text-[15px] text-center text-[#03041666] leading-[32px] md:leading-[26px] sm:leading-[22px] tracking-[-1%]">
               <span className="text-black">25,000+</span> Students <br />
               Empowered Since Launch
             </h1>
-            <div className="flex justify-center gap-11 mt-7">
+
+            {/* Company logos */}
+            <div className="relative flex flex-wrap justify-center gap-11 md:gap-6 md:bottom-[25px] sm:gap-4 mt-7">
               <a
                 href="https://www.hw.com/"
                 target="_blank"
@@ -267,19 +310,19 @@ export default function Landingpage() {
               >
                 <img
                   src="/public/images/company/img1.svg"
-                  alt=""
-                  className="cursor-pointer"
+                  alt="logo1"
+                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
                 />
               </a>
               <a
-                href="https://https://www.andover.edu/"
+                href="https://www.andover.edu/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   src="/public/images/company/img2.svg"
-                  alt=""
-                  className="cursor-pointer"
+                  alt="logo2"
+                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -289,8 +332,8 @@ export default function Landingpage() {
               >
                 <img
                   src="/public/images/company/img3.svg"
-                  alt=""
-                  className="cursor-pointer"
+                  alt="logo3"
+                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -300,8 +343,8 @@ export default function Landingpage() {
               >
                 <img
                   src="/public/images/company/img4.svg"
-                  alt=""
-                  className="cursor-pointer"
+                  alt="logo4"
+                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -311,8 +354,8 @@ export default function Landingpage() {
               >
                 <img
                   src="/public/images/company/img5.svg"
-                  alt=""
-                  className="cursor-pointer"
+                  alt="logo5"
+                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -322,8 +365,8 @@ export default function Landingpage() {
               >
                 <img
                   src="/public/images/company/img6.svg"
-                  alt=""
-                  className="cursor-pointer"
+                  alt="logo6"
+                  className="cursor-pointer w-[120px] md:w-[35px] sm:w-[70px]"
                 />
               </a>
             </div>
@@ -332,84 +375,138 @@ export default function Landingpage() {
       </div>
 
       {/* Skills Section */}
-      <div className="flex justify-between items-end mt-16">
-        <div>
-          <h1 className="Recoleta font-bold text-[56px] mr-[57px] leading-[60px] tracking-[-1.02px]">
+      <div className="flex justify-between items-end mt-16 flex-wrap gap-6 sm:gap-3 px-4">
+        {/* Left: Title */}
+        <div className="flex-1 min-w-[250px]">
+          <h1 className="Recoleta font-bold text-[56px] md:text-[33px] sm:text-[28px] leading-[60px] md:leading-[40px] sm:leading-[32px] tracking-[-1.02px] mr-[57px] md:mr-0 md:mt-[-20px] text-left md:text-center">
             Skills That <br /> Shape Tomorrow
           </h1>
         </div>
-        <div>
-          <img src="/public/images/Cart/icon.svg" alt="" />
-          <p className="font-medium text-[18px] mt-[20px] leading-[28px] tracking-[-0.22px]">
-            Learn Essential Life Skills Tailored to Help <br /> You Succeed in
-            School, Work, and Life
-          </p>
-        </div>
-        <div>
-          <button
-            onClick={() => navigate('/login')}
-            className="py-3 px-8 bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition"
-          >
-            Join now
-          </button>
+
+        {/* Middle: Icon + Text */}
+        <div className="flex flex-col items-center text-center flex-1 min-w-[250px] md:mt-3">
+          <div className="md:flex md:flex-col md:items-center md:justify-center md:gap-3">
+            <img
+              src="/public/images/Cart/icon.svg"
+              alt="icon"
+              className="w-[80px]  md:hidden sm:w-[50px] mx-auto"
+            />
+            <p className="font-medium text-[18px] md:text-[15px] sm:text-[13px] mt-[20px] md:mt-2 leading-[28px] md:leading-[24px] tracking-[-0.22px] text-center">
+              Learn Essential Life Skills Tailored to Help{' '}
+              <br className="hidden sm:block" />
+              You Succeed in School, Work, and Life
+            </p>
+          </div>
+
+          {/* Right: Button */}
+          <div className="flex justify-center flex-1 min-w-[200px] mt-4 md:mt-6">
+            <button
+              onClick={() => navigate('/login')}
+              className="py-3 px-8 bg-[#FF3400] rounded-full text-white text-[18px] md:text-[16px] sm:text-[14px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800] transition"
+            >
+              Join now
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Skills images */}
-      <div className="flex gap-[20px] mt-[66px] ">
-        <div className="bg-[#FF9F87] rounded-3xl  ">
-          <div className="flex gap-14 px-8 absolute">
-            <h1 className="font-semibold text-3xl leading-[36px] tracking-[-0.09px] pt-[26px]">
+      <div className="flex gap-[20px] mt-[66px] flex-wrap justify-center md:gap-[16px] sm:gap-[12px]">
+        {/* Card 1 */}
+        <div className="relative bg-[#FF9F87] rounded-3xl overflow-hidden w-full sm:w-[90%] md:w-[48%] lg:w-auto">
+          <div className="flex gap-14 px-8 absolute top-0 left-0 right-0">
+            <h1 className="font-semibold text-3xl md:text-[22px] sm:text-[18px] leading-[36px] md:leading-[28px] tracking-[-0.09px] pt-[26px] sm:pt-[20px]">
               Join My EdSkills <br /> to activate your <br /> learning
             </h1>
-            <div className="absolute bottom-2 right-[-71px] p-4 bg-white rounded-full">
-              <img src="/public/images/Cart/R-button.svg" alt="" />
+            <div className="absolute bottom-2 right-[-71px] sm:right-[-40px] md:right-[-50px] p-4 sm:p-2 bg-white rounded-full">
+              <img
+                src="/public/images/Cart/R-button.svg"
+                alt=""
+                className="w-[30px] md:w-[36px]"
+              />
             </div>
           </div>
-
-          <img src="/public/images/Cart/img1.svg" alt="" />
+          <img
+            src="/public/images/Cart/img1.svg"
+            alt=""
+            className="w-full h-auto object-cover rounded-3xl"
+          />
         </div>
-        <div className="bg-[#DDF24B] rounded-3xl pb-[12px]  ">
-          <div className="flex gap-14 px-8 absolute">
-            <h1 className="font-semibold text-3xl leading-[36px] tracking-[-0.09px] pt-[26px]">
-              Join My EdSkills <br /> to activate your <br /> teaching{' '}
+
+        {/* Card 2 */}
+        <div className="relative bg-[#DDF24B] rounded-3xl pb-[12px] overflow-hidden w-full sm:w-[90%] md:w-[48%] lg:w-auto mt-4 md:mt-0">
+          <div className="flex gap-14 px-8 absolute top-0 left-0 right-0">
+            <h1 className="font-semibold text-3xl md:text-[22px] sm:text-[18px] leading-[36px] md:leading-[28px] tracking-[-0.09px] pt-[26px] sm:pt-[20px]">
+              Join My EdSkills <br /> to activate your <br /> teaching
             </h1>
-            <div className="absolute bottom-2 right-[-71px] p-4 bg-white rounded-full">
-              <img src="/public/images/Cart/R-button.svg" alt="" />
+            <div className="absolute bottom-2 right-[-71px] sm:right-[-40px] md:right-[-50px] p-4 sm:p-2 bg-white rounded-full">
+              <img
+                src="/public/images/Cart/R-button.svg"
+                alt=""
+                className="w-[30px] md:w-[36px]"
+              />
             </div>
           </div>
+          <img
+            src="/public/images/Cart/img2.svg"
+            alt=""
+            className="w-full h-auto object-cover rounded-3xl"
+          />
+        </div>
 
-          <img src="/public/images/Cart/img2.svg" alt="" />
-        </div>{' '}
-        <div className="bg-[#CBBEFD] rounded-3xl pb-[12px]  ">
-          <div className="flex gap-14 px-8 absolute">
-            <h1 className="font-semibold text-3xl leading-[36px] tracking-[-0.09px] pt-[26px]">
-              Join My EdSkills <br /> to activate your <br /> teaching{' '}
+        {/* Card 3 */}
+        <div className="relative bg-[#CBBEFD] rounded-3xl pb-[12px] overflow-hidden w-full sm:w-[90%] md:w-[48%] lg:w-auto mt-4 md:mt-0">
+          <div className="flex gap-14 px-8 absolute top-0 left-0 right-0">
+            <h1 className="font-semibold text-3xl md:text-[22px] sm:text-[18px] leading-[36px] md:leading-[28px] tracking-[-0.09px] pt-[26px] sm:pt-[20px]">
+              Join My EdSkills <br /> to activate your <br /> teaching
             </h1>
-            <div className="absolute bottom-2 right-[-71px] p-4 bg-white rounded-full">
-              <img src="/public/images/Cart/R-button.svg" alt="" />
+            <div className="absolute bottom-2 right-[-71px] sm:right-[-40px] md:right-[-50px] p-4 sm:p-2 bg-white rounded-full">
+              <img
+                src="/public/images/Cart/R-button.svg"
+                alt=""
+                className="w-[30px] md:w-[36px]"
+              />
             </div>
           </div>
-
-          <img src="/public/images/Cart/img3.svg" alt="" />
-        </div>{' '}
+          <img
+            src="/public/images/Cart/img3.svg"
+            alt=""
+            className="w-full h-auto object-cover rounded-3xl"
+          />
+        </div>
       </div>
 
       {/* Section Title */}
       <div className="mt-[107px] relative flex justify-center">
-        <img src="/public/images/subjects/icons.svg" alt="" />
-        <h1 className="absolute inset-0 flex items-center justify-center text-[55px] text-center leading-[60px]">
+        {/* Background Icon Image */}
+        <img
+          src="/public/images/subjects/icons.svg"
+          alt=""
+          className="w-full max-w-[1000px] md:max-w-[800px] sm:max-w-[600px] xs:max-w-[350px] h-auto"
+        />
+
+        {/* Centered Heading */}
+        <h1
+          className="
+      absolute inset-0 flex items-center justify-center 
+      text-[55px] leading-[60px] text-center font-bold
+      lg:text-[55px] lg:leading-[60px]  /* keep 1440px same */
+      md:text-[36px] md:leading-[40px] 
+      sm:text-[28px] sm:leading-[32px] 
+      xs:text-[22px] xs:leading-[26px]
+      px-4
+    "
+        >
           Where Questions <br /> Meet Answers
         </h1>
       </div>
 
       {/* Subjects Grid */}
-      <div className=" flex flex-col items-center gap-5 mt-3">
+      <div className="flex flex-col items-center gap-5 mt-10">
         {renderRow(row1)}
         {renderRow(row2)}
         {renderRow(row3)}
       </div>
-
       {/* Last Section */}
       <div className="flex gap-[63px] mt-[176px]">
         <div className="relative">
