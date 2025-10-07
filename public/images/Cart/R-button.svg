@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="24" cy="24" r="24" fill="white"/>
 <path d="M28.1716 22.9999L22.8076 17.6359L24.2218 16.2217L32 23.9999L24.2218 31.778L22.8076 30.3638L28.1716 24.9999H16V22.9999H28.1716Z" fill="black"/>
+=======
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.1716 6.9999L6.8076 1.63589L8.2218 0.22168L16 7.9999L8.2218 15.778L6.8076 14.3638L12.1716 8.9999H0V6.9999H12.1716Z" fill="black"/>
+>>>>>>> origin/Ahmadi
 </svg>
