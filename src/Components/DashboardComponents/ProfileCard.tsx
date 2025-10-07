@@ -35,7 +35,7 @@ export default function ProfileCard() {
   ];
   const COLORS = ['#F5C545', '#C4E59C', '#ED844E', '#8EB1F9'];
     return (
-      <div className="mr-[10px] mt-[7px] w-[410px]  bg-[#EEEEE4] rounded-2xl  flex flex-col justify-between items-center px-2">
+      <div className="mr-[10px] mt-[7px] w-[410px]  bg-[#EEEEE4] rounded-2xl  flex flex-col justify-between items-center px-2 transition-all duration-300 ease-in-out hover:shadow-2xl">
         <div className="relative mt-3 flex flex-col gap-6 items-center">
           {/* Top bar */}
           <div className="w-[386px] h-[100px] bg-white rounded-2xl flex justify-between items-start p-3 shadow-sm hover:shadow-lg transition-shadow duration-300">
@@ -49,7 +49,7 @@ export default function ProfileCard() {
   
           {/* Profile image */}
           <img
-            className="absolute top-[54px] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5]  hover:shadow-xl transition-shadow duration-300"
+            className="absolute top-[54px] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5]  hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg]"
             src="/images/DashBoardSideBar/profileImage.svg"
             alt=""
           />
