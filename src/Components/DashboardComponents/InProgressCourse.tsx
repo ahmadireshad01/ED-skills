@@ -102,7 +102,7 @@ export default function InprogressCourse(props: any){
               <div className="flex flex-col gap-1 items-center h-[97px] justify-center transition-all duration-300 hover:scale-[1.03]">
                   <p className="text-[#6B6B6B] font-pp-mori font-normal text-[16.66px] leading-[31.99px] tracking-[-0.02em]">Duration</p>
                   <div className="flex items-center gap-1">
-                      <img className="w-[23px] transition-transform duration-500 hover:rotate-12" src="images/dashBoard/clock.svg" alt="" />
+                      <img className="w-[23px] transition-transform duration-500 hover:rotate-12" src="/images/dashBoard/clock.svg" alt="" />
                       <p className="font-pp-mori font-semibold text-[17.33px] leading-[31.99px] tracking-[-0.02em]">{props.duration}</p>
                   </div>
               </div>

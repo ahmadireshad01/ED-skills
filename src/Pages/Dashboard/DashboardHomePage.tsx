@@ -14,20 +14,23 @@ export default function DashboardHomePage() {
         {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'}
     ]
 
-    const Classes = [{id:1,bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy",topic: "The Secrets of the nature", participants:{first: "images/ClassCard/firstPersonImage.svg", second: "images/ClassCard/firstPersonImage.svg", third: "images/ClassCard/thirdPersonImage.svg"}  },
-                     {id:2,bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry",topic: "Cordination Chemistry", participants:{first: "images/ClassCard/firstPersonImage.svg", second: "images/ClassCard/firstPersonImage.svg", third: "images/ClassCard/thirdPersonImage.svg"}  }
+    const Classes = [{id:1,bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy",topic: "The Secrets of the nature", participants:{first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg"}  },
+                     {id:2,bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry",topic: "Cordination Chemistry", participants:{first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg"}  }
     ]
 
-    const InProgressClasses = [{id:4, icon:"images/dashBoard/physicsIcon.svg", bg:"#b0d7c7", subject:"Physics", topic:"Unlock the Laws of Nature",content:"5 Material", progress:44,duration:"1 day"},
-                               {id:5, icon:"images/dashBoard/englishIcon.svg", bg:"#FAEAFA", subject:"English", topic:"Learn the National language",content:"5 Material", progress:60,duration:"5 day"},
-                               {id:6, icon:"images/dashBoard/businessIcon.svg", bg:"#E9F3AA", subject:"Business", topic:"Learn to Business here at Ed",content:"5 Material", progress:28,duration:"2 day"}
+    const InProgressClasses = [{id:4, icon:"/images/dashBoard/physicsIcon.svg", bg:"#b0d7c7", subject:"Physics", topic:"Unlock the Laws of Nature",content:"5 Material", progress:44,duration:"1 day"},
+                               {id:5, icon:"/images/dashBoard/englishIcon.svg", bg:"#FAEAFA", subject:"English", topic:"Learn the National language",content:"5 Material", progress:60,duration:"5 day"},
+                               {id:6, icon:"/images/dashBoard/businessIcon.svg", bg:"#E9F3AA", subject:"Business", topic:"Learn to Business here at Ed",content:"5 Material", progress:28,duration:"2 day"}
     ]
     return(
-    <>
-        <div className="flex bg-[#fafaf5]">
-            <DashboardSideBar />
+    <>  
+        
+        <div className=" flex bg-[#fafaf5]">
+
+        <DashboardSideBar />
+        
             {/*middle section*/}
-            <div className="flex flex-col m-[30px] w-full ">
+            <div className=" flex flex-col m-[30px] w-full ">
                 <div className="flex items-center justify-between ">
                     <p className=" font-[Roboto] font-bold text-[51.75px] leading-[49.49px] tracking-[-0.02em]">Good Morning, Sophia 👋</p>
                     <button className="flex items-center justify-center gap-1 shadow-[0px_5.33px_0px_0px_#FF3400] 
@@ -36,9 +39,8 @@ export default function DashboardHomePage() {
                         bg-white text-orange-600 transition-all duration-300 ease-out 
                         hover:bg-orange-500 hover:text-white hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
                         hover:scale-[1.05] active:scale-95 active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]">
-
                         <img className="w-8 transition-transform duration-500 group-hover:rotate-[15deg] hover:rotate-[20deg]" 
-                            src="images/dashBoard/askAi.svg" alt="" />
+                            src="/images/dashBoard/askAi.svg" alt="" />
                         Ask Ai
                     </button>
 
