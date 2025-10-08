@@ -7,10 +7,14 @@ export default function DashboardHomePage() {
         {icon: 'allSubjectIcon', label: "All Subjects" , color: '#FFD5CA'},
         {icon: 'englishIcon', label: "English", color: '#FAEAFA'},
         {icon: 'businessIcon', label: "Business", color: '#E9F3AA'},
+        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
         {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'}
     ]
 
-    const Classes = [{id:1,bg: '#E9F3AA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy",topic: "The Secrets of the nature", participants:{first: "images/ClassCard/firstPersonImage.svg", second: "images/ClassCard/firstPersonImage.svg", third: "images/ClassCard/thirdPersonImage.svg"}  },
+    const Classes = [{id:1,bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy",topic: "The Secrets of the nature", participants:{first: "images/ClassCard/firstPersonImage.svg", second: "images/ClassCard/firstPersonImage.svg", third: "images/ClassCard/thirdPersonImage.svg"}  },
                      {id:2,bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry",topic: "Cordination Chemistry", participants:{first: "images/ClassCard/firstPersonImage.svg", second: "images/ClassCard/firstPersonImage.svg", third: "images/ClassCard/thirdPersonImage.svg"}  }
     ]
 
@@ -39,11 +43,11 @@ export default function DashboardHomePage() {
                     </button>
 
                 </div>
-                <div className="flex  gap-4  mt-8 w-full h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth" >
+                <div className="flex  gap-4  mt-8  w-[850px] h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth" >
                     {subjects.map((subject) => (
-                        <div className=" border-[#E3E3DE] border-[1.33px] flex gap-4 rounded-2xl items-center justify-center  w-fit p-3 h-[72px]  shadow-[0px_2.33px_0px_0px_#E3E3DE] hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-                            <span className={`rounded-2xl bg-[${subject.color}] flex items-center justify-center w-[54px] h-[54px]`}><img className="" src={`/images/dashBoard/${subject.icon}.svg`} alt="" /></span>
-                            <p className="font-roboto font-semibold text-[23.99px] leading-[42.65px] tracking-[0%] text-center">{subject.label}</p>
+                        <div className=" border-[#E3E3DE] border-[1.33px] flex gap-4 rounded-2xl items-center justify-center w-lg-[250px]  w-[187px] p-3 h-[72px]  shadow-[0px_2.33px_0px_0px_#E3E3DE] hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <span className={`rounded-lg bg-[${subject.color}] flex items-center justify-center w-[54px] h-[54px]`}><img className="" src={`/images/dashBoard/${subject.icon}.svg`} alt="" /></span>
+                            <p className=" font-roboto font-semibold text-[19.99px] leading-[22.65px] tracking-[0%] text-center">{subject.label}</p>
                         </div>
                     ))}
                 </div>
