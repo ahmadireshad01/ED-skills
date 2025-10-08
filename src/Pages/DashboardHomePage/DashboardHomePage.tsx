@@ -39,7 +39,7 @@ export default function DashboardHomePage() {
                     </button>
 
                 </div>
-                <div className="flex  gap-4  mt-8 w-full h-[98px]" >
+                <div className="flex  gap-4  mt-8 w-full h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth" >
                     {subjects.map((subject) => (
                         <div className=" border-[#E3E3DE] border-[1.33px] flex gap-4 rounded-2xl items-center justify-center  w-fit p-3 h-[72px]  shadow-[0px_2.33px_0px_0px_#E3E3DE] hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
                             <span className={`rounded-2xl bg-[${subject.color}] flex items-center justify-center w-[54px] h-[54px]`}><img className="" src={`/images/dashBoard/${subject.icon}.svg`} alt="" /></span>

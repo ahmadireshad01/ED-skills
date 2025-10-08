@@ -40,7 +40,7 @@ export default function ProfileCard() {
           {/* Top bar */}
           <div className="w-[386px] h-[100px] bg-white rounded-2xl flex justify-between items-start p-3 shadow-sm hover:shadow-lg transition-shadow duration-300">
             <button className="p-3 hover:scale-110 transition-transform duration-300">
-              <img className="w-[21px]" src="/images/dashBoard/massage.svg" alt="" />
+              <img className="w-[23px]" src="/images/DashBoardSideBar/massage.svg" alt="" />
             </button>
             <button className="p-3 hover:scale-110 transition-transform duration-300">
               <img className="w-[21px]" src="/images/DashBoardSideBar/settings.svg" alt="" />
@@ -144,7 +144,7 @@ export default function ProfileCard() {
                   <p className="font-pp-mori font-normal text-[16px] leading-[24px] tracking-[-0.02em] text-[#6B6B6B]">{item.label}</p>
                 </div>
               </div>
-              <button className="w-[149px] h-[43px] rounded-3xl shadow-lg hover:bg-gray-200 hover:scale-105 transition-all duration-300">
+              <button className="w-[149px] h-[43px] rounded-3xl shadow-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300">
                 View all
               </button>
             </div>
