@@ -2,6 +2,10 @@ import DashboardSideBar from "../../Components/DashboardComponents/DashboardSide
 import ContinueClass from "../../Components/DashboardComponents/ContinueClass";
 
 export default function DashboardCoursesPage(){
+    const ContinueClasses =[
+        { materials:12, bg:"#E3EFFF", image:"/images/dashboardCourses/courseImage.svg", subject:"Geography", topic:"Understand the Land, Oceans and Beyond", progress:"80", dialog:"Increase your knowledge with", recommendation:"Unlock the Power of Place"},
+        { materials:23, bg:"#FAEAFA", image:"/images/dashboardCourses/courseImage2.svg", subject:"Computer & AI", topic:"Unlock the Power of Creativity with Generative AI", progress:"30", dialog:"Next, you can dive into", recommendation:"Create Using Generative AI"},
+    ]
     return(
         <div className="flex bg-[#fafaf5]">
             <div className="h-[940px] flex pl-1 fixed top-0 left-0">
@@ -23,9 +27,15 @@ export default function DashboardCoursesPage(){
                 </div>
 
                 <div className="py-6 flex gap-7">
-                    <ContinueClass/>
-                    <ContinueClass/>
+                    {
+                        ContinueClasses.map((continueClass)=>(
+                            <ContinueClass materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress } dialog={continueClass.dialog} recommendation={continueClass.recommendation}/>
+                        ))
+                    }
+
                 </div>
+
+                
             </div>
         </div>
     )
