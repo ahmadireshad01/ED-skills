@@ -1,34 +1,46 @@
-import { FC } from "react";
+import { FC } from 'react';
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaXTwitter,
-} from "react-icons/fa6";
+} from 'react-icons/fa6';
 
 const Footer: FC = () => {
   return (
-    <footer className="px-[124px]">
+    <footer className="px-[124px] xl:px-[124px] lg:px-[80px] md:px-[40px] sm:px-[20px]">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex justify-between items-baseline md:grid-cols-4 gap-8">
+        {/* Top Section */}
+        <div
+          className="flex justify-between items-start 
+                     flex-wrap gap-8 
+                     md:grid md:grid-cols-2 
+                     sm:grid sm:grid-cols-1"
+        >
           {/* Brand + Description */}
-          <div>
-            <div className="flex items-center gap-2">
-              <img src="/public/images/Footer.svg" alt="" />
+          <div className="min-w-[220px] sm:text-center">
+            <div className="flex items-center gap-2 sm:justify-center">
+              <img src="/public/images/Footer.svg" alt="logo" />
               <span className="font-bold text-[27.92px] leading-[26.7px] tracking-[-2%]">
                 MyEdSkills
               </span>
             </div>
-            <p className="text-[18px] mt-[23px]  font-medium leading-[30px] tracking-[0px] text-[#474645] ">
+            <p
+              className="text-[18px] mt-[23px] font-medium leading-[30px] 
+                         tracking-[0px] text-[#474645]
+                         lg:text-[16px] md:text-[15px] sm:text-[14px]"
+            >
               Empowering Students with Personalized, <br /> Interactive Learning
               Designed to Build <br /> Essential Skills for Future Success
             </p>
           </div>
 
           {/* Product */}
-          <div>
-            <h3 className="text-[#9B9B9B] ">Product</h3>
-            <ul className="leading-[24px] traking-[0%] text-[#474645]">
+          <div className="sm:text-center">
+            <h3 className="text-[#9B9B9B] font-semibold text-[16px]">
+              Product
+            </h3>
+            <ul className="leading-[24px] text-[#474645]">
               <li className="mt-[17px]">
                 <a href="#">Courses</a>
               </li>
@@ -45,9 +57,11 @@ const Footer: FC = () => {
           </div>
 
           {/* Company */}
-          <div>
-            <h3 className="text-[#9B9B9B] ">Company</h3>
-            <ul className="leading-[24px] traking-[0%] text-[#474645]">
+          <div className="sm:text-center">
+            <h3 className="text-[#9B9B9B] font-semibold text-[16px]">
+              Company
+            </h3>
+            <ul className="leading-[24px] text-[#474645]">
               <li className="mt-[17px]">
                 <a href="#">About us</a>
               </li>
@@ -61,9 +75,11 @@ const Footer: FC = () => {
           </div>
 
           {/* Behind the scenes */}
-          <div>
-            <h3 className="text-[#9B9B9B] ">Behind the scenes</h3>
-            <ul className="leading-[24px] traking-[0%] text-[#474645]">
+          <div className="sm:text-center">
+            <h3 className="text-[#9B9B9B] font-semibold text-[16px]">
+              Behind the scenes
+            </h3>
+            <ul className="leading-[24px] text-[#474645]">
               <li className="mt-[17px]">
                 <a href="#">Solving Equations</a>
               </li>
@@ -72,7 +88,14 @@ const Footer: FC = () => {
               </li>
             </ul>
           </div>
-          <div className="flex gap-4 mt-6 text-gray-500">
+
+          {/* Social Media Icons */}
+          <div
+            className="flex gap-4 mt-6 text-gray-500 
+             lg:justify-start 
+             md:justify-center md:items-center 
+             sm:justify-center sm:items-center"
+          >
             <a href="#">
               <FaFacebookF size={18} />
             </a>
@@ -89,12 +112,16 @@ const Footer: FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 border-t border-[#E4E4D9] pt-6">
-          <div className="flex gap-6 mb-4 md:mb-0">
+        <div
+          className="mt-10 flex flex-col md:flex-row justify-between items-center 
+                     text-xs text-gray-500 border-t border-[#E4E4D9] pt-6 
+                     sm:gap-4 sm:text-center"
+        >
+          <div className="flex gap-6 mb-4 md:mb-0 sm:justify-center">
             <a href="#">Terms of service</a>
             <a href="#">Privacy policy</a>
           </div>
-          <p>© Myedskill {new Date().getFullYear()}</p>
+          <p>© MyEdSkills {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

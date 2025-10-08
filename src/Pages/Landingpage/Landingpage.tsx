@@ -68,7 +68,7 @@ export default function Landingpage() {
     },
   ];
 
-  const row3 = [];
+  const row3: never[] = [];
 
   // Helper function to render rows
   const renderRow = row => (
@@ -186,9 +186,9 @@ export default function Landingpage() {
                     />
 
                     {/* Content on top of image */}
-                    <div className="absolute   inset-0 md:top-[90px]  md:flex md:flex-col md:justify-end md:items-center  text-center pb-5 ">
+                    <div className="absolute   inset-3  md:top-[70px]  md:flex md:flex-col md:justify-end md:items-center  text-center pb-5 ">
                       <div className="flex items-center gap-2  md:relative md:bottom-[-10px] ">
-                        <h1 className="font-bold text-[31.01px] md:text-[30px] leading-[31.5px] tracking-[-0.04em]">
+                        <h1 className="font-bold text-[31.01px] md:text-[27px] leading-[31.5px] tracking-[-0.04em]">
                           Professional
                         </h1>
                         <img
@@ -204,14 +204,14 @@ export default function Landingpage() {
                           src="/public/images/Banner/img5.svg"
                           alt="icon"
                         />
-                        <h1 className="font-bold text-[31.01px] md:text-[31px] leading-[31.5px] tracking-[-0.04em]">
+                        <h1 className="font-bold text-[31.01px] md:text-[27px] leading-[31.5px] tracking-[-0.04em]">
                           Teachers
                         </h1>
                       </div>
                     </div>
                   </div>
 
-                  <div className="relative top-[-8px]">
+                  <div className="relative top-[-8px] ">
                     {/* Background image */}
                     <img
                       src="/public/images/Banner/img3.svg"
@@ -219,7 +219,7 @@ export default function Landingpage() {
                     />
 
                     {/* Text on top of the image */}
-                    <h1 className="absolute md:text-[27px] md:leading-[27px]  inset-0 flex pl-[23px] items-start  mt-6 font-bold text-[25.67px] leading-[25.67px] tracking-[-0.02em]">
+                    <h1 className="absolute  md:text-[25px] md:leading-[27px]  inset-0 flex pl-[23px] items-start  mt-6 font-bold text-[25.67px] leading-[25.67px] tracking-[-0.02em]">
                       Every child <br /> deserves the <br /> chance to <br />{' '}
                       learn
                     </h1>
@@ -236,14 +236,14 @@ export default function Landingpage() {
                     />
 
                     {/* Bottom info bar */}
-                    <div className="absolute bottom-4 left-5 md:bottom-[20px]  flex items-center justify-center px-[28] py-4  ">
+                    <div className="absolute bottom-4 left-5 md:bottom-[24px]  flex items-center justify-center px-[28] py-4  ">
                       {/* Left: Course info */}
-                      <div className="pl-[21px] md:px-[12px] pr-[28px] ">
-                        <span className="font-extrabold md:text-[20px] md:leading-[12px] text-[23.67px] tracking-[-0.02em]">
+                      <div className="pl-[21px] md:px-[18px] pr-[28px] ">
+                        <span className="font-extrabold md:text-[17px] md:leading-[12px] text-[23.67px] tracking-[-0.02em]">
                           Math
                         </span>
                         <br />
-                        <span className="font-medium text-[14.94px] md:text-[17px] md:leading-[-125px]  leading-[22.64px] tracking-[-0.02em] text-[#434343]">
+                        <span className="font-medium text-[14.94px] md:text-[14px] md:leading-[-125px]  leading-[22.64px] tracking-[-0.02em] text-[#434343]">
                           For Beginner
                         </span>
                       </div>
@@ -258,11 +258,11 @@ export default function Landingpage() {
 
                       {/* Right: Duration */}
                       <div className="text-right pl-[34px]">
-                        <span className="font-extrabold pr-[22px] text-[23.67px] text-start tracking-[-0.02em]">
+                        <span className="font-extrabold pr-[22px] text-[23.67px] md:text-[18px] text-start tracking-[-0.02em]">
                           12
                         </span>
                         <br />
-                        <span className="font-medium text-[14.94px] leading-[22.64px] tracking-[-0.02em] text-[#434343]">
+                        <span className="font-medium text-[14.94px] md:text-[14px] leading-[22.64px] tracking-[-0.02em] text-[#434343]">
                           Weeks
                         </span>
                       </div>
@@ -508,76 +508,128 @@ export default function Landingpage() {
         {renderRow(row3)}
       </div>
       {/* Last Section */}
-      <div className="flex gap-[63px] mt-[176px]">
-        <div className="relative">
-          <img src="/public/images/Cart2/backimg.svg" alt="" />
-          <div className="absolute inset-0 top-[170px] flex flex-col items-start justify-center ">
-            <h1 className="Recoleta font-bold  text-[56px] leading-[60px] tracking-[-1px]">
+      <div className="flex flex-col lg:flex-row gap-[63px] mt-[176px] md:mt-[-30px] items-center lg:items-start">
+        {/* Left Section */}
+        <div className="relative w-full lg:w-1/2 flex justify-center md:justify-center md:items-center">
+          <img
+            src="/public/images/Cart2/backimg.svg"
+            alt="background"
+            className="w-full max-w-[700px] sm:max-w-[450px] h-auto"
+          />
+
+          <div
+            className="absolute inset-0 flex flex-col 
+               items-start justify-center 
+               px-6 sm:px-4 
+               lg:items-start lg:justify-center 
+               md:items-center md:justify-center 
+               top-[120px] sm:top-[80px] lg:top-[170px]"
+          >
+            <h1
+              className="Recoleta font-bold text-[56px] leading-[60px] tracking-[-1px]
+                 lg:text-[56px] lg:leading-[60px]
+                 md:text-[38px] md:leading-[46px] md:text-center
+                 sm:text-[28px] sm:leading-[34px] sm:text-center"
+            >
               Experience <br /> Learning Like <br /> Never Before
             </h1>
-            <p className="font-medium text-[18px] leading-[30px] tracking-[-0.22px] mt-[24px] ">
+
+            <p
+              className="font-medium text-[18px] leading-[30px] tracking-[-0.22px] mt-[24px]
+                 lg:text-[18px] lg:leading-[30px]
+                 md:text-[15px] md:leading-[24px] md:text-center
+                 sm:text-[13px] sm:leading-[22px] sm:text-center"
+            >
               Discover Personalized, AI-Powered <br /> Learning That Prepares
               Students for <br /> Success in the Real World
             </p>
+
             <button
               onClick={() => navigate('/login')}
-              className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px] font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800]  transition"
+              className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px]
+                 font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800] transition
+                 md:text-[16px] sm:text-[14px] sm:px-6 sm:py-2"
             >
               Start Your Journey
             </button>
           </div>
         </div>
 
-        <div>
-          <div className="">
-            <div className="absolute px-[45px] pt-[123px]">
-              <h1 className="Recoleta font-semibold  text-[#FFFFFF] text-[40px] leading-[42px] tracking-[-0.13px]">
+        {/* Right Section */}
+        <div className="w-full md:mt-[-30px]  lg:w-1/2 flex flex-col items-center lg:items-start px-4">
+          {/* Top Card */}
+          <div className="relative w-full flex justify-center">
+            <div className="absolute px-[45px] pt-[123px] md:pt-[40px] md:px-[70px] md:left-0">
+              <h1
+                className="Recoleta font-semibold text-white text-[40px] leading-[42px] tracking-[-0.13px]
+                       md:text-[28px] md:leading-[32px] sm:text-[22px] sm:leading-[26px]"
+              >
                 Personalized <br /> Learning Paths
               </h1>
-
-              <p className="font-normal text-[18px] text-white leading-[24px] tracking-[-0.22px]">
+              <p
+                className="font-normal text-[18px] text-white leading-[24px] tracking-[-0.22px]
+                      md:text-[15px] sm:text-[13px]"
+              >
                 AI adapts courses to your unique <br /> learning style.
               </p>
             </div>
-            <img src="/public/images/Cart2/img1.svg" alt="" />
+            <img
+              src="/public/images/Cart2/img1.svg"
+              alt="Learning paths"
+              className="w-full max-w-[600px] sm:max-w-[400px] h-auto"
+            />
           </div>
-          <div className="flex gap-5 mt-5">
-            <div className="bg-[#DDF24B] relative px-[32px] py-[37px] rounded-[24px] flex flex-col justify-between">
-              {/* Top-right text */}
-              <div className="absolute top-[30px] right-[40px] ">
-                <h1 className="Recoleta font-semibold text-[30px] leading-[36px] tracking-[-0.09px]">
+
+          {/* Bottom Cards */}
+          <div className="flex flex-col md:flex-row gap-5 mt-5 w-full justify-center items-center">
+            {/* Card 1 */}
+            <div
+              className="bg-[#DDF24B] relative px-[32px] py-[37px] rounded-[24px]
+                      flex flex-col justify-between w-full md:w-1/2 max-w-[400px]"
+            >
+              <div className="absolute top-[30px] right-[40px] sm:top-[20px] sm:right-[20px]">
+                <h1
+                  className="Recoleta font-semibold text-[30px] leading-[36px] tracking-[-0.09px]
+                         md:text-[24px] sm:text-[20px]"
+                >
                   Earn While <br /> You Learn
                 </h1>
               </div>
-
-              {/* Background shapes / image */}
               <img
                 src="/public/images/Cart2/img2.svg"
-                alt=""
+                alt="Earn while learn"
                 className="w-full h-full object-contain"
               />
-
-              {/* Bottom text */}
-              <p className="absolute bottom-[30px] left-[40px] text-[18px] leading-[22px] text-[#434343] font-medium">
+              <p
+                className="absolute bottom-[30px] left-[40px] text-[18px] leading-[22px] text-[#434343]
+                      font-medium md:text-[15px] sm:text-[13px] sm:left-[20px]"
+              >
                 Accumulate scholarship <br /> funds as you progress
               </p>
             </div>
 
-            <div className="bg-[#AF9EEF] relative rounded-[24px] px-[39px] py-[37px] overflow-hidden">
-              {/* Text section */}
-              <h1 className="Recoleta font-semibold text-[30px] leading-[36px] tracking-[-0.09px] absolute top-[37px] left-[39px]">
+            {/* Card 2 */}
+            <div
+              className="bg-[#AF9EEF] relative rounded-[24px] md:h-[225px] px-[39px] py-[37px]  overflow-hidden
+                      w-full md:w-1/2 max-w-[400px] mt-5 md:mt-0"
+            >
+              <h1
+                className="Recoleta font-semibold text-[30px] leading-[36px] tracking-[-0.09px]
+                       absolute top-[37px] left-[39px] md:top-5
+                       md:text-[24px] sm:text-[20px] sm:left-[20px]"
+              >
                 Verified <br /> Credentials
               </h1>
-
-              {/* Decorative image */}
               <img
                 src="/public/images/Cart2/img3.svg"
-                alt=""
+                alt="Credentials"
                 className="w-full h-full object-contain"
               />
-
-              {/* Paragraph at the bottom */}
-              <p className="font-medium text-[18px] leading-[24px] text-[#474645] absolute bottom-[20px] left-[39px]">
+              <p
+                className="font-medium text-[18px] leading-[24px] text-[#474645]
+                      absolute bottom-[20px] left-[39px]
+                      md:text-[15px] md:bottom-7 md:px-  sm:text-[13px] sm:left-[20px]"
+              >
                 Secure blockchain certificates <br /> for your achievements
               </p>
             </div>
@@ -590,17 +642,17 @@ export default function Landingpage() {
         <img
           src="/images/community/bgimg.svg"
           alt="background"
-          className="w-full relative bottom-[-6px]"
+          className="w-full relative bottom-[-6px] md:bottom-[-3px]"
         />
 
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
           <img src="/images/community/icon.svg" alt="icon" className="mb-4" />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold  mb-8 leading-[60px]">
+          <h1 className="text-3xl sm:text-4xl md:text-[25px] md:leading-[25px] lg:text-6xl font-bold  mb-8 leading-[60px]">
             Join Our <br /> Community <br /> Banner
           </h1>
           <button
             onClick={() => navigate('/login')}
-            className="py-3 px-8 bg-[#FF3400] rounded-full cursor-pointer text-white text-[18px] font-semibold  hover:shadow-[0_6px_0_0_#C52800]  transition"
+            className="py-3 px-8 md:py-2 md:px-6 md:mb-8 bg-[#FF3400] rounded-full cursor-pointer text-white text-[18px] md:text-[14px] font-semibold  hover:shadow-[0_6px_0_0_#C52800]  transition"
           >
             Join now
           </button>
