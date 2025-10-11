@@ -140,34 +140,34 @@ export default function Landingpage() {
 
       {/* Banner images */}
       <div className="w-full md:mt-[70px] flex justify-center overflow-hidden">
-        <div className="w-[1440px] max-w-full scale-100 md:scale-100 sm:scale-[0.9] xs:scale-[0.8] origin-top">
-          <div className="flex gap-5 mt-8">
-            <div className="">
+        <div className="max-w-full scale-100 md:scale-100 sm:scale-[0.9] xs:scale-[0.8] origin-top">
+          <div className="md:flex gap-5 mt-8">
+            <div className="lg:flex lg:items-baseline-last">
               <div>
-                <div className="relative">
+                <div className="relative lg:mr-3">
                   {/* Background Image */}
                   <img
                     src="/public/images/Banner/img1.svg"
                     alt="banner"
-                    className="w-full h-auto"
+                    className="w-auto h-auto"
                   />
 
                   {/* Content */}
                   <div
                     className="absolute left-[210px] bottom-[130px] inset-0 flex flex-col justify-center items-center text-center px-4
-                  lg:left-[210px] lg:bottom-[130px] md:left-[180px] md:bottom-[110px]"
+                lg:left-[140px] lg:bottom-[80px] md:left-[180px] md:bottom-[110px]"
                   >
-                    <span className="lg:text-[20px] lg:leading-[20px]  md:text-[17px] md:leading-[19px] leading-[20.96px] tracking-[-2%] font-extrabold">
+                    <span className="lg:text-[14px] lg:leading-[14px] md:text-[17px] md:leading-[19px] leading-[20.96px] tracking-[-2%] font-extrabold">
                       Learn anytime, <br /> anywhere with our <br /> online
                       courses.
                     </span>
-                    <div className="flex  gap-1 items-baseline md:mt-2 mt-2">
+                    <div className="flex gap-1 items-baseline md:mt-2 mt-2 lg:mt-1 lg:flex lg:items-center">
                       <img
-                        className="md:h-[14px]"
+                        className="md:h-[14px] w-auto"
                         src="/public/images/Banner/icon.svg"
                         alt="icon"
                       />
-                      <h1 className="font-bold md:text-[14px] text-[11px] leading-[10px] tracking-[-0.02em]">
+                      <h1 className="font-bold md:text-[14px] text-[11px] lg:text-[12px] leading-[10px] tracking-[-0.02em]">
                         MyEdSkills
                       </h1>
                     </div>
@@ -176,88 +176,90 @@ export default function Landingpage() {
               </div>
 
               <div className="md:flex md:mt-6">
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col md:gap-4 lg:flex lg:gap-4 lg:relative top-[83px]">
                   <div className="relative w-full">
                     {/* Background Image */}
                     <img
                       src="/public/images/Banner/img2.svg"
                       alt="background"
-                      className="w-full h-auto"
+                      className="w-auto h-aut"
                     />
 
                     {/* Content on top of image */}
-                    <div className="absolute   inset-3  md:top-[70px]  md:flex md:flex-col md:justify-end md:items-center  text-center pb-5 ">
-                      <div className="flex items-center gap-2  md:relative md:bottom-[-10px] ">
-                        <h1 className="font-bold text-[31.01px] md:text-[27px] leading-[31.5px] tracking-[-0.04em]">
+                    <div className="absolute inset-3 md:top-[70px] md:flex md:flex-col md:justify-end md:items-center text-center pb-5">
+                      <div className="flex items-center gap-2 md:relative md:bottom-[-10px] lg:bottom-[-30px]">
+                        <h1 className="font-bold text-[31.01px] md:text-[27px] lg:text-[21px] leading-[31.5px] tracking-[-0.04em]">
                           Professional
                         </h1>
                         <img
-                          className="md:h-[30px]"
+                          className="md:h-[30px] lg:h-[20px] w-auto"
                           src="/public/images/Banner/img6.svg"
                           alt="icon"
                         />
                       </div>
 
-                      <div className="flex items-center gap-2  md:gap-2 md:relative md:bottom-[-17px]">
+                      <div className="flex items-center gap-2 md:gap-2 md:relative md:bottom-[-17px] lg:bottom-[-20px]">
                         <img
-                          className="md:h-[20px]"
+                          className="md:h-[20px] lg:h-[10px] w-auto"
                           src="/public/images/Banner/img5.svg"
                           alt="icon"
                         />
-                        <h1 className="font-bold text-[31.01px] md:text-[27px] leading-[31.5px] tracking-[-0.04em]">
+                        <h1 className="font-bold text-[31.01px] md:text-[27px] lg:text-[21px] leading-[31.5px] tracking-[-0.04em]">
                           Teachers
                         </h1>
                       </div>
                     </div>
                   </div>
 
-                  <div className="relative top-[-8px] ">
+                  <div className="relative top-[-8px]">
                     {/* Background image */}
                     <img
                       src="/public/images/Banner/img3.svg"
                       alt="background"
+                      className="w-auto h-auto"
                     />
 
                     {/* Text on top of the image */}
-                    <h1 className="absolute  md:text-[25px] md:leading-[27px]  inset-0 flex pl-[23px] items-start  mt-6 font-bold text-[25.67px] leading-[25.67px] tracking-[-0.02em]">
+                    <h1 className="absolute md:text-[25px] lg:text-[20px] lg:leading-[20px] md:leading-[27px] lg:pl-4 inset-0 flex pl-[23px]  items-start mt-6 font-bold text-[25.67px] leading-[25.67px] tracking-[-0.02em]">
                       Every child <br /> deserves the <br /> chance to <br />{' '}
                       learn
                     </h1>
                   </div>
                 </div>
 
-                <div className="relative flex justify-center items-center">
+                <div className="relative flex justify-center items-center lg:ml-2">
                   {/* Background image */}
-                  <div className="relative  w-full max-w-sm rounded-2xl overflow-hidden">
+                  <div className="relative w-full  rounded-2xl overflow-hidden">
                     <img
                       src="/public/images/Banner/img4.svg"
                       alt="course"
-                      className="w-full h-auto object-cover pl-1 relative md:top-[-10px] "
+                      className=" object-contain pl-1 relative md:top-[-10px]  lg:top-[40px] lg:h-[350px] lg:w-[317px]"
                     />
 
                     {/* Bottom info bar */}
-                    <div className="absolute bottom-4 left-5 md:bottom-[24px]  flex items-center justify-center px-[28] py-4  ">
+                    <div className="absolute bottom-4 left-5 lg:left-1 lg:bottom-[2px] md:bottom-[24px] flex items-center justify-center px-[28] py-4">
                       {/* Left: Course info */}
-                      <div className="pl-[21px] md:px-[18px] pr-[28px] ">
-                        <span className="font-extrabold md:text-[17px] md:leading-[12px] text-[23.67px] tracking-[-0.02em]">
+                      <div className="pl-[21px] md:px-[18px] pr-[28px] lg:leading-[20px]">
+                        <span className="font-extrabold md:text-[17px] md:leading-[12px] text-[23.67px] lg:text-[13px] tracking-[-0.02em]">
                           Math
                         </span>
                         <br />
-                        <span className="font-medium text-[14.94px] md:text-[14px] md:leading-[-125px]  leading-[22.64px] tracking-[-0.02em] text-[#434343]">
+                        <span className="font-medium text-[14.94px] md:text-[14px] lg:text-[11px] md:leading-[-125px] leading-[22.64px] tracking-[-0.02em] text-[#434343]">
                           For Beginner
                         </span>
                       </div>
 
                       {/* Middle: Button */}
-                      <div className="pt-3 pr-3">
+                      <div className="pt-3 lg:pb-3 pr-4 lg:w-[35px]">
                         <img
                           src="/public/images/Banner/ButtonR.svg"
                           alt="button"
+                          className="w-auto h-auto "
                         />
                       </div>
 
                       {/* Right: Duration */}
-                      <div className="text-right pl-[34px]">
+                      <div className="text-right pl-[30px] lg:pl-[15px] lg:leading-[20px]">
                         <span className="font-extrabold pr-[22px] text-[23.67px] md:text-[18px] text-start tracking-[-0.02em]">
                           12
                         </span>
@@ -270,9 +272,9 @@ export default function Landingpage() {
                   </div>
 
                   {/* Centered image */}
-                  <div className="absolute bottom-[100px] inset-0 flex justify-center  items-end">
+                  <div className="absolute bottom-[100px] lg:bottom-[70px] inset-0 flex justify-center items-end">
                     <img
-                      className="bg-[#DFF25D] rounded-full"
+                      className="bg-[#DFF25D] rounded-full  lg:w-[30px]"
                       src="/public/images/Banner/img7.svg"
                       alt=""
                     />
