@@ -298,13 +298,13 @@ export default function Landingpage() {
 
           {/* Centered content */}
           <div className="absolute top-[40px] inset-0 flex flex-col items-center justify-center px-4">
-            <h1 className="font-semibold text-[24px] md:text-[18px] sm:text-[15px] text-center text-[#03041666] leading-[32px] md:leading-[26px] sm:leading-[22px] tracking-[-1%]">
+            <h1 className="font-semibold text-[24px] md:text-[18px] lg:text-[21px] sm:text-[15px] text-center text-[#03041666] leading-[32px] md:leading-[26px] sm:leading-[22px] tracking-[-1%]">
               <span className="text-black">25,000+</span> Students <br />
               Empowered Since Launch
             </h1>
 
             {/* Company logos */}
-            <div className="relative flex flex-wrap justify-center gap-11 md:gap-6 md:bottom-[25px] sm:gap-4 mt-7">
+            <div className="relative flex flex-wrap justify-center gap-11 md:gap-6 md:bottom-[25px] lg:top-[-5px] sm:gap-4 mt-7">
               <a
                 href="https://www.hw.com/"
                 target="_blank"
@@ -313,7 +313,7 @@ export default function Landingpage() {
                 <img
                   src="/public/images/company/img1.svg"
                   alt="logo1"
-                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
+                  className="cursor-pointer w-[120px] md:w-[40px] lg:w-[50px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -324,7 +324,7 @@ export default function Landingpage() {
                 <img
                   src="/public/images/company/img2.svg"
                   alt="logo2"
-                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
+                  className="cursor-pointer w-[120px] md:w-[40px] lg:w-[50px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -335,7 +335,7 @@ export default function Landingpage() {
                 <img
                   src="/public/images/company/img3.svg"
                   alt="logo3"
-                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
+                  className="cursor-pointer w-[120px] md:w-[40px] lg:w-[50px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -346,7 +346,7 @@ export default function Landingpage() {
                 <img
                   src="/public/images/company/img4.svg"
                   alt="logo4"
-                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
+                  className="cursor-pointer w-[120px] md:w-[40px] lg:w-[50px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -357,7 +357,7 @@ export default function Landingpage() {
                 <img
                   src="/public/images/company/img5.svg"
                   alt="logo5"
-                  className="cursor-pointer w-[120px] md:w-[40px] sm:w-[70px]"
+                  className="cursor-pointer w-[120px] md:w-[40px] lg:w-[50px] sm:w-[70px]"
                 />
               </a>
               <a
@@ -368,7 +368,7 @@ export default function Landingpage() {
                 <img
                   src="/public/images/company/img6.svg"
                   alt="logo6"
-                  className="cursor-pointer w-[120px] md:w-[35px] sm:w-[70px]"
+                  className="cursor-pointer w-[120px] md:w-[35px] lg:w-[45px] sm:w-[70px]"
                 />
               </a>
             </div>
