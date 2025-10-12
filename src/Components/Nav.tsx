@@ -1,6 +1,6 @@
-"use client";
-import { useState } from "react";
-import { Search } from "lucide-react";
+'use client';
+import { useState } from 'react';
+import { Search } from 'lucide-react';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ export default function Nav() {
               alt="logo"
               className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8"
             />
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-[27px] font-bold leading-[26.7px] tracking-[-2%]">
+            <h1 className=" text-lg sm:text-xl md:text-2xl lg:text-[27px] font-bold leading-[26.7px] tracking-[-2%]">
               MyEdSkills
             </h1>
           </div>
@@ -36,8 +36,8 @@ export default function Nav() {
         {/* Right side: search + auth buttons */}
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           {/* Search */}
-          <button className="bg-[#E8E6E8] p-2 rounded-full hover:bg-gray-300 transition">
-            <Search className="w-4 h-4 sm:w-5 sm:h-5" />
+          <button className="bg-[#E8E6E8] cursor-pointer p-2 rounded-full hover:bg-gray-300 transition">
+            <Search className="w-4 h-4 sm:w-5  sm:h-5" />
           </button>
 
           {/* Mobile menu button */}
@@ -56,18 +56,18 @@ export default function Nav() {
                 strokeLinejoin="round"
                 strokeWidth={2}
                 d={
-                  menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'
                 }
               />
             </svg>
           </button>
 
           {/* Auth buttons - md+ only */}
-          <div className="hidden md:flex items-center gap-3 lg:gap-4">
-            <button className="hover:bg-black hover:text-white font-medium px-4 md:px-6 py-2 rounded-full transition">
+          <div className="hidden  md:flex items-center  ">
+            <button className="hover:bg-black cursor-pointer hover:text-white font-medium px-4 md:px-6 py-2 rounded-full transition">
               Login
             </button>
-            <button className="hover:bg-black hover:text-white font-medium px-4 md:px-6 py-2 rounded-full transition">
+            <button className="hover:bg-black cursor-pointer hover:text-white font-medium px-4 md:px-6 py-2 rounded-full transition">
               Signup
             </button>
           </div>
@@ -92,7 +92,7 @@ export default function Nav() {
 
             {/* Auth buttons */}
             <div className="flex flex-col w-full max-w-[200px] gap-3 pt-4">
-              <button className="hover:bg-black hover:text-white font-medium px-4 py-2 rounded-full border transition">
+              <button className="hover:bg-black cursor-pointer hover:text-white font-medium px-4 py-2 rounded-full border transition">
                 Login
               </button>
               <button className="hover:bg-black hover:text-white font-medium px-4 py-2 rounded-full border transition">
