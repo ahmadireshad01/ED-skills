@@ -7,11 +7,11 @@ export default function Material(props: any) {
                     hover:scale-[1.02] hover:-translate-y-1 cursor-pointer group">
 
       {/* Top image container */}
-      <div className={`relative h-[100px] bg-[${props.bg}] w-[95%] rounded-2xl m-2 
+      <div className={`relative h-[98px] bg-[${props.bg}] w-[95%] rounded-2xl m-2 
                       overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out
                       hover:brightness-110 hover:shadow-md`}>
         <img
-          className="absolute top-[2%] transition-transform duration-500 ease-out 
+          className="absolute top-[1%] transition-transform duration-500 ease-out 
                      group-hover:scale-110 group-hover:rotate-1"
           src={props.image}
           alt=""
@@ -27,7 +27,7 @@ export default function Material(props: any) {
 
       {/* Text and buttons */}
       <div className="p-3 gap-2 flex flex-col justify-between h-[210px] transition-all duration-300 group-hover:translate-y-[-2px]">
-        <span className="text-gray-500 flex gap-2 items-center transition-all duration-300 hover:scale-[1.03]">
+        <span className="text-gray-500 flex gap-1 items-center transition-all duration-300 hover:scale-[1.03]">
           <img
             src={props.typeImage}
             alt=""

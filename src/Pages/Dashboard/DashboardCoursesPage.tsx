@@ -7,18 +7,18 @@ import Material from "../../Components/DashboardComponents/Material";
 
 export default function DashboardCoursesPage(){
     const ContinueClasses =[
-        { materials:12, bg:"#E3EFFF", image:"/images/dashboardCourses/courseImage.svg", subject:"Geography", topic:"Understand the Land, Oceans and Beyond", progress:"80", dialog:"Increase your knowledge with", recommendation:"Unlock the Power of Place"},
-        { materials:23, bg:"#FAEAFA", image:"/images/dashboardCourses/courseImage2.svg", subject:"Computer & AI", topic:"Unlock the Power of Creativity with Generative AI", progress:"30", dialog:"Next, you can dive into", recommendation:"Create Using Generative AI"},
+        {id: 12, materials:1, bg:"#E3EFFF", image:"/images/dashboardCourses/courseImage.svg", subject:"Geography", topic:"Understand the Land, Oceans and Beyond", progress:"80", dialog:"Increase your knowledge with", recommendation:"Unlock the Power of Place"},
+        {id: 23, materials:2, bg:"#FAEAFA", image:"/images/dashboardCourses/courseImage2.svg", subject:"Computer & AI", topic:"Unlock the Power of Creativity with Generative AI", progress:"30", dialog:"Next, you can dive into", recommendation:"Create Using Generative AI"},
     ]
 
-    const Materials = [{type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
-                       {type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
-                       {type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
-                       {type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
-                       {type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
-                       {type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
-                       {type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
-                       {type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44}
+    const Materials = [{id: 1 ,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {id: 2,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {id: 3,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {id: 4,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {id: 5,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {id: 6,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {id: 7,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {id: 8,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44}
     ]
 
     const [activetTab, setActiveTab] = useState('allStatus')
@@ -28,7 +28,7 @@ export default function DashboardCoursesPage(){
     
     return(
         <div className="flex bg-[#fafaf5]">
-            <div className="h-[940px] flex pl-1 fixed top-0 left-0">
+            <div className="h-[940px] flex pl-1 fixed top-0 left-[-3px]">
                 <DashboardSideBar />
             </div>
             <div className="mx-30 mt-11 w-full">
@@ -49,7 +49,7 @@ export default function DashboardCoursesPage(){
                 <div className="py-6 flex gap-7">
                     {
                         ContinueClasses.map((continueClass)=>(
-                            <ContinueClass materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress } dialog={continueClass.dialog} recommendation={continueClass.recommendation}/>
+                            <ContinueClass key={continueClass} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress } dialog={continueClass.dialog} recommendation={continueClass.recommendation}/>
                         ))
                     }
                 </div>
@@ -92,7 +92,7 @@ export default function DashboardCoursesPage(){
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-7">
                     {
                         Materials.map((material) => (
-                            <Material key={material.type} image={material.image} typeImage={material.typeImage} subject={material.subjec} bg={material.bg} materials={material.material} type={material.type} topic={material.topic} firstRecommendation={material.firstRecommendation} secondRecommendation={material.secondRecommendation} points={material.points} passingPoints={material.passingPoints} progress={material.progress}/>
+                            <Material key={material.id} image={material.image} typeImage={material.typeImage} subject={material.subjec} bg={material.bg} materials={material.material} type={material.type} topic={material.topic} firstRecommendation={material.firstRecommendation} secondRecommendation={material.secondRecommendation} points={material.points} passingPoints={material.passingPoints} progress={material.progress}/>
                         ))
                     }
                     
