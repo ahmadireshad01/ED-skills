@@ -71,7 +71,7 @@ export default function Landingpage() {
   const row3: never[] = [];
 
   // Helper function to render rows
-  const renderRow = row => (
+  const renderRow = (row: typeof row1) => (
     <div
       className="
       flex flex-wrap justify-center gap-6
@@ -149,7 +149,7 @@ export default function Landingpage() {
                   <img
                     src="/public/images/Banner/img1.svg"
                     alt="banner"
-                    className="w-auto h-auto"
+                    className="w-full h-auto max-[640px]:mt-[62px]"
                   />
 
                   {/* Content */}
@@ -157,11 +157,15 @@ export default function Landingpage() {
                     className="absolute left-[210px] bottom-[130px] inset-0 flex flex-col justify-center items-center text-center px-4
                 lg:left-[140px] lg:bottom-[80px] md:left-[180px] md:bottom-[110px]"
                   >
-                    <span className="lg:text-[14px] lg:leading-[14px] md:text-[17px] md:leading-[19px] leading-[20.96px] tracking-[-2%] font-extrabold">
-                      Learn anytime, <br /> anywhere with our <br /> online
-                      courses.
+                    <span className="lg:text-[14px] lg:leading-[14px] md:text-[17px] md:leading-[19px] leading-[20.96px] tracking-[-2%] font-extrabold max-[640px]:text-[10px] max-[640px]:hidden">
+                      Learn anytime,
+                      <br className="max-[640px]:hidden inline" />
+                      anywhere with our
+                      <br className="max-[640px]:hidden inline" />
+                      online courses.
                     </span>
-                    <div className="flex gap-1 items-baseline md:mt-2 mt-2 lg:mt-1 lg:flex lg:items-center">
+
+                    <div className="flex gap-1 items-baseline md:mt-2 mt-2 lg:mt-1 lg:flex lg:items-center max-[640px]:hidden">
                       <img
                         className="md:h-[14px] w-auto"
                         src="/public/images/Banner/icon.svg"
