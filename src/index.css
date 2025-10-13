@@ -1,26 +1,26 @@
 /* Import Google Fonts first */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Then import Tailwind */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Custom font classes */
 .recoleta-font {
-  font-family: "Recoleta", serif;
+  font-family: 'Recoleta', serif;
 }
 
 .recoleta-light {
-  font-family: "Recoleta", serif;
+  font-family: 'Recoleta', serif;
   font-weight: 300;
 }
 
 .recoleta-regular {
-  font-family: "Recoleta", serif;
+  font-family: 'Recoleta', serif;
   font-weight: 400;
 }
 
 .recoleta-bold {
-  font-family: "Recoleta", serif;
+  font-family: 'Recoleta', serif;
   font-weight: 700;
 }
 
@@ -30,6 +30,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Recoleta", serif;
+  font-family: 'Recoleta', serif;
   font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Proxima';
+  src: url('/fonts/proximanova/ProximaNova-Regular.woff2') format('woff2'),
+    url('/fonts/proximanova/ProximaNova-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
