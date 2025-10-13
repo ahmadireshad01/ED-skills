@@ -7,12 +7,13 @@ import Landingpage from './Pages/Landingpage/Landingpage';
 import Skills from './Pages/singn-up/skills';
 import Agepage from './Pages/singn-up/age';
 import Interestpage from './Pages/singn-up/interest';
+import ClearLocalStorage from './Pages/singn-up/local';
+import Footer from './Components/Footer';
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen">
       <Routes>
-        {/* Pages WITHOUT Nav */}
         <Route path="/login" element={<Login />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
         <Route path="/signup" element={<Signup />} />
@@ -24,18 +25,16 @@ function App() {
         <Route path="/signup/1" element={<Skills />} />
         <Route path="/signup/2" element={<Agepage />} />
         <Route path="/signup/3" element={<Interestpage />} />
-
-        {/* Pages WITH Nav */}
+        <Route path="/local" element={<ClearLocalStorage />} />
+        Pages WITH Nav
         <Route
           path="*"
           element={
-            <div className="min-h-screen">
+            <>
               <Nav />
-              <Routes>
-                <Route path="/" element={<Landingpage />} />
-                <Route path="/signup" element={<Signup />} />
-              </Routes>
-            </div>
+              <Landingpage />
+              <Footer />
+            </>
           }
         />
       </Routes>
