@@ -1,38 +1,61 @@
 export default function OnBoardingPage() {
-    return(
-    <>
-        <div className=" flex flex-row mt-0 justify-center items-center bg-[#fafaf5] ">
-            <div className="relative bg-white gap-2 w-[695px] h-[969px] flex justify-center items-center flex-col">
-                <div className="z-2 flex justify-center gap-2 items-center absolute top-[47px] left-[48px] w-[183px] h-[33.3 px] ">
-                    <img  src="images/OnBoarding/EdLogo.svg" alt="" />
-                    <p className="font-proxima font-bold text-[27.92px] leading-[26.7px] tracking-[-0.02em]">MyEdSkills</p>
-                </div>
-                <img className="absolute top-0" src="images/OnBoarding/backgroundPattern.svg" alt="" />
-                <img className="absolute top-[215px]" src="images/OnBoarding/OnBoardingPageImage2.svg" alt="" />
-            </div>
-            <div className="flex justify-center items-center  w-[705px] ">
-                <div className="flex flex-col justify-center items-center w-[434px] h-[464px] gap-[28px]">
-                    <h1 className="w-[372px] font-recoleta font-semibold text-[32px] leading-[40px] tracking-[-1px] text-center font align-middle">
-                    Create an account to discover your personalized learnig path
-                    </h1>
-                    <div className="w-[434px] h-[92px] rounded-2xl border-[#B1B1AC4D] shadow-[0_6px_0_0_#B1B1AC4D] border flex flex-col justify-center items-start px-6 hover:bg-[#B1B1AC4D] cursor-pointer hover:shadow-[0_7px_3px_3px_#B1B1AC4D] transition ease-in-out duration-300 ">
-                        <p className="font-intertight font-medium text-[18px] leading-[24px] tracking-[-0.2px]">Parents</p>
-                        <p className="font-intertight font-normal text-[16px] leading-[24px] tracking-[0px] text-[#666D80]">Track your child progress, and assign new courses </p>
-                    </div>
-
-                    <div className="w-[434px] h-[92px] rounded-2xl border-[#B1B1AC4D] shadow-[0_6px_0_0_#B1B1AC4D] border flex flex-col justify-center items-start px-6 hover:bg-[#B1B1AC4D] cursor-pointer hover:shadow-[0_7px_3px_3px_#B1B1AC4D] transition ease-in-out duration-300">
-                        <p className="font-intertight font-medium text-[18px] leading-[24px] tracking-[-0.2px]">Teachers</p>
-                        <p className="font-intertight font-normal text-[16px] leading-[24px] tracking-[0px] text-[#666D80]">Track your child progress, and assign new courses </p>
-                    </div>
-
-                    <div className="w-[434px] h-[92px] rounded-2xl border-[#B1B1AC4D] shadow-[0_6px_0_0_#B1B1AC4D] border flex flex-col justify-center items-start px-6 hover:bg-[#B1B1AC4D] cursor-pointer hover:shadow-[0_7px_3px_3px_#B1B1AC4D] transition ease-in-out duration-300">
-                        <p className="font-intertight font-medium text-[18px] leading-[24px] tracking-[-0.2px]">Learner</p>
-                        <p className="font-intertight font-normal text-[16px] leading-[24px] tracking-[0px] text-[#666D80]">SignUp for a free account, and Start learning </p>
-                    </div>
-                </div>
-                
-            </div>
+    return (
+      <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen bg-[#fafaf5]">
+        {/* Left side (image section) */}
+        <div className="relative bg-white flex justify-center items-center flex-col w-full lg:w-1/2 h-[400px] lg:h-screen overflow-hidden">
+          {/* Logo */}
+          <div className="absolute top-6 left-6 flex items-center gap-2 z-10">
+            <img src="images/OnBoarding/EdLogo.svg" alt="Logo" className="w-8 h-8 lg:w-auto lg:h-auto" />
+            <p className="font-proxima font-bold text-[22px] lg:text-[28px] tracking-[-0.02em]">MyEdSkills</p>
+          </div>
+  
+          {/* Background patterns */}
+          <img
+            className="absolute top-0 w-full h-auto object-cover opacity-90"
+            src="images/OnBoarding/backgroundPattern.svg"
+            alt=""
+          />
+          <img
+            className="absolute top-1/3 w-3/4 lg:w-2/3 max-w-[400px]"
+            src="images/OnBoarding/OnBoardingPageImage2.svg"
+            alt=""
+          />
         </div>
-    </>
-    )
-}
+  
+        {/* Right side (content section) */}
+        <div className="flex justify-center items-center w-full lg:w-1/2 py-10 px-6 lg:px-0">
+          <div className="flex flex-col justify-center items-center max-w-[440px] w-full gap-6">
+            <h1 className="font-recoleta font-semibold text-2xl md:text-3xl text-center leading-snug">
+              Create an account to discover your personalized learning path
+            </h1>
+  
+            {/* Card Options */}
+            {[
+              {
+                title: "Parents",
+                desc: "Track your child progress, and assign new courses",
+              },
+              {
+                title: "Teachers",
+                desc: "Track your students' progress, and assign new courses",
+              },
+              {
+                title: "Learner",
+                desc: "Sign up for a free account and start learning",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="w-full rounded-2xl border border-[#B1B1AC4D] shadow-[0_6px_0_0_#B1B1AC4D] flex flex-col justify-center items-start px-6 py-5 
+                           hover:bg-[#EAEAE2] hover:shadow-[0_7px_3px_3px_#B1B1AC4D] transition-all ease-in-out duration-300 cursor-pointer"
+              >
+                <p className="font-intertight font-medium text-lg leading-6 tracking-[-0.2px]">{item.title}</p>
+                <p className="font-intertight font-normal text-base leading-6 text-[#666D80]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  

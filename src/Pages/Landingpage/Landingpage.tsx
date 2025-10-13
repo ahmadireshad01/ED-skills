@@ -238,7 +238,7 @@ export default function Landingpage() {
                     <img
                       src="/public/images/Banner/img4.svg"
                       alt="course"
-                      className=" object-contain pl-1 relative md:top-[-10px]  lg:top-[40px] lg:h-[350px] lg:w-[317px]"
+                      className=" object-contain pl-1 relative md:top-[-10px]  lg:top-[40px] lg:h-[350px] lg:w-[317px] max-[640px]:w-full "
                     />
 
                     {/* Bottom info bar */}
@@ -311,7 +311,7 @@ export default function Landingpage() {
             {/* Company logos */}
             <div className="relative flex flex-wrap justify-center gap-11 md:gap-6 md:bottom-[25px] lg:top-[-5px] sm:gap-4 mt-7 max-[640px]:flex max-[640px]:flex-row max-[640px]:flex-nowrap">
               {/* اولین div */}
-              <div className="max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center">
+              <div className="max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center contents">
                 <a
                   href="https://www.hw.com/"
                   target="_blank"
@@ -348,7 +348,7 @@ export default function Landingpage() {
               </div>
 
               {/* دومین div */}
-              <div className="max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center">
+              <div className="max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center contents">
                 <a
                   href="http://lakesideschool.org/"
                   target="_blank"

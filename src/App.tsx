@@ -8,7 +8,12 @@ import Skills from './Pages/singn-up/skills';
 import Agepage from './Pages/singn-up/age';
 import Interestpage from './Pages/singn-up/interest';
 import ClearLocalStorage from './Pages/singn-up/local';
+
+import DashboardHomePage from './Pages/Dashboard/DashboardHomePage';
+import DashboardCoursesPage from './Pages/Dashboard/DashboardCoursesPage';
 import Footer from './Components/Footer';
+
+
 
 function App() {
   return (
@@ -21,12 +26,12 @@ function App() {
         <Route path="/interests" element={<Interestpage />} />
         <Route path="/skills" element={<Skills />} />
 
+
+        <Route path="/dashboard/home" element={<DashboardHomePage />} />
+        <Route path="/dashboard/courses" element={<DashboardCoursesPage />} />
         {/* Paged signup step routes */}
-        <Route path="/signup/1" element={<Skills />} />
-        <Route path="/signup/2" element={<Agepage />} />
-        <Route path="/signup/3" element={<Interestpage />} />
         <Route path="/local" element={<ClearLocalStorage />} />
-        Pages WITH Nav
+        {/* Pages WITH Nav */}
         <Route
           path="*"
           element={
