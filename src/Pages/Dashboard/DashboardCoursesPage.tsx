@@ -11,21 +11,47 @@ export default function DashboardCoursesPage(){
         {id: 23, materials:2, bg:"#FAEAFA", image:"/images/dashboardCourses/courseImage2.svg", subject:"Computer & AI", topic:"Unlock the Power of Creativity with Generative AI", progress:"30", dialog:"Next, you can dive into", recommendation:"Create Using Generative AI"},
     ]
 
-    const Materials = [{id: 1 ,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
-                       {id: 2,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
-                       {id: 3,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
-                       {id: 4,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
-                       {id: 5,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
-                       {id: 6,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
-                       {id: 7,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
-                       {id: 8,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44}
+    const Materials = [{status:'inProgress' ,id: 1 ,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {status:'inProgress' ,id: 2,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'notStarted' ,id: 3,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {status:'inProgress' ,id: 4,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'inProgress' ,id: 5,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {status:'inProgress',id: 6,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'notStarted',id: 7,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {status:'inProgress' ,id: 9,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'inProgress' ,id: 10 ,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {status:'inProgress' ,id: 11,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'notStarted' ,id: 12,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {status:'inProgress' ,id: 13,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'inProgress' ,id: 14,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {status:'inProgress',id: 15,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'notStarted',id: 16,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {status:'inProgress' ,id: 17,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'inProgress' ,id: 18 ,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {status:'inProgress' ,id: 19,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'notStarted' ,id: 20,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {status:'inProgress' ,id: 21,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'inProgress' ,id: 22,type:"StartedQuiz", image:"/images/Materials/materialImage.svg" , material:"12 Chepters", bg:"#E8E2FF", subjec:"Qiuz", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"5 Essential Steps to Excel in Mathematics", firstRecommendation:"Mathematics", secondRecommendation:"Urgent", points:"20", passingPoints:"20"},
+                       {status:'inProgress',id: 23,type:"StartedCourse", image:"/images/Materials/materialImage2.svg" , material:"10 Pages", bg:"#FFD5CA", subjec:"Pages", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
+                       {status:'notStarted',id: 24,type:"NotStartedCourse", image:"/images/Materials/materialImage3.svg" , material:"12 Questions", bg:"#E8E2FF", subjec:"Learning Path", typeImage:"/images/Materials/QuizTypeImage.svg", topic:"Building and Growing a Thriving Business", firstRecommendation:"Mathematics", secondRecommendation:"Urgent"},
+                       {status:'inProgress' ,id: 8,type:"StartedCourse", image:"/images/Materials/materialImage.svg" , material:"10 Pages", bg:"#E8E2FF", subjec:"Courses", typeImage:"/images/Materials/coursesType.svg", topic:"10 Usability Principles to Enhance Generative AI", firstRecommendation:"Computer", secondRecommendation:"Urgent", progress:44},
     ]
-
+    const [filter, setFilter] = useState('all')
     const [activetTab, setActiveTab] = useState('allStatus')
     const [activeList, setActiveList] = useState('grid')
-
+    const [filterInput, setFilterInput] = useState('')
     const [open , setOpen] = useState(false)
+    const [isFilterOpen, setIsFilterOpen] = useState(false)
+    const [subjectFilter, setSubjectFilter] = useState('')
+
+    let filteredMaterials = (filter === "all" ? Materials : Materials.filter(material => material.status === filter))
+        .filter(material => material.topic.toLowerCase().includes(filterInput.toLowerCase()))
+        .filter(material => subjectFilter === '' || material.subjec.toLowerCase() === subjectFilter.toLowerCase())
     
+    const addFilterBtn = () => {
+        filteredMaterials = Materials.filter(material => material.subjec.toLowerCase() === subjectFilter.toLowerCase())
+        console.log(filteredMaterials)
+    }
     return(
         <div className="flex bg-[#fafaf5]">
             <div className="h-[940px] flex pl-1 fixed top-0 left-[-3px]">
@@ -49,13 +75,13 @@ export default function DashboardCoursesPage(){
                 <div className="py-6 flex gap-7">
                     {
                         ContinueClasses.map((continueClass)=>(
-                            <ContinueClass key={continueClass} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress } dialog={continueClass.dialog} recommendation={continueClass.recommendation}/>
+                            <ContinueClass key={continueClass.id} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress } dialog={continueClass.dialog} recommendation={continueClass.recommendation}/>
                         ))
                     }
                 </div>
-                <div className="py-4 ">
+                <div className="py-4 relative">
                     <div className="relative mb-6">
-                            <p className="flex gap-3 items-center  font-[] font-semibold text-[24px] leading-[32px] tracking-[-0.01em]">All Materials <span className="text-center rounded-lg font-semibold text-[13.6px] leading-[27.2px] tracking-[-0.01em] w-[34px] h-[28px] bg-[#EEEEE4]">24</span> <button onClick={() => setOpen(!open)}>{open ? '⏶' : '⏷'}</button></p>
+                            <p className="flex gap-3 items-center  font-[] font-semibold text-[24px] leading-[32px] tracking-[-0.01em]">All Materials <span className="text-center rounded-lg font-semibold text-[13.6px] leading-[27.2px] tracking-[-0.01em] w-[34px] h-[28px] bg-[#EEEEE4]">{Materials.length}</span> <button onClick={() => setOpen(!open)}>{open ? '⏶' : '⏷'}</button></p>
                             { open && (
                             <div className="transition  flex flex-col absolute left-[16%] top-21">
                                 <button>1</button>
@@ -66,17 +92,18 @@ export default function DashboardCoursesPage(){
                         )}
                     </div>
                     <div className="flex items-center justify-between">  
-                        <div className="w-[371px] h-[48px] flex items-center justify-center rounded-3xl bg-[#EEEEE4]">
-                            <button onClick={() => setActiveTab('allStatus')} className={`font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${ activetTab === "allStatus" ? "bg-white" : "bg-[#EEEEE4]"}`}>All Status</button>
-                            <button  onClick={() => setActiveTab('notStarted')} className={`font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${ activetTab === "notStarted" ? "bg-white" : "bg-[#EEEEE4]"}`}>Not Started</button>
-                            <button  onClick={() => setActiveTab('inProgress')} className={`font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${ activetTab === "inProgress" ? "bg-white" : "bg-[#EEEEE4]"}`}>In Progress</button>
+                        <div className="transition ease-in-out w-[371px] h-[48px] flex items-center justify-center rounded-3xl bg-[#EEEEE4]">
+                            <button onClick={() => {setActiveTab('allStatus'); setFilter('all')}} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${ activetTab === "allStatus" ? "bg-white" : "bg-[#EEEEE4]"}`}>All Status</button>
+                            <button  onClick={() => {setActiveTab('notStarted'); setFilter('notStarted')}} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${ activetTab === "notStarted" ? "bg-white" : "bg-[#EEEEE4]"}`}>Not Started</button>
+                            <button  onClick={() => {setActiveTab('inProgress'); setFilter('inProgress')}} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${ activetTab === "inProgress" ? "bg-white" : "bg-[#EEEEE4]"}`}>In Progress</button>
                         </div>
                         <div className="w-[335px] h-[40px] flex items-center gap-2  rounded-full p-1">
                             <div className="relative">
-                            <input className="pl-10 w-[120px] flex items-center rounded-full px-3 py-1.5 " placeholder="Search" type="text" name="" id="" />
+                            <input value={filterInput} onChange={(event) => setFilterInput(event.target.value)} className="pl-10 w-[120px] flex items-center rounded-full px-3 py-1.5 " placeholder="Search" type="text" name="" id="" />
                             <img className="absolute top-[23%] left-[5%]" src="/images/dashboardCourses/search.svg" alt="" />
                             </div>
-                            <button className="flex gap-3 items-center"><img src="/images/dashboardCourses/filter.svg" alt="" />Add Filter</button>
+                            {/** add filter btn*/}
+                            <button onClick={() => setIsFilterOpen(!isFilterOpen)} className="flex gap-3 items-center"><img src="/images/dashboardCourses/filter.svg" alt="" />Add Filter</button>
                             <div className="flex items-center bg-[#f6f5f2] gap-2  rounded-lg p-1">
                                 <button onClick={() => setActiveList('grid')} className={`p-2  rounded-lg  ${ activeList === 'grid' ?  "bg-[#dbdad7]" : "bg-[#f6f5f2]"}`}>
                                     <img src="/images/dashboardCourses/2x2layout.svg" alt="" />
@@ -87,12 +114,61 @@ export default function DashboardCoursesPage(){
                             </div>
                         </div>
                     </div>
+                    {isFilterOpen && 
+                        <div className="absolute top-[102%] right-[3%] w-[240px] h-auto z-10 bg-white rounded-3xl shadow-2xl p-5 flex flex-col gap-4 border border-gray-100 backdrop-blur-sm">
+                            <button
+                            onClick={() => {
+                                setIsFilterOpen(false);
+                                addFilterBtn();
+                                setSubjectFilter("quiz");
+                            }}
+                            className="group w-full py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold shadow-md transition-all duration-300 hover:shadow-blue-400/40 hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                            >
+                            <span className="group-hover:tracking-wider transition-all duration-300">Quizzes</span>
+                            </button>
+                        
+                            <button
+                            onClick={() => {
+                                setIsFilterOpen(false);
+                                addFilterBtn();
+                                setSubjectFilter("pages");
+                            }}
+                            className="group w-full py-3 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold shadow-md transition-all duration-300 hover:shadow-emerald-400/40 hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
+                            >
+                            <span className="group-hover:tracking-wider transition-all duration-300">Pages</span>
+                            </button>
+                        
+                            <button
+                            onClick={() => {
+                                setIsFilterOpen(false);
+                                addFilterBtn();
+                                setSubjectFilter("courses");
+                            }}
+                            className="group w-full py-3 rounded-2xl bg-gradient-to-r from-pink-400 to-rose-500 text-white font-semibold shadow-md transition-all duration-300 hover:shadow-rose-400/40 hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-rose-400 focus:ring-offset-2"
+                            >
+                            <span className="group-hover:tracking-wider transition-all duration-300">Courses</span>
+                            </button>
+                        
+                            <button
+                            onClick={() => {
+                                setIsFilterOpen(false);
+                                addFilterBtn();
+                                setSubjectFilter("learning path");
+                            }}
+                            className="group w-full py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold shadow-md transition-all duration-300 hover:shadow-amber-400/40 hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+                            >
+                            <span className="group-hover:tracking-wider transition-all duration-300">Learning Paths</span>
+                            </button>
+                        </div>
+                    }
                 </div>
+                
+                
  
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-7">
                     {
-                        Materials.map((material) => (
-                            <Material key={material.id} image={material.image} typeImage={material.typeImage} subject={material.subjec} bg={material.bg} materials={material.material} type={material.type} topic={material.topic} firstRecommendation={material.firstRecommendation} secondRecommendation={material.secondRecommendation} points={material.points} passingPoints={material.passingPoints} progress={material.progress}/>
+                        filteredMaterials.map((singleMaterial: any) => (
+                            <Material key={singleMaterial.id} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subjec} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress}/>
                         ))
                     }
                     

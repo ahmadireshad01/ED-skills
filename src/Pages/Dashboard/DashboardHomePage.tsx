@@ -4,14 +4,14 @@ import ClassCard from "../../Components/DashboardComponents/ClassCard";
 import InprogressCourse from "../../Components/DashboardComponents/InProgressCourse";
 export default function DashboardHomePage() {
     const subjects = [
-        {icon: 'allSubjectIcon', label: "All Subjects" , color: '#FFD5CA'},
-        {icon: 'englishIcon', label: "English", color: '#FAEAFA'},
-        {icon: 'businessIcon', label: "Business", color: '#E9F3AA'},
-        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
-        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
-        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
-        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
-        {icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'}
+        {id:1 , icon: 'allSubjectIcon', label: "All Subjects" , color: '#FFD5CA'},
+        {id:2 , icon: 'englishIcon', label: "English", color: '#FAEAFA'},
+        {id:3 , icon: 'businessIcon', label: "Business", color: '#E9F3AA'},
+        {id:4 , icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {id:5 , icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {id:6 , icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {id:7 , icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'},
+        {id:8 , icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA'}
     ]
 
     const Classes = [{id:1,bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy",topic: "The Secrets of the nature", participants:{first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg"}  },
