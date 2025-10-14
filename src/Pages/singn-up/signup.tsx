@@ -50,7 +50,7 @@ export default function Signup() {
 
     setLoading(true);
     try {
-      // Save signup data to localStorage
+      // Save signup data to loca lStorage
       localStorage.setItem('signupData', JSON.stringify(formData));
       navigate('/age'); // Move to Age page
     } catch (error) {
@@ -62,7 +62,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen ">
       {/* Left red div */}
       <div className="hidden md:flex bg-[#FF613E] m-[10px] py-[80px] rounded-2xl rounded-tr-sm rounded-br-sm w-2/5 items-center justify-center">
         <div className="flex flex-col gap-[40px] items-center text-center px-6 md:px-0">
