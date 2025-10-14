@@ -17,11 +17,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
-        <Route path="/signup/1" element={<Skills />} />
-        <Route path="/signup/2" element={<Agepage />} />
-        <Route path="/signup/3" element={<Interestpage />} />
+        <Route path="/age" element={<Agepage />} />
+        <Route path="/interests" element={<Interestpage />} />
+        <Route path="/skills" element={<Skills />} />
+
+        {/* Sequential signup step routes */}
+
         <Route path="/local" element={<ClearLocalStorage />} />
-        Pages WITH Nav
+
+        {/* Pages WITH Nav */}
         <Route
           path="*"
           element={

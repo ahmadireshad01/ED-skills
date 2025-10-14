@@ -72,12 +72,12 @@ export default function Interestpage() {
       <img
         src={left}
         alt="left decoration"
-        className="absolute left-0 top-1/2 -translate-y-1/2"
+        className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
       />
       <img
         src={right}
         alt="right decoration"
-        className="absolute right-0 top-1/2 -translate-y-1/2"
+        className="absolute right-0 top-[62%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
       />
 
       {/* Progress bar */}
@@ -88,9 +88,9 @@ export default function Interestpage() {
       {/* Form */}
       <form
         onSubmit={handleContinue}
-        className="flex flex-col items-center justify-center w-full max-w-[700px] px-6 text-center mt-20"
+        className="flex flex-col items-center justify-center w-full max-w-[700px] px-6 text-center mt-20 z-10 "
       >
-        <img src={flower} alt="flower" className="mb-6" />
+        <img src={flower} alt="flower" className="mb-6 z-0" />
 
         <h1 className="font-semibold text-2xl sm:text-3xl leading-snug text-[#1D1D1F]">
           Pick your interests from the <br /> list above and start learning
@@ -139,7 +139,7 @@ export default function Interestpage() {
           </div>
 
           {/* Row 3 */}
-          <div className="flex gap-3 justify-center">
+          <div className="flex gap-3 justify-center max-[799px]:flex-wrap">
             {interests.slice(6, 9).map(({ label, icon }) => (
               <button
                 type="button"

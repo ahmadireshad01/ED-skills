@@ -39,12 +39,12 @@ export default function Agepage() {
       <img
         src={left}
         alt="left decoration"
-        className="absolute left-0 top-1/2 -translate-y-1/2"
+        className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
       />
       <img
         src={right}
         alt="right decoration"
-        className="absolute right-0 top-1/2 -translate-y-1/2"
+        className="absolute right-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
       />
 
       {/* Progress bar */}
