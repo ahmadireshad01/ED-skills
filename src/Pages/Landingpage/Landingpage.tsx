@@ -67,7 +67,7 @@ export default function Landingpage() {
   ];
 
   // Function to render subjects in a given number of columns
-  const renderSubjects = (subjects, cols) => (
+  const renderSubjects = (subjects: any[], cols: number) => (
     <div
       className={`
         grid gap-6 justify-center
