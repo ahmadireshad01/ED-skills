@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useLocation,} from "react-router-dom";
+import { useNavigate, useLocation, } from "react-router-dom";
 
 export default function DashboardSideBar() {
   const navigate = useNavigate();
@@ -110,7 +110,7 @@ export default function DashboardSideBar() {
         className="
         hidden
         lg:flex flex-col justify-between items-center py-5
-        w-[70px] sm:w-[80px] md:w-[90px] lg:w-[80px]
+        w-[70px] sm:w-[80px] md:w-[90px] lg:w-[90px]
         ml-1 sm:ml-2 mt-3 sm:mt-5 pb-4 sm:pb-5
         rounded-[19px] bg-[#EEEEE4]
         flex-shrink-0
