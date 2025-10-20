@@ -117,7 +117,7 @@ export default function DashboardSideBar() {
         transition-all duration-300 ease-in-out
         hover:shadow-2xl
         fixed sm:static left-0 top-0 sm:top-auto
-        h-[60px] sm:h-auto
+        sm:h-auto
         z-40
       "
       >

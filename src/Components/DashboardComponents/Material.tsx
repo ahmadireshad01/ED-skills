@@ -4,10 +4,10 @@ export default function Material(props: any) {
   return (
     <div className="w-[291px] h-[339px] bg-white rounded-2xl pt-0.5 
                     shadow-md hover:shadow-xl transition-all duration-500 ease-out 
-                    hover:scale-[1.02] hover:-translate-y-1 cursor-pointer group">
+                    hover:scale-[1.02] hover:-translate-y-1 cursor-pointer group flex flex-col items-center">
 
       {/* Top image container */}
-      <div className={`relative h-[98px] bg-[${props.bg}] w-[95%] rounded-2xl m-2 
+      <div className={`relative h-[98px] bg-[${props.bg}] w-[95%] rounded-xl m-1 
                       overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out
                       hover:brightness-110 hover:shadow-md`}>
         <img

@@ -58,21 +58,54 @@ export default function DashboardCoursesPage() {
                 <DashboardSideBar />
             </div>
             <div className="px-[9%] mt-11 w-full overflow-y-auto scrollbar-hide">
-                <div className="flex items-center justify-between ">
-                    <p className=" font-[Roboto] font-bold text-[51.75px] leading-[49.49px] tracking-[-0.02em]">Continue learning 📚</p>
-                    <button className="flex items-center justify-center gap-1 shadow-[0px_5.33px_0px_0px_#FF3400] 
-                        w-[147px] h-[58px] rounded-[29px] border border-orange-500 font-[roboto]
-                        font-semibold text-[18.66px] leading-[35.59px] tracking-[-0.02em]
-                        bg-white text-orange-600 transition-all duration-300 ease-out 
-                        hover:bg-orange-500 hover:text-white hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
-                        hover:scale-[1.05] active:scale-95 active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]">
-                        <img className="w-8 transition-transform duration-500 group-hover:rotate-[15deg] hover:rotate-[20deg]"
-                            src="/images/dashBoard/askAi.svg" alt="" />
-                        Ask Ai
-                    </button>
-                </div>
+            <div
+                        className="
+                        flex sm:w-[105%]  sm:items-center sm:justify-between items-center sm:pt-0 pt-2  gap-0 sm:gap-4 
+                        pl-5  mt-[20px] sm:mx-[-20px] sm:mt-0
+                        "
+                        >
+                            <p
+                            className="
+                            font-[Roboto] font-bold 
+                            text-[21px] sm:text-[30px] lg:text-[38.75px] 
+                            leading-[1.2] md:leading-[49.49px] 
+                            tracking-[-0.02em] w-full sm:w-auto"
+                            >
+                                Continue learning 📚
+                            </p>
 
-                <div className="py-6 flex gap-7">
+                            <button
+                                className="
+                                flex items-center justify-center gap-1
+                                shadow-[0px_3px_0px_0px_#FF3400] 
+                                w-[100px] sm:w-[115px] md:w-[115px]
+                                h-[38px] sm:h-[43px] md:h-[43px]
+                                rounded-[22px] border border-orange-500
+                                font-[roboto] font-semibold 
+                                text-[13px] sm:text-[17px] md:text-[14px]
+                                leading-[1.8] tracking-[-0.02em]
+                                bg-white
+                                transition-all duration-300 ease-out 
+                                hover:bg-orange-500 hover:text-white 
+                                hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
+                                hover:scale-[1.05] active:scale-95 
+                                active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]
+                                "
+                            >
+                                <img
+                                    className="
+                                    w-4 sm:w-[18px] md:w-[18px] 
+                                    transition-transform duration-500 
+                                    group-hover:rotate-[15deg] hover:rotate-[20deg]
+                                    "
+                                    src="/images/dashBoard/askAi.svg"
+                                    alt=""
+                                />
+                                Ask Ai
+                            </button>
+                        </div>
+
+                <div className="py-6 flex gap-6">
                     {
                         ContinueClasses.map((continueClass) => (
                             <ContinueClass key={continueClass.id} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress} dialog={continueClass.dialog} recommendation={continueClass.recommendation} />
@@ -83,7 +116,7 @@ export default function DashboardCoursesPage() {
                     <div className="relative mb-6">
                         <p className="flex gap-3 items-center  font-[] font-semibold text-[24px] leading-[32px] tracking-[-0.01em]">All Materials <span className="text-center rounded-lg font-semibold text-[13.6px] leading-[27.2px] tracking-[-0.01em] w-[34px] h-[28px] bg-[#EEEEE4]">{Materials.length}</span> <button onClick={() => setOpen(!open)}>{open ? '⏶' : '⏷'}</button></p>
                         {open && (
-                            <div className="transition  flex flex-col absolute left-[16%] top-21">
+                            <div className="transition  flex flex-col absolute left-[15.6%] top-11 border z-10 p-3 rounded-2xl gap-2 items-center justify-center bg-white border-gray-300">
                                 <button>1</button>
                                 <button>2</button>
                                 <button>3</button>
@@ -91,7 +124,7 @@ export default function DashboardCoursesPage() {
                             </div>
                         )}
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center xl:w-[105%] justify-between">
                         <div className="transition ease-in-out w-[371px] h-[48px] flex items-center justify-center rounded-3xl bg-[#EEEEE4]">
                             <button onClick={() => { setActiveTab('allStatus'); setFilter('all') }} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${activetTab === "allStatus" ? "bg-white" : "bg-[#EEEEE4]"}`}>All Status</button>
                             <button onClick={() => { setActiveTab('notStarted'); setFilter('notStarted') }} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[120px] h-[39px] rounded-3xl  ${activetTab === "notStarted" ? "bg-white" : "bg-[#EEEEE4]"}`}>Not Started</button>
@@ -164,15 +197,17 @@ export default function DashboardCoursesPage() {
                 </div>
 
 
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-7">
-                    {
-                        filteredMaterials.map((singleMaterial: any) => (
-                            <Material key={singleMaterial.id} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subjec} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} />
-                        ))
-                    }
-
+                <div className="relative flex flex-col">
+                    <div className="grid items-center grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-18 gap-5">
+                        {
+                            filteredMaterials.map((singleMaterial: any) => (
+                                <Material key={singleMaterial.id} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subjec} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} />
+                            ))
+                        }
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 w-full h-8 bg-gradient-to-t from-[#fafaf5] to-transparent pointer-events-none"></div>
                 </div>
+                
 
 
             </div>

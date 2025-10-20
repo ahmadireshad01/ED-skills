@@ -8,12 +8,12 @@ export default function ClassCard(props: any) {
                 <div className={`relative sm:h-[106px] h-[70px] bg-[${props.bg}] w-[95%] rounded-3xl mt-2
         overflow-hidden group transition-all duration-500 ease-in-out`}>
 
-                    <img className="absolute top-[0%] transform transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1"
+                    <img className="absolute top-[0%] transform transition-transform duration-700 ease-in-out"
                         src={props.image} alt="" />
 
                     <span className="absolute top-[11%] left-[4%] px-2 flex justify-center items-center
             w-[98px] h-[31px] rounded-2xl font-ppMori font-semibold text-[14.61px] leading-[15.09px]
-            text-center bg-white shadow-sm transition-all duration-300 group-hover:bg-opacity-90 group-hover:scale-105">
+            text-center bg-white">
                         Start: {props.startingTime}
                     </span>
                 </div>
@@ -21,13 +21,11 @@ export default function ClassCard(props: any) {
                 {/* 2nd child div */}
                 <div className="gap-0 px-4 pt-5 p-2 flex flex-col items-baseline h-fit w-full transition-all duration-300">
                     <span className={`flex items-center justify-center font-semibold text-[12.61px] leading-[15.09px]
-                                         w-fit px-2 pb-0.5 h-[20px] rounded-lg bg-[${props.bg}]
-                                        transition-transform duration-300 hover:scale-110 hover:shadow-md`}>
+                                         w-fit px-2 pb-0.5 h-[20px] rounded-lg bg-[${props.bg}]`}>
                         {props.subject}
                     </span>
 
-                    <p className="font-interTight font-semibold text-[19.95px] leading-[40.81px] tracking-[0] text-center
-                                    transition-all duration-300 hover:text-gray-700 hover:scale-105">
+                    <p className="font-interTight font-semibold text-[19.95px] leading-[40.81px] tracking-[0] text-center">
                         {props.topic}
                     </p>
 

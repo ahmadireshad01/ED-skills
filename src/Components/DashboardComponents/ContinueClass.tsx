@@ -3,7 +3,7 @@ export default function ContinueClass(props: any) {
         <>
             <div className="flex flex-col bg-[#EEEEE4] max-w-[600px] rounded-3xl 
                             hover:scale-[1.02] transition-transform duration-500 ease-out shadow-lg hover:shadow-2xl">
-                <div className="p-3 flex rounded-3xl bg-white gap-5 hover:shadow-lg transition-shadow duration-300">
+                <div className="p-3 flex rounded-3xl bg-white gap-2 hover:shadow-lg transition-shadow duration-300">
                     <div className={`relative w-[200px] h-[146px] rounded-3xl bg-[${props.bg}] overflow-hidden group cursor-pointer`}>
                         <img src={props.image} alt="" 
                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[2deg]" />
