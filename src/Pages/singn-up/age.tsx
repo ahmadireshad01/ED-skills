@@ -39,12 +39,12 @@ export default function Agepage() {
       <img
         src={left}
         alt="left decoration"
-        className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
+        className="absolute left-0 top-[60%] -translate-y-1/2 max-[800px]:opacity-20 max-[450px]:hidden"
       />
       <img
         src={right}
         alt="right decoration"
-        className="absolute right-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
+        className="absolute right-0 top-[60%] -translate-y-1/2 max-[800px]:opacity-20 max-[450px]:hidden"
       />
 
       {/* Progress bar */}
@@ -75,7 +75,7 @@ export default function Agepage() {
           <input
             type="number"
             value={age}
-            onChange={(e) => setAge(e.target.value)}
+            onChange={e => setAge(e.target.value)}
             className="border border-[#DEE0E3] rounded-lg py-3 px-4 text-base focus:outline-none focus:ring-2 focus:ring-[#FF613E] transition"
             placeholder="Enter your age..."
           />

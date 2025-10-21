@@ -10,10 +10,9 @@ const Footer: FC = () => {
   return (
     <footer
       className="px-[124px] xl:px-[124px] lg:px-[80px] md:px-[40px] sm:px-[20px] bg-white 
-                 max-[640px]:px-[20px] min-[2560px]:px-[300px]"
+                 max-[640px]:px-[20px] min-[2560px]:px-[300px] max-[640px]:mt-[50px]"
     >
       <div className="mx-auto px-6 py-12 max-w-[1300px] max-[640px]:px-2 max-[640px]:py-8 min-[2560px]:max-w-[1800px]">
-
         {/* Top Section */}
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-10 lg:gap-6 
@@ -74,7 +73,7 @@ const Footer: FC = () => {
           </div>
 
           {/* Company */}
-          <div className="sm:text-center lg:text-left max-[640px]:w-full">
+          <div className="sm:text-center lg:text-left max-[640px]:w-full ">
             <h3
               className="text-[#9B9B9B] font-semibold text-[16px] lg:text-[14px]
                          max-[640px]:text-[15px]"
