@@ -3,8 +3,8 @@ export default function ContinueClass(props: any) {
         <>
             <div className="flex flex-col bg-[#EEEEE4] max-w-[600px] rounded-3xl 
                             hover:scale-[1.02] transition-transform duration-500 ease-out shadow-lg hover:shadow-2xl">
-                <div className="p-3 flex rounded-3xl bg-white gap-2 hover:shadow-lg transition-shadow duration-300">
-                    <div className={`relative w-[200px] h-[146px] rounded-3xl bg-[${props.bg}] overflow-hidden group cursor-pointer`}>
+                <div className="p-3 flex flex-col md:flex-row rounded-3xl bg-white gap-2 hover:shadow-lg transition-shadow duration-300">
+                    <div className={`relative w-full sm:w-[200px] h-[146px] rounded-3xl bg-[${props.bg}] overflow-hidden group cursor-pointer`}>
                         <img src={props.image} alt="" 
                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[2deg]" />
                         <span className="absolute top-[9px] left-[11px] w-fit h-[24px] rounded-2xl bg-white p-2 flex justify-center items-center text-[12px] font-semibold
@@ -21,7 +21,7 @@ export default function ContinueClass(props: any) {
                                       transition-colors duration-300 hover:text-[#4414FC]">
                             {props.topic}
                         </p>
-                        <div className="flex pt-4 items-center gap-10">
+                        <div className="flex sm:flex-row flex-col pt-4 items-center gap-10">
                             <div className="flex flex-col">
                                 <p className="font-semibold text-[11.96px] leading-[11.32px] tracking-[0em] text-[#7A7A7A]">
                                     progress: <span className="text-black">{props.progress}%</span>
