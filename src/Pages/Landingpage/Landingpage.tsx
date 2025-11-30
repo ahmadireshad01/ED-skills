@@ -253,7 +253,9 @@ export default function Landingpage() {
                   className="flex flex-col md:gap-4 lg:flex lg:gap-3
                  lg:relative top-[85px] min-[1300px]:pt-[15px] min-[1439px]:pt-[0px]
                    min-[1439px]:top-[4px]  xl:gap-[25px] 
-                   2xl:top-[-145px] 2xl:left-[20px]"
+                   2xl:top-[-145px] 2xl:left-[20px]
+                   min-[1340px]:top-[9px]
+                   "
                 >
                   <div className="relative w-full">
                     {/* Background Image */}
