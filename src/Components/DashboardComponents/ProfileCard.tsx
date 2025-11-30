@@ -37,33 +37,34 @@ export default function ProfileCard() {
   ];
   const COLORS = ['#FED216', '#BFE942', '#FD823A', '#AF9EEF'];
   return (
-    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out hover:shadow-2xl">
+    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] [@media(max-height:880px)_and_(min-width:1340px)]:lg:mt-[-5px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out hover:shadow-2xl">
 
       {/* Top Section */}
-      <div className="relative mt-auto flex flex-col gap-[18px] items-center">
+      <div className="mt-auto flex flex-col gap-[18px] items-center">
         {/* Top bar */}
-        <div className="w-full h-[100px] bg-white rounded-2xl flex justify-between items-start p-1 hover:shadow-lg transition-shadow duration-300">
+        <div className=" relative w-full h-[100px] [@media(max-height:880px)_and_(min-width:1340px)]:h-[50px] bg-white rounded-2xl flex justify-between items-start p-1 hover:shadow-lg transition-shadow duration-300">
           <button className="p-3 hover:scale-110 transition-transform duration-300">
             <img className="w-[23px]" src="/images/DashBoardSideBar/massage.svg" alt="" />
           </button>
           <button className="p-3 hover:scale-110 transition-transform duration-300">
             <img className="w-[21px]" src="/images/DashBoardSideBar/settings.svg" alt="" />
           </button>
+          <img
+            className="absolute top-[42%] left-[35%] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5] hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg]"
+            src="/images/DashBoardSideBar/profileImage.svg"
+            alt=""
+          />
         </div>
 
         {/* Profile image */}
-        <img
-          className="absolute top-[54px] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5] hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg]"
-          src="/images/DashBoardSideBar/profileImage.svg"
-          alt=""
-        />
 
-        <h1 className="mt-[54px] font-bold text-2xl font-serif text-black text-center">
+
+        <h1 className="[@media(max-height:880px)_and_(min-width:1340px)]:mt-[67px] mt-[54px] font-bold text-2xl font-serif text-black text-center">
           Sophia Guesh
         </h1>
 
         {/* Stats cards */}
-        <div className="mt-0 flex flex-wrap justify-center items-center gap-3 w-full">
+        <div className="mt-0 flex flex-wrap sm:flex-nowrap justify-center items-center gap-3 w-full">
           {[
             { icon: "points", value: "100", label: "Points" },
             { icon: "badges", value: "32", label: "Badges" },
@@ -88,8 +89,8 @@ export default function ProfileCard() {
             <div className="flex justify-between">
               <p className="text-[#6B6B6B] font-pp-mori font-semibold text-[14px] leading-[20px] tracking-[-0.02em]">Activity</p>
               <button className='relative border-1 rounded-2xl px-2 py-1 border-gray-300 shadow-sm text-[12px] flex items-center justify-center font-semibold' onClick={() => setIsYearOpen(!isYearOpen)}>Year {isYearOpen ? '⏶' : '⏷'}</button>
-            </div> 
-            {isYearOpen && 
+            </div>
+            {isYearOpen &&
               <div className='absolute flex flex-col items-center gap-2 justify-center top-[62%] right-[1%] border p-2 rounded-2xl shadow-lg border-gray-300 bg-white'>
                 <button>2024</button>
                 <button>2023</button>
@@ -143,7 +144,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Content/Learning cards */}
-      <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 pb-3 mt-4 w-full">
+      <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 pb-3 mt-4 w-full [@media(max-height:880px)_and_(min-width:1340px)]:hidden">
         {[
           { icon: "date", value: "120", label: "Content" },
           { icon: "time", value: "120", label: "Learning" },
@@ -159,7 +160,7 @@ export default function ProfileCard() {
                 <p className="font-pp-mori font-normal text-[16px] leading-[24px] tracking-[-0.02em] text-[#6B6B6B]">{item.label}</p>
               </div>
             </div>
-            <button className="w-full sm:w-[149px] h-[43px] font-semibold border-1 border-gray-300 rounded-3xl shadow-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300">
+            <button className="w-full sm:w-[149px] h-[43px] font-semibold border-1 bg-white  border-gray-300 rounded-3xl shadow-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300">
               View all
             </button>
           </div>

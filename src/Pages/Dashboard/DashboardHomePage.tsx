@@ -16,9 +16,9 @@ export default function DashboardHomePage() {
     ]
 
     const Classes = [{ id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
-                     { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
-                     { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
-                     { id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    { id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
     ]
 
     const InProgressClasses = [{ id: 4, icon: "/images/dashBoard/physicsIcon.svg", bg: "#b0d7c7", subject: "Physics", topic: "Unlock the Laws of Nature", content: "5 Material", progress: 44, duration: "1 day" },
@@ -28,21 +28,21 @@ export default function DashboardHomePage() {
     return (
         <>
 
-            <div className="h-full pb-3 flex bg-[#fafaf5] gap-6 w-full">
-                <div className="flex lg:fixed lg:h-[955px] xl:h-auto xl:static">
+            <div className="h-screen overflow-hidden flex bg-[#fafaf5] gap-6 w-full">
+                <div className="flex lg:fixed lg:h-[955px] xl:h-screen xl:max-h-screen xl:static  pb-4">
                     <DashboardSideBar />
                 </div>
-                <div className="lg:ml-[120px] xl:ml-0 lg:flex lg:flex-row lg:pt-3 lg:p-0 ml-[-21px] sm:p-[50px] sm:pt-[100px] flex flex-col items-center gap-9 w-full lg:justify-between ">
+                <div className=" lg:ml-[120px] xl:ml-0 lg:flex lg:flex-row lg:pt-3 lg:p-0 ml-[-21px] sm:p-[50px] sm:pt-[100px] flex flex-col items-center gap-9 w-full lg:justify-between ">
                     {/*middle section*/}
-                    <div className="sm:pt-13 pt-13 flex flex-col ml-5  md:ml-0 lg:m-[10px] w-full lg:w-[832px] ">
+                    <div className="pt-[52px] mt-0 [@media(max-height:880px)_and_(min-width:1340px)]:mt-[-60px] flex flex-col ml-5 md:ml-0 lg:m-[10px] w-full lg:w-[832px]">
                         <div
-                        className="
+                            className="
                         flex  sm:items-center sm:justify-between items-center sm:pt-0 pt-2  gap-0 sm:gap-4 
                         px-5  mt-[20px] sm:mx-[-20px] sm:mt-0
                         "
                         >
                             <p
-                            className="
+                                className="
                             font-[Roboto] font-bold 
                             text-[21px] sm:text-[30px] lg:text-[40.75px] 
                             leading-[1.2] md:leading-[49.49px] 
@@ -82,10 +82,10 @@ export default function DashboardHomePage() {
                             </button>
                         </div>
                         <div className="relative">
-                            <div className=" shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)] bg-[#f3f3ef]  flex gap-4 mt-8 w-full max-w-[850px] h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth">
+                            <div className=" shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)] bg-[#f3f3ef]  flex gap-4 mt-8 [@media(max-height:880px)_and_(min-width:1340px)]:mt-6 w-full max-w-[850px] h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth">
                                 {subjects.map((subject) => (
                                     <div
-                                        className="border-[#E3E3DE] border-[1.33px] flex gap-4 rounded-2xl items-center justify-between 
+                                        className="border-[#E3E3DE] border-[1.33px] flex gap-4 bg-white rounded-2xl items-center justify-between 
                                         w-[168px]
                                         p-3 h-[72px] shadow-[0px_2.33px_0px_0px_#E3E3DE] 
                                         hover:scale-102 transition-all duration-300 cursor-pointer"
@@ -102,8 +102,8 @@ export default function DashboardHomePage() {
                                 ))}
                             </div>
                             <div className="absolute inset-y-0 right-[-4px] w-22 bg-gradient-to-l from-[#fafaf5] to-transparent pointer-events-none"></div>
-                        </div> 
-                        <div className="pt-2 pb-4 sm:pl-0 pl-3 flex flex-col lg:flex-col lg:items-start  xl:flex-row sm:flex-row items-start sm:items-center justify-between pr-5 gap-2 sm:gap-0">
+                        </div>
+                        <div className="pt-2 [@media(max-height:880px)_and_(min-width:1340px)]:pt-0 pb-4 sm:pl-0 pl-3 flex flex-col lg:flex-col lg:items-start  xl:flex-row sm:flex-row items-start sm:items-center justify-between pr-5 gap-2 sm:gap-0">
                             <p className="font-recoleta font-semibold text-[24px]  sm:text-[24.99px] leading-[42.65px] tracking-[-0.01em]">
                                 Your Upcoming Class
                             </p>
@@ -114,63 +114,68 @@ export default function DashboardHomePage() {
                         {/* upComingClassesCards and  inProgressCards*/}
                         <div className="relative">
                             <div className="">
-                                <div className="lg:flex-col lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center justify-center sm:gap-6 md:gap-8l:flex-row">
-                                {Classes.map((singleClass, index) => (
-                                    <div
-                                    className={`
+                                <div className="lg:flex-col lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center justify-center sm:gap-1 xl:gap-8 ">
+                                    {Classes.map((singleClass, index) => (
+                                        <div
+                                            className={`
                                         ${index > 1 ? 'hidden lg:block xl:hidden' : 'block'}
                                     `}
-                                    >
-                                    <ClassCard
-                                        key={singleClass.id}
-                                        bg={singleClass.bg}
-                                        image={singleClass.image}
-                                        startingTime={singleClass.startingTime}
-                                        subject={singleClass.subject}
-                                        topic={singleClass.topic}
-                                        participants={singleClass.participants}
-                                    />
-                                    </div>
-                                ))}
+                                        >
+                                            <ClassCard
+                                                key={singleClass.id}
+                                                bg={singleClass.bg}
+                                                image={singleClass.image}
+                                                startingTime={singleClass.startingTime}
+                                                subject={singleClass.subject}
+                                                topic={singleClass.topic}
+                                                participants={singleClass.participants}
+                                            />
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             <div className="absolute right-[-21px] top-[-15px] hidden lg:flex xl:hidden">
-                                <ProfileCard/>
+                                <ProfileCard />
                             </div>
                         </div>
                         <div className="w-full">
-                                    {/* Header */}
-                                    <div className="xl:flex-row py-5 pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between pr-5 gap-2 sm:gap-0">
-                                        <p className="font-recoleta font-semibold text-[24.99px] leading-[42.65px] tracking-[-0.01em]">
-                                            In progress learning content
-                                        </p>
-                                        <button className="text-[#FF3400] font-pp-mori font-semibold text-[16.33px] leading-[31.99px] tracking-[0%] hover:text-orange-400 transition ease-in-out">
-                                            view all
-                                        </button>
-                                    </div>
+                            {/* Header */}
+                            <div className="xl:flex-row py-5 pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between pr-5 gap-2 sm:gap-0">
+                                <p className="font-recoleta font-semibold text-[24.99px] leading-[42.65px] tracking-[-0.01em]">
+                                    In progress learning content
+                                </p>
+                                <button className="text-[#FF3400] font-pp-mori font-semibold text-[16.33px] leading-[31.99px] tracking-[0%] hover:text-orange-400 transition ease-in-out">
+                                    view all
+                                </button>
+                            </div>
 
-                                    {/* List of in-progress courses */}
-                                    <div className="flex flex-col lg:items-start xl:items-center items-center justify-center sm:ml-0 ml-[-20px] gap-4">
-                                        {InProgressClasses.map((inProgressClass) => (
-                                            <InprogressCourse
-                                                key={inProgressClass.id}
-                                                icon={inProgressClass.icon}
-                                                bg={inProgressClass.bg}
-                                                subject={inProgressClass.subject}
-                                                topic={inProgressClass.topic}
-                                                content={inProgressClass.content}
-                                                progress={inProgressClass.progress}
-                                                duration={inProgressClass.duration}
-                                            />
-                                        ))}
+                            {/* List of in-progress courses */}
+                            <div className="flex flex-col lg:items-start items-center gap-4 lg:ml-0 md:ml-[7%] ml-3">
+                                {InProgressClasses.map((inProgressClass, index) => (
+                                    <div
+                                        key={inProgressClass.id}
+                                        className={`w-full ${index > 0 ? "[@media(max-height:880px)_and_(min-width:1340px)]:hidden" : ""}`}
+                                    >
+                                        <InprogressCourse
+                                            icon={inProgressClass.icon}
+                                            bg={inProgressClass.bg}
+                                            subject={inProgressClass.subject}
+                                            topic={inProgressClass.topic}
+                                            content={inProgressClass.content}
+                                            progress={inProgressClass.progress}
+                                            duration={inProgressClass.duration}
+                                        />
                                     </div>
-                                </div>
-                        
-                        
+                                ))}
+                            </div>
+
+                        </div>
+
+
 
 
                     </div>
-                    <div className="flex lg:hidden xl:flex">
+                    <div className="flex pb-2 lg:hidden xl:flex">
                         <ProfileCard />
                     </div>
                 </div>

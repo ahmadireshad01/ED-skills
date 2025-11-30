@@ -6,7 +6,7 @@ import { List } from "lucide-react";
 import Material from "../../Components/DashboardComponents/Material";
 
 export default function DashboardCoursesPage() {
-    const [layout , setLayout] = useState('grid')
+    const [layout, setLayout] = useState('grid')
     const ContinueClasses = [
         { id: 12, materials: 1, bg: "#E3EFFF", image: "/images/dashboardCourses/courseImage.svg", subject: "Geography", topic: "Understand the Land, Oceans and Beyond", progress: "80", dialog: "Increase your knowledge with", recommendation: "Unlock the Power of Place" },
         { id: 23, materials: 2, bg: "#FAEAFA", image: "/images/dashboardCourses/courseImage2.svg", subject: "Computer & AI", topic: "Unlock the Power of Creativity with Generative AI", progress: "30", dialog: "Next, you can dive into", recommendation: "Create Using Generative AI" },
@@ -56,14 +56,14 @@ export default function DashboardCoursesPage() {
     }
     return (
         <div className="flex bg-[#fafaf5] h-screen overflow-hidden">
-            <div className="h-[940px] z-50 flex pl-1 fixed top-0 left-[-3px]">
+            <div className="h-screen z-50 flex pl-1 pb-4 fixed top-0 left-[-3px]">
                 <DashboardSideBar />
             </div>
-            <div className="px-[9%] lg:pt-11 pt-[90px] lg:ml-[25px] xl:ml-0 w-full overflow-y-auto scrollbar-hide">
+            <div className="px-[9%] lg:pt-11 pt-[90px] lg:ml-[25px] xl:ml-0 w-full overflow-y-auto overflow-x-hidden scrollbar-hide">
                 <div
                     className="
-                        flex sm:w-[105%]  sm:items-center sm:justify-between items-center sm:pt-0 pt-2  gap-0 sm:gap-4 
-                        pl-5  mt-[20px] sm:mx-[-20px] sm:mt-0
+                        flex w-full sm:items-center sm:justify-between items-center sm:pt-0 pt-2  gap-0 sm:gap-4 
+                        pl-5  mt-[20px] sm:mx-0 sm:mt-0
                         "
                 >
                     <p
@@ -118,7 +118,7 @@ export default function DashboardCoursesPage() {
                     <div className="relative mb-6">
                         <p className="flex gap-3 items-center  font-[] font-semibold text-[24px] leading-[32px] tracking-[-0.01em]">All Materials <span className="text-center rounded-lg font-semibold text-[13.6px] leading-[27.2px] tracking-[-0.01em] w-[34px] h-[28px] bg-[#EEEEE4]">{Materials.length}</span> <button onClick={() => setOpen(!open)}>{open ? '⏶' : '⏷'}</button></p>
                         {open && (
-                            <div className="transition  flex flex-col absolute left-[15.6%] top-11 border z-10 p-3 rounded-2xl gap-2 items-center justify-center bg-white border-gray-300">
+                            <div className="transition  flex flex-col absolute left-[85.6%] top-11 border z-10 p-3 rounded-2xl gap-2 items-center justify-center bg-white border-gray-300">
                                 <button>1</button>
                                 <button>2</button>
                                 <button>3</button>
@@ -150,7 +150,7 @@ export default function DashboardCoursesPage() {
                         </div>
                     </div>
                     {isFilterOpen &&
-                        <div className="absolute top-[102%] right-[3%] w-[240px] h-auto z-10 bg-white rounded-3xl shadow-2xl p-5 flex flex-col gap-4 border border-gray-100 backdrop-blur-sm">
+                        <div className="absolute top-[102%] xl:right-[-32px] right-[7%] sm:right-[50%] lg:right-[10px] w-[240px] h-auto z-10 bg-white rounded-3xl shadow-2xl p-5 flex flex-col gap-4 border border-gray-100 backdrop-blur-sm">
                             <button
                                 onClick={() => {
                                     setIsFilterOpen(false);
@@ -199,8 +199,8 @@ export default function DashboardCoursesPage() {
                 </div>
 
 
-                <div className="relative flex flex-col w-full items-center">
-                    <div className={`grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6"}  gap-x-18 gap-5`}>
+                <div className={`relative flex flex-col w-full ${layout === 'list' ? 'items-start' : 'items-center'}`}>
+                    <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"}   xl:gap-x-8 gap-x-8 lg:gap-x-21 gap-y-6`}>
                         {
                             filteredMaterials.map((singleMaterial: any) => (
                                 <Material key={singleMaterial.id} layout={layout} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subjec} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} isCertified={singleMaterial.isCertified} />

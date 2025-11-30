@@ -1,4 +1,3 @@
-import { Layout } from "lucide-react"
 import CircularProgress from "./CircleProgress"
 
 export default function Material(props: any) {
@@ -30,8 +29,8 @@ export default function Material(props: any) {
 
 
       {/* Text and buttons */}
-      <div className={`p-3 gap-2 flex   ${props.layout === "grid" ? "flex-col" : "flex-row"} justify-between transition-all duration-300 group-hover:translate-y-[-2px]`}>
-        <div className={`flex flex-col `}>
+      <div className={`p-3 gap-2 flex   ${props.layout === "grid" ? "flex-col" : "flex-row justify-between items-center"}  transition-all duration-300 group-hover:translate-y-[-2px]`}>
+        <div className={`flex flex-col flex-1`}>
           <div className="flex flex-wrap gap-1 items-center">
             <span className="text-gray-500 flex gap-1 items-center transition-all duration-300 hover:scale-[1.03]">
               <img
