@@ -28,8 +28,8 @@ export default function DashboardHomePage() {
     return (
         <>
 
-            <div className="h-screen overflow-hidden flex bg-[#fafaf5] gap-6 w-full">
-                <div className="flex lg:fixed lg:h-[955px] xl:h-screen xl:max-h-screen xl:static  pb-4">
+            <div className="min-h-screen pb-3 flex bg-[#fafaf5] gap-6 w-full">
+                <div className="flex lg:fixed lg:h-[955px] xl:h-screen xl:max-h-screen xl:static  pb-2">
                     <DashboardSideBar />
                 </div>
                 <div className=" lg:ml-[120px] xl:ml-0 lg:flex lg:flex-row lg:pt-3 lg:p-0 ml-[-21px] sm:p-[50px] sm:pt-[100px] flex flex-col items-center gap-9 w-full lg:justify-between ">
