@@ -708,7 +708,7 @@ export default function Landingpage() {
       <div
         className="flex gap-[20px] mt-[66px] md:flex-wrap
       lg:flex-nowrap justify-center md:gap-[16px] sm:gap-[12px]
-      2xl:gap-[30px]
+      2xl:gap-[30px] max-[640px]:flex-col
       "
       >
         {/* Card 1 */}
