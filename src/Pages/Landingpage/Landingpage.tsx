@@ -191,7 +191,6 @@ export default function Landingpage() {
         </div>
       </div>
 
-      {/* Banner images */}
       <div className="w-full md:mt-[70px] flex justify-center overflow-hidden 2xl:mt-[-70px] 2xl:relative 2xl:right-[-40px]">
         <div className="max-w-full scale-100 md:scale-100 sm:scale-[0.9] xs:scale-[0.8] origin-top">
           <div className="md:flex gap-5 mt-8">
@@ -247,7 +246,7 @@ export default function Landingpage() {
                   </div>
                 </div>
               </div>
-
+ 
               <div className="md:flex md:mt-6">
                 <div
                   className="flex flex-col md:gap-4 lg:flex lg:gap-3
@@ -255,6 +254,7 @@ export default function Landingpage() {
                    min-[1439px]:top-[4px]  xl:gap-[25px] 
                    2xl:top-[-145px] 2xl:left-[20px]
                    min-[1340px]:top-[9px]
+                   min-[1025px]:top-[85px]
                    "
                 >
                   <div className="relative w-full">
