@@ -136,14 +136,18 @@ export default function Landingpage() {
           })}
         </div>
 
+        <div className="flex flex-col gap-6 mt-10">
+          {/* ✅ MD: Always 3 items */}
+          <div className="md:flex flex-col gap-6 lg:hidden">
+            {renderSubjects(row1, 3)}
+          </div>
+        </div>
 
-         {/* 📱 Mobile (max-640px): 2 items */}
-   <div className="lg:hidden max-[640px]:block">
-        {renderSubjects(row1, 2)}
+        {/* 📱 Mobile (max-640px): 2 items */}
+        <div className="lg:hidden md:hidden  max-[640px]:block">
+          {renderSubjects(row1, 2)}
+        </div>
       </div>
-        
-      </div>
-      
     );
   };
 
@@ -196,7 +200,6 @@ export default function Landingpage() {
         </div>
       </div>
 
-      {/* Banner images */}
       <div className="w-full md:mt-[70px] flex justify-center overflow-hidden 2xl:mt-[-70px] 2xl:relative 2xl:right-[-40px]">
         <div className="max-w-full scale-100 md:scale-100 sm:scale-[0.9] xs:scale-[0.8] origin-top">
           <div className="md:flex gap-5 mt-8">
@@ -258,7 +261,10 @@ export default function Landingpage() {
                   className="flex flex-col md:gap-4 lg:flex lg:gap-3
                  lg:relative top-[85px] min-[1300px]:pt-[15px] min-[1439px]:pt-[0px]
                    min-[1439px]:top-[4px]  xl:gap-[25px] 
-                   2xl:top-[-145px] 2xl:left-[20px]"
+                   2xl:top-[-145px] 2xl:left-[20px]
+                   min-[1340px]:top-[9px]
+                   min-[1025px]:top-[85px]
+                   "
                 >
                   <div className="relative w-full">
                     {/* Background Image */}
