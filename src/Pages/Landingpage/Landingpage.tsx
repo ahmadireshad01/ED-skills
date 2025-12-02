@@ -136,14 +136,18 @@ export default function Landingpage() {
           })}
         </div>
 
+        <div className="flex flex-col gap-6 mt-10">
+          {/* ✅ MD: Always 3 items */}
+          <div className="md:flex flex-col gap-6 lg:hidden">
+            {renderSubjects(row1, 3)}
+          </div>
+        </div>
 
-         {/* 📱 Mobile (max-640px): 2 items */}
-   <div className="lg:hidden max-[640px]:block">
-        {renderSubjects(row1, 2)}
+        {/* 📱 Mobile (max-640px): 2 items */}
+        <div className="lg:hidden md:hidden  max-[640px]:block">
+          {renderSubjects(row1, 2)}
+        </div>
       </div>
-        
-      </div>
-      
     );
   };
 
