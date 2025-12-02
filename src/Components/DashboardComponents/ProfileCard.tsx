@@ -1,172 +1,188 @@
-import { useState } from 'react';
-import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
+import DashboardSideBar from "../../Components/DashboardComponents/DashboardSideBar";
+import ProfileCard from "../../Components/DashboardComponents/ProfileCard";
+import ClassCard from "../../Components/DashboardComponents/ClassCard";
+import InprogressCourse from "../../Components/DashboardComponents/InProgressCourse";
 
-const renderCustomizedLabel = (props: any) => {
-  const { cx, cy, midAngle, innerRadius, outerRadius, percent } = props;
-  const RADIAN = Math.PI / 180;
-  const radius = outerRadius * 0.79; // position label
-  const angleOffset = -4; // moves label slightly toward arc end
-  const angle = midAngle - angleOffset; // offset the position
-  const x = cx + radius * Math.cos(-angle * RADIAN);
-  const y = cy + radius * Math.sin(-angle * RADIAN);
+export default function DashboardHomePage() {
+    const subjects = [
+        { id: 1, icon: 'allSubjectIcon', label: "All Subjects", color: '#FFD5CA' },
+        { id: 2, icon: 'englishIcon', label: "English", color: '#FAEAFA' },
+        { id: 3, icon: 'businessIcon', label: "Business", color: '#E9F3AA' },
+        { id: 4, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
+        { id: 5, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
+        { id: 6, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
+        { id: 7, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
+        { id: 8, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' }
+    ]
 
-  return (
-    <text
-      x={x}
-      y={y}
-      fill="#000"
-      textAnchor="middle"
-      dominantBaseline="central"
-      fontSize={12}
-      fontWeight={500}
-    >
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
-  );
-};
+    const Classes = [{ id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    { id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
+    ]
+
+    const InProgressClasses = [{ id: 4, icon: "/images/dashBoard/physicsIcon.svg", bg: "#b0d7c7", subject: "Physics", topic: "Unlock the Laws of Nature", content: "5 Material", progress: 44, duration: "1 day" },
+    { id: 5, icon: "/images/dashBoard/englishIcon.svg", bg: "#FAEAFA", subject: "English", topic: "Learn the National language", content: "5 Material", progress: 60, duration: "5 day" },
+    { id: 6, icon: "/images/dashBoard/businessIcon.svg", bg: "#E9F3AA", subject: "Business", topic: "Learn to Business here at Ed", content: "5 Material", progress: 28, duration: "2 day" }
+    ]
+    return (
+        <>
+
+            <div className="min-h-screen pb-3 flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
+                <div className="flex lg:fixed lg:h-screen xl:h-screen xl:max-h-screen xl:static pb-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[640px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[640px]">
+                    <DashboardSideBar />
+                </div>
+                <div className=" lg:ml-[120px] xl:ml-0 lg:flex lg:flex-row lg:pt-3 lg:p-0 ml-[-21px] sm:p-[50px] sm:pt-[100px] flex flex-col items-center gap-9 w-full lg:justify-between [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-1">
+                    {/*middle section*/}
+                    <div className="pt-[52px] mt-0 [@media(max-height:880px)_and_(min-width:1340px)]:mt-[-60px] flex flex-col ml-5 md:ml-0 lg:m-[10px] w-full lg:w-[832px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-3 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[-40px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:overflow-y-auto [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[600px]">
+                        <div
+                            className="
+                        flex  sm:items-center sm:justify-between items-center sm:pt-0 pt-2  gap-0 sm:gap-4 
+                        px-5  mt-[20px] sm:mx-[-20px] sm:mt-0
+                        [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2
+                        "
+                        >
+                            <p
+                                className="
+                            font-[Roboto] font-bold 
+                            text-[21px] sm:text-[30px] lg:text-[40.75px] 
+                            leading-[1.2] md:leading-[49.49px] 
+                            tracking-[-0.02em] w-full sm:w-auto
+                            [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:text-[28px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:leading-[32px]"
+                            >
+                                Good Morning, Sophia 👋
+                            </p>
+
+                            <button
+                                className="
+                                flex items-center justify-center gap-1
+                                shadow-[0px_3px_0px_0px_#FF3400] 
+                                w-[100px] sm:w-[115px] md:w-[115px]
+                                h-[38px] sm:h-[43px] md:h-[43px]
+                                rounded-[22px] border border-orange-500
+                                font-[roboto] font-semibold 
+                                text-[13px] sm:text-[17px] md:text-[14px]
+                                leading-[1.8] tracking-[-0.02em]
+                                bg-white
+                                transition-all duration-300 ease-out 
+                                hover:bg-orange-500 hover:text-white 
+                                hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
+                                hover:scale-[1.05] active:scale-95 
+                                active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]
+                                "
+                            >
+                                <img
+                                    className="
+                                    w-4 sm:w-[18px] md:w-[18px] 
+                                    transition-transform duration-500 
+                                    group-hover:rotate-[15deg] hover:rotate-[20deg]
+                                    "
+                                    src="/images/dashBoard/askAi.svg"
+                                    alt=""
+                                />
+                                Ask Ai
+                            </button>
+                        </div>
+                        <div className="relative">
+                            <div className=" shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)] bg-[#f3f3ef]  flex gap-4 mt-8 [@media(max-height:880px)_and_(min-width:1340px)]:mt-6 w-full max-w-[850px] h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[80px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
+                                {subjects.map((subject) => (
+                                    <div
+                                        className="border-[#E3E3DE] border-[1.33px] flex gap-4 bg-white rounded-2xl items-center justify-between 
+                                        w-[168px]
+                                        p-3 h-[72px] shadow-[0px_2.33px_0px_0px_#E3E3DE] 
+                                        hover:scale-102 transition-all duration-300 cursor-pointer
+                                        [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:w-[150px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[60px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:p-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2"
+                                    >
+                                        <span
+                                            className={`rounded-lg flex items-center ml-[-5px] justify-center w-[54px] sm:w-[65px] h-[54px] sm:h-[54px] bg-[${subject.color}] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:w-[45px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[45px]`}
+                                        >
+                                            <img src={`/images/dashBoard/${subject.icon}.svg`} alt="" />
+                                        </span>
+                                        <p className="font-roboto font-semibold text-[15.99px] sm:text-[18px] leading-[24.65px] tracking-[0%] text-center [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:text-[14px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:leading-[18px]">
+                                            {subject.label}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="absolute inset-y-0 right-[-4px] w-22 bg-gradient-to-l from-[#fafaf5] to-transparent pointer-events-none"></div>
+                        </div>
+                        <div className="pt-2 [@media(max-height:880px)_and_(min-width:1340px)]:pt-0 pb-4 sm:pl-0 pl-3 flex flex-col lg:flex-col lg:items-start  xl:flex-row sm:flex-row items-start sm:items-center justify-between pr-5 gap-2 sm:gap-0 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-1 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-2">
+                            <p className="font-recoleta font-semibold text-[24px]  sm:text-[24.99px] leading-[42.65px] tracking-[-0.01em] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:text-[20px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:leading-[28px]">
+                                Your Upcoming Class
+                            </p>
+                            <button className="text-[#FF3400] font-pp-mori font-semibold text-[16.33px] leading-[31.99px] tracking-[0%] hover:text-orange-400 transition ease-in-out">
+                                view all
+                            </button>
+                        </div>
+                        {/* upComingClassesCards and  inProgressCards*/}
+                        <div className="relative [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mb-2">
+                            <div className="">
+                                <div className="lg:flex-col lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center justify-center sm:gap-1 xl:gap-8 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4">
+                                    {Classes.map((singleClass, index) => (
+                                        <div
+                                            className={`
+                                        ${index > 1 ? 'hidden lg:block xl:hidden' : 'block'}
+                                    `}
+                                        >
+                                            <ClassCard
+                                                key={singleClass.id}
+                                                bg={singleClass.bg}
+                                                image={singleClass.image}
+                                                startingTime={singleClass.startingTime}
+                                                subject={singleClass.subject}
+                                                topic={singleClass.topic}
+                                                participants={singleClass.participants}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="absolute right-[-21px] top-[-15px] hidden lg:flex xl:hidden">
+                                <ProfileCard />
+                            </div>
+                        </div>
+                        <div className="w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[-10px]">
+                            {/* Header */}
+                            <div className="xl:flex-row py-5 pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between pr-5 gap-2 sm:gap-0 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:py-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-3">
+                                <p className="font-recoleta font-semibold text-[24.99px] leading-[42.65px] tracking-[-0.01em] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:text-[20px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:leading-[28px]">
+                                    In progress learning content
+                                </p>
+                                <button className="text-[#FF3400] font-pp-mori font-semibold text-[16.33px] leading-[31.99px] tracking-[0%] hover:text-orange-400 transition ease-in-out [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:text-[14px]">
+                                    view all
+                                </button>
+                            </div>
+
+                            {/* List of in-progress courses */}
+                            <div className="flex flex-col lg:items-start items-center gap-4 lg:ml-0 md:ml-[7%] ml-3 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2">
+                                {InProgressClasses.map((inProgressClass, index) => (
+                                    <div
+                                        key={inProgressClass.id}
+                                        className={`w-full ${index > 0 ? "[@media(max-height:880px)_and_(min-width:1340px)]:hidden [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:hidden" : ""}`}
+                                    >
+                                        <InprogressCourse
+                                            icon={inProgressClass.icon}
+                                            bg={inProgressClass.bg}
+                                            subject={inProgressClass.subject}
+                                            topic={inProgressClass.topic}
+                                            content={inProgressClass.content}
+                                            progress={inProgressClass.progress}
+                                            duration={inProgressClass.duration}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+
+                        </div>
 
 
-export default function ProfileCard() {
-
-  const [isYearOpen, setIsYearOpen] = useState(false)
-  const data = [
-    { name: 'Group A', value: 300 },
-    { name: 'Group B', value: 500 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
-  ];
-  const COLORS = ['#FED216', '#BFE942', '#FD823A', '#AF9EEF'];
-  return (
-    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] [@media(max-height:880px)_and_(min-width:1340px)]:lg:mt-[-5px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out hover:shadow-2xl">
-
-      {/* Top Section */}
-      <div className="mt-auto flex flex-col gap-[18px] items-center">
-        {/* Top bar */}
-        <div className=" relative w-full h-[100px] [@media(max-height:880px)_and_(min-width:1340px)]:h-[50px] bg-white rounded-2xl flex justify-between items-start p-1 hover:shadow-lg transition-shadow duration-300">
-          <button className="p-3 hover:scale-110 transition-transform duration-300">
-            <img className="w-[23px]" src="/images/DashBoardSideBar/massage.svg" alt="" />
-          </button>
-          <button className="p-3 hover:scale-110 transition-transform duration-300">
-            <img className="w-[21px]" src="/images/DashBoardSideBar/settings.svg" alt="" />
-          </button>
-          <img
-            className="absolute top-[42%] left-[35%] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5] hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg]"
-            src="/images/DashBoardSideBar/profileImage.svg"
-            alt=""
-          />
-        </div>
-
-        {/* Profile image */}
 
 
-        <h1 className="[@media(max-height:880px)_and_(min-width:1340px)]:mt-[67px] mt-[54px] font-bold text-2xl font-serif text-black text-center">
-          Sophia Guesh
-        </h1>
-
-        {/* Stats cards */}
-        <div className="mt-0 flex flex-wrap sm:flex-nowrap justify-center items-center gap-3 w-full">
-          {[
-            { icon: "points", value: "100", label: "Points" },
-            { icon: "badges", value: "32", label: "Badges" },
-            { icon: "certificates", value: "32", label: "Certificates" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="w-[120px]  h-[105px] border-0 bg-white flex flex-col justify-center items-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
-            >
-              <img className="w-[23px] mt-2" src={`/images/dashBoard/${item.icon}.svg`} alt={item.label} />
-              <p className="font-semibold text-[23px] -mb-1">{item.value}</p>
-              <p className="text-[15px] text-[#6B6B6B]">{item.label}</p>
+                    </div>
+                    <div className="flex pb-2 lg:hidden xl:flex [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1">
+                        <ProfileCard />
+                    </div>
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* White Card with PieChart */}
-      <div className="mt-[16px] items-center w-[340px] h-[339px] lg:w-[383px] lg:h-[379px] bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col p-4">
-        <div className="flex flex-col sm:flex-row justify-between w-full gap-4">
-          <div className=" relative flex flex-col w-full sm:w-[347px] gap-2">
-            <div className="flex justify-between">
-              <p className="text-[#6B6B6B] font-pp-mori font-semibold text-[14px] leading-[20px] tracking-[-0.02em]">Activity</p>
-              <button className='relative border-1 rounded-2xl px-2 py-1 border-gray-300 shadow-sm text-[12px] flex items-center justify-center font-semibold' onClick={() => setIsYearOpen(!isYearOpen)}>Year {isYearOpen ? '⏶' : '⏷'}</button>
-            </div>
-            {isYearOpen &&
-              <div className='absolute flex flex-col items-center gap-2 justify-center top-[62%] right-[1%] border p-2 rounded-2xl shadow-lg border-gray-300 bg-white'>
-                <button>2024</button>
-                <button>2023</button>
-                <button>2022</button>
-                <button>2021</button>
-              </div>}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 items-center">
-              <p className="font-pp-mori font-semibold text-[24px] leading-[28.8px] tracking-[-0.02em] text-center">3.5h</p>
-              <div className="w-[106px] h-[26px] rounded-2xl bg-[#EEEEE4] pl-1 flex items-center justify-center text-sm">👍Great Job!</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full bg-[#EEEEE4] h-[1px] my-2"></div>
-
-        {/* Pie Chart */}
-        <div className="relative w-full h-[50vw] max-h-[320px] min-h-[200px] flex items-center justify-center">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                innerRadius="55%"
-                outerRadius="90%"
-                paddingAngle={6}
-                dataKey="value"
-                cornerRadius={11}
-                labelLine={false}
-                label={renderCustomizedLabel}
-              >
-                {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-
-          {/* Center text */}
-          <div className="absolute flex flex-col items-center text-center">
-            <span className="text-gray-400 text-sm">Contents</span>
-            <span className="text-black font-bold text-4xl">140</span>
-          </div>
-
-          {/* Status badge */}
-          <div className="absolute top-9 left-[10px] bg-white shadow  w-[91px] h-[39px] rounded-full px-2 py-1 flex items-center justify-center gap-2">
-            <span className="h-[6px] w-[6px] bg-green-400 rounded-full"></span>
-            <span className="text-[14px] font-semibold">Passed</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Content/Learning cards */}
-      <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 pb-3 mt-4 w-full [@media(max-height:880px)_and_(min-width:1340px)]:hidden">
-        {[
-          { icon: "date", value: "120", label: "Content" },
-          { icon: "time", value: "120", label: "Learning" },
-        ].map((item) => (
-          <div
-            key={item.label}
-            className="w-[186px] h-[154px]  bg-[#F9F9F3] rounded-2xl flex flex-col p-4 gap-4 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
-          >
-            <div className="flex justify-center items-center gap-6">
-              <span className='w-[56px] h-[56px] bg-white flex items-center justify-center rounded-full'><img src={`/images/dashBoard/${item.icon}.svg`} alt={item.label} /></span>
-              <div className="flex flex-col justify-center items-center gap-1">
-                <p className="font-pp-mori font-semibold text-[24px] leading-[24px] tracking-[-0.02em]">{item.value}</p>
-                <p className="font-pp-mori font-normal text-[16px] leading-[24px] tracking-[-0.02em] text-[#6B6B6B]">{item.label}</p>
-              </div>
-            </div>
-            <button className="w-full sm:w-[149px] h-[43px] font-semibold border-1 bg-white  border-gray-300 rounded-3xl shadow-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300">
-              View all
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-
-  );
+        </>
+    )
 }
