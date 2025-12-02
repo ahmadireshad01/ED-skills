@@ -2,7 +2,8 @@ export default function ClassCard(props: any) {
     return (
         <>
             <div className="sm:mb-0 mb-8 w-[94%] max-w-[404px]  sm:w-[360px] md:w-[380px] lg:w-[404px] h-[244px] rounded-3xl bg-white flex flex-col items-center
-    shadow-md hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg] cursor-pointer">
+    shadow-md hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg] cursor-pointer
+    [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[200px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:w-[360px]">
 
                 {/* 1st child div */}
                 <div className={`relative sm:h-[106px] h-[70px] bg-[${props.bg}] w-[95%] rounded-3xl mt-2
