@@ -6,7 +6,8 @@ export default function InprogressCourse(props: any) {
     return (
         <>
             <div className=" flex flex-col lg:flex-row justify-between sm:ml-0  items-center w-[90%] lg:w-full  max-w-full h-auto lg:h-[85px] sm:h-[228px] rounded-2xl bg-white px-3 py-3 sm:py-4 lg:py-0 gap-3 sm:gap-1.5
-                             sm:shadow-md shadow-lg hover:shadow-xl transition-all duration-500 ease-out hover:scale-[1.02] hover:-translate-y-1 cursor-pointer">
+                             sm:shadow-md shadow-lg hover:shadow-xl transition-all duration-500 ease-out hover:scale-[1.02] hover:-translate-y-1 cursor-pointer
+                             [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:lg:h-[70px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:py-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2">
 
                 {/* Left section: icon + subject/topic */}
                 <div className="flex items-start sm:items-center w-full sm:w-[320px] gap-3 sm:gap-5">

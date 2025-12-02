@@ -37,12 +37,12 @@ export default function ProfileCard() {
   ];
   const COLORS = ['#FED216', '#BFE942', '#FD823A', '#AF9EEF'];
   return (
-    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] [@media(max-height:880px)_and_(min-width:1340px)]:lg:mt-[-5px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out hover:shadow-2xl">
+    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] [@media(max-height:880px)_and_(min-width:1340px)]:lg:mt-[-5px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out hover:shadow-2xl [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:py-[4px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[5px]">
 
       {/* Top Section */}
       <div className="mt-auto flex flex-col gap-[18px] items-center">
         {/* Top bar */}
-        <div className=" relative w-full h-[100px] [@media(max-height:880px)_and_(min-width:1340px)]:h-[50px] bg-white rounded-2xl flex justify-between items-start p-1 hover:shadow-lg transition-shadow duration-300">
+        <div className=" relative w-full h-[100px] [@media(max-height:880px)_and_(min-width:1340px)]:h-[50px] bg-white rounded-2xl flex justify-between items-start p-1 hover:shadow-lg transition-shadow duration-300 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[45px]">
           <button className="p-3 hover:scale-110 transition-transform duration-300">
             <img className="w-[23px]" src="/images/DashBoardSideBar/massage.svg" alt="" />
           </button>
@@ -83,7 +83,7 @@ export default function ProfileCard() {
       </div>
 
       {/* White Card with PieChart */}
-      <div className="mt-[16px] items-center w-[340px] h-[339px] lg:w-[383px] lg:h-[379px] bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col p-4">
+      <div className="mt-[16px] items-center w-[340px] h-[339px] lg:w-[383px] lg:h-[379px] bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col p-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[8px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[280px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:lg:h-[280px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:p-3">
         <div className="flex flex-col sm:flex-row justify-between w-full gap-4">
           <div className=" relative flex flex-col w-full sm:w-[347px] gap-2">
             <div className="flex justify-between">
@@ -107,7 +107,7 @@ export default function ProfileCard() {
         <div className="w-full bg-[#EEEEE4] h-[1px] my-2"></div>
 
         {/* Pie Chart */}
-        <div className="relative w-full h-[50vw] max-h-[320px] min-h-[200px] flex items-center justify-center">
+        <div className="relative w-full h-[50vw] max-h-[320px] min-h-[200px] flex items-center justify-center [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[200px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:min-h-[150px]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

@@ -200,7 +200,7 @@ export default function DashboardCoursesPage() {
 
 
                 <div className={`relative flex flex-col w-full ${layout === 'list' ? 'items-start' : 'items-center'}`}>
-                    <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"}   xl:gap-x-8 gap-x-8 lg:gap-x-21 gap-y-6`}>
+                    <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 [@media_(min-width:1520px)_and_(max-width:1730px)]:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 [@media_(min-width:1270px)_and_(max-width:1370px)]:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6"}   xl:gap-x-8 gap-x-8 lg:gap-x-21 gap-y-6`}>
                         {
                             filteredMaterials.map((singleMaterial: any) => (
                                 <Material key={singleMaterial.id} layout={layout} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subjec} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} isCertified={singleMaterial.isCertified} />
