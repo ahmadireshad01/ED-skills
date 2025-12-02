@@ -136,16 +136,21 @@ export default function Landingpage() {
           })}
         </div>
 
-        {/* ✅ MD and below (up to 1023px): 3-column grid */}
-        <div className="lg:hidden">{renderSubjects(row1, 3)}</div>
+
+         {/* 📱 Mobile (max-640px): 2 items */}
+   <div className="lg:hidden max-[640px]:block">
+        {renderSubjects(row1, 2)}
       </div>
+        
+      </div>
+      
     );
   };
 
   // Usage
 
   return (
-    <div className="min-h-screen w-full bg-[#F9F9F3] px-[124px]">
+    <div className="min-h-screen w-full bg-[#F9F9F3] px-[124px] max-[640px]:p-[10px]">
       {/* Hero Section */}
       <div className="relative flex justify-center items-center">
         <img
@@ -153,7 +158,7 @@ export default function Landingpage() {
           alt="banner"
           className="w-full h-auto"
         />
-        <div className="absolute flex flex-col justify-center items-center text-center w-full px-4">
+        <div className="absolute flex flex-col justify-center items-center text-center w-full px-4 max-[640px]:gap-[10px] max-[640px]:mt-[15px]">
           <h1
             className="font-bold Recoleta mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-[64px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[62px] leading-6 sm:leading-8 md:leading-10 lg:leading-[60px] xl:leading-[70px] tracking-[-0.5%] sm:tracking-[-0.7%] xl:tracking-[-1%]
             2xl:text-[110px] 2xl:leading-[120px]
@@ -168,7 +173,7 @@ export default function Landingpage() {
           md:leading-7 lg:leading-[26px] xl:leading-[28px] tracking-[-0.1px]
            sm:tracking-[-0.15px] lg:tracking-[-0.2px] xl:tracking-[-0.22px]
             text-[#474645] mt-3 sm:mt-4 lg:mt-4 xl:mt-4
-            2xl:text-[30px] 2xl:leading-[40px]"
+            2xl:text-[30px] 2xl:leading-[40px] max-[640px]:mt-[0px]"
           >
             Empowering Students with Personalized, Interactive Learning{' '}
             <br className="hidden lg:block" />
@@ -202,7 +207,7 @@ export default function Landingpage() {
                   <img
                     src="/public/images/Banner/img1.svg"
                     alt="banner"
-                    className="w-auto h-auto 2xl:w-[950px] 2xl:h-[950px]"
+                    className="w-auto h-auto 2xl:w-[950px] 2xl:h-[950px] max-[640px]:mt-[62px]"
                   />
 
                   {/* Content */}
@@ -211,7 +216,7 @@ export default function Landingpage() {
                          flex flex-col justify-center items-center text-center px-4
                          lg:left-[140px] lg:bottom-[80px] xl:left-[210px]
                          xl:bottom-[130px] md:left-[180px] md:bottom-[110px]
-                         2xl:left-[340px] 2xl:top-[-75px]
+                         2xl:left-[340px] 2xl:top-[-75px] max-[640px]:left-[78px]
                          "
                   >
                     <span
@@ -219,7 +224,7 @@ export default function Landingpage() {
                       xl:text-[20px] xl:leading-[20.96px] xl:tracking-[-2%]
                       md:text-[17px] md:leading-[19px] leading-[20.96px] 
                       tracking-[-2%] font-extrabold
-                      2xl:text-[30px] 2xl:leading-[30px]
+                      2xl:text-[30px] 2xl:leading-[30px] max-[640px]:text-[13px] max-[640px]:leading-[20px] max-[640px]:relative  max-[640px]:top-[25px] max-[640px]:left-[28px]
 
                      "
                     >
@@ -228,7 +233,7 @@ export default function Landingpage() {
                     </span>
                     <div
                       className="flex gap-1 items-baseline md:mt-2 
-                    mt-2 lg:mt-1 lg:flex lg:items-center xl:pt-[13px]"
+                    mt-2 lg:mt-1 lg:flex lg:items-center xl:pt-[13px] max-[640px]:hidden"
                     >
                       <img
                         className="md:h-[14px] w-auto 2xl:h-[25px]"
@@ -248,7 +253,7 @@ export default function Landingpage() {
                 </div>
               </div>
 
-              <div className="md:flex md:mt-6">
+              <div className="md:flex md:mt-6 max-[640px]:mt-[10px]">
                 <div
                   className="flex flex-col md:gap-4 lg:flex lg:gap-3
                  lg:relative top-[85px] min-[1300px]:pt-[15px] min-[1439px]:pt-[0px]
@@ -260,7 +265,7 @@ export default function Landingpage() {
                     <img
                       src="/public/images/Banner/img2.svg"
                       alt="background"
-                      className="w-auto h-aut 2xl:w-[400px] 2xl:h-[300px]"
+                      className="w-auto h-aut 2xl:w-[400px] 2xl:h-[300px] max-[640px]:w-full"
                     />
 
                     {/* Content on top of image */}
@@ -273,7 +278,7 @@ export default function Landingpage() {
                       <div
                         className="flex items-center gap-2 md:relative
                        md:bottom-[-10px] lg:bottom-[-30px] xl:gap-2
-                       2xl:bottom-[-15px]
+                       2xl:bottom-[-15px] max-[640px]:mt-[120px] max-[640px]:ml-[30px] max-[640px]:items-center max-[640px]:justify-center 
                        "
                       >
                         <h1
@@ -296,7 +301,7 @@ export default function Landingpage() {
                       <div
                         className="flex items-center gap-2 md:gap-2 
                        md:relative md:bottom-[-17px] lg:bottom-[-20px]
-                       xl:pt-3 xl:gap-[0px]"
+                       xl:pt-3 xl:gap-[0px] max-[640px]:items-center max-[640px]:justify-center max-[640px]:ml-[20px]"
                       >
                         <img
                           className="md:h-[20px] lg:h-[10px] 
@@ -319,12 +324,12 @@ export default function Landingpage() {
                     </div>
                   </div>
 
-                  <div className="relative top-[-8px] ">
+                  <div className="relative top-[-8px] max-[640px]:flex max-[640px]:justify-center max-[640px]:mt-[20px]  max-[640px]:w-[full]">
                     {/* Background image */}
                     <img
                       src="/public/images/Banner/img3.svg"
                       alt="background"
-                      className="w-auto h-auto 2xl:w-[400px] 2xl:h-[350px]"
+                      className="w-auto h-auto 2xl:w-[400px] 2xl:h-[350px] max-[640px]:w-full"
                     />
 
                     {/* Text on top of the image */}
@@ -334,7 +339,7 @@ export default function Landingpage() {
                       xl:leading-[25.67px] xl:tracking-[-2%] inset-0 flex pl-[23px] 
                        items-start mt-6 font-bold text-[25.67px] leading-[25.67px]
                         tracking-[-0.02em] 
-                        2xl:text-[45px] 2xl:leading-[40px] 2xl:py-[20px] 2xl:pl-[40px]
+                        2xl:text-[45px] 2xl:leading-[40px] 2xl:py-[20px] 2xl:pl-[40px] max-[640px]:ml-[26px] max-[640px]:text-[35px] max-[640px]:leading-[35px]
                         "
                     >
                       Every child <br /> deserves the <br /> chance to <br />{' '}
@@ -362,7 +367,7 @@ export default function Landingpage() {
                       className=" object-contain pl-1 relative 
                       md:top-[-10px]  lg:top-[40px] lg:h-[350px]
                        lg:w-[317px] xl:top-0 xl:w-[316.47px] xl:h-[407.44px]
-                       2xl:w-[650px] 2xl:h-[660px]
+                       2xl:w-[650px] 2xl:h-[660px] max-[640px]:w-full 
                     
                        "
                     />
@@ -476,7 +481,8 @@ export default function Landingpage() {
                   >
                     <img
                       className="bg-[#DFF25D] rounded-full 
-                       lg:w-[30px] xl:w-[41px] 2xl:w-[70px] 2xl:h-[70px]"
+                       lg:w-[30px] xl:w-[41px] 2xl:w-[70px] 2xl:h-[70px] max-[640px]:mb-[12px]
+                       "
                       src="/public/images/Banner/img7.svg"
                       alt=""
                     />
@@ -514,7 +520,7 @@ export default function Landingpage() {
             <h1
               className="font-semibold text-[24px] md:text-[18px] lg:text-[21px] sm:text-[15px] xl:text-[24px] xl:leading-[32px]
              xl:tracking-[-1%] xl:pt-[22px] text-center text-[#03041666] leading-[32px] md:leading-[26px] sm:leading-[22px] tracking-[-1%]
-             2xl:text-[40px] 2xl:leading-[50px] 
+             2xl:text-[40px] 2xl:leading-[50px]  max-[640px]:mt-[100px]
              "
             >
               <span className="text-black">25,000+</span> Students <br />
@@ -525,98 +531,102 @@ export default function Landingpage() {
             <div
               className="relative flex flex-wrap justify-center gap-11 md:gap-6 md:bottom-[25px]
              lg:top-[-5px] sm:gap-4 xl:gap-[46px] mt-7
-             2xl:top-[20px] 2xl:gap-[90px]
+             2xl:top-[20px] 2xl:gap-[90px] max-[640px]:flex max-[640px]:flex-row max-[640px]:flex-nowrap
              "
             >
-              <a
-                href="https://www.hw.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/public/images/company/img1.svg"
-                  alt="logo1"
-                  className="cursor-pointer w-[120px] md:w-[40px]
+              <div className="max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center contents">
+                <a
+                  href="https://www.hw.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/images/company/img1.svg"
+                    alt="logo1"
+                    className="cursor-pointer w-[120px] md:w-[40px]
                    lg:w-[50px] sm:w-[70px] xl:w-[62px] xl:h-[73px] 
-                   2xl:w-[90px] 2xl:h-[100px]
+                   2xl:w-[90px] 2xl:h-[100px]  max-[640px]:w-[60px]
                    "
-                />
-              </a>
-              <a
-                href="https://www.andover.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/public/images/company/img2.svg"
-                  alt="logo2"
-                  className="cursor-pointer w-[120px] 
+                  />
+                </a>
+                <a
+                  href="https://www.andover.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/images/company/img2.svg"
+                    alt="logo2"
+                    className="cursor-pointer w-[120px] 
                   md:w-[40px] lg:w-[50px] sm:w-[70px]
                    xl:w-[62px] xl:h-[73px]
-                   2xl:w-[90px] 2xl:h-[100px]
+                   2xl:w-[90px] 2xl:h-[100px]  max-[640px]:w-[60px]
                    "
-                />
-              </a>
-              <a
-                href="https://www.horacemann.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/public/images/company/img3.svg"
-                  alt="logo3"
-                  className="cursor-pointer w-[120px]
+                  />
+                </a>
+                <a
+                  href="https://www.horacemann.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/images/company/img3.svg"
+                    alt="logo3"
+                    className="cursor-pointer w-[120px]
                    md:w-[40px] lg:w-[50px] sm:w-[70px]
                     xl:w-[62px] xl:h-[73px]
-                   2xl:w-[90px] 2xl:h-[100px]
+                   2xl:w-[90px] 2xl:h-[100px]  max-[640px]:w-[60px]
                     "
-                />
-              </a>
-              <a
-                href="http://lakesideschool.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/public/images/company/img4.svg"
-                  alt="logo4"
-                  className="cursor-pointer w-[120px]
+                  />
+                </a>
+              </div>
+              <div className="max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center contents">
+                <a
+                  href="http://lakesideschool.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/images/company/img4.svg"
+                    alt="logo4"
+                    className="cursor-pointer w-[120px]
                    md:w-[40px] lg:w-[50px] sm:w-[70px]
                     xl:w-[62px] xl:h-[73px]
-                   2xl:w-[90px] 2xl:h-[100px]
+                   2xl:w-[90px] 2xl:h-[100px]  max-[640px]:w-[60px]
                     "
-                />
-              </a>
-              <a
-                href="https://www.sidwell.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/public/images/company/img5.svg"
-                  alt="logo5"
-                  className="cursor-pointer w-[120px]
+                  />
+                </a>
+                <a
+                  href="https://www.sidwell.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/images/company/img5.svg"
+                    alt="logo5"
+                    className="cursor-pointer w-[120px]
                    md:w-[40px] lg:w-[50px] sm:w-[70px]
                     xl:w-[62px] xl:h-[73px]
-                   2xl:w-[90px] 2xl:h-[100px]
+                   2xl:w-[90px] 2xl:h-[100px]  max-[640px]:w-[60px] 
                     "
-                />
-              </a>
-              <a
-                href="https://www.stmarksschool.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/public/images/company/img6.svg"
-                  alt="logo6"
-                  className="cursor-pointer w-[120px]
+                  />
+                </a>
+                <a
+                  href="https://www.stmarksschool.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/images/company/img6.svg"
+                    alt="logo6"
+                    className="cursor-pointer w-[120px]
                    md:w-[35px] lg:w-[45px] sm:w-[70px]
                     xl:w-[62px] xl:h-[73px]
-                   2xl:w-[90px] 2xl:h-[100px]
+                   2xl:w-[90px] 2xl:h-[100px]  max-[640px]:w-[60px]
                     "
-                />
-              </a>
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -625,7 +635,7 @@ export default function Landingpage() {
       {/* Skills Section */}
       <div
         className="flex justify-center lg:justify-between 
-       items-end mt-16 flex-wrap gap-6 sm:gap-3 px-4 2xl:px-[220px] 2xl:py-[30px]"
+       items-end mt-16 flex-wrap gap-6 sm:gap-3 px-4 2xl:px-[220px] 2xl:py-[30px] max-[640px]:mt-[190px]"
       >
         {/* Left: Title */}
         <div className="flex-1 min-w-[250px]">
@@ -634,7 +644,7 @@ export default function Landingpage() {
           sm:text-[28px] lg:text-start lg:text-[30px] lg:leading-[30px] 
           leading-[60px] md:leading-[40px] sm:leading-[32px] xl:text-[56.99px] 
           xl:leading-[60px] tracking-[-1.02px] mr-[57px] md:mr-0 md:mt-[-20px] 
-          text-left md:text-center 2xl:text-[60px]"
+          text-left md:text-center 2xl:text-[60px] max-[640px]:text-center max-[640px]:m-0 max-[640px]:text-[34px] max-[640px]:leading-[35px]"
           >
             Skills That <br /> Shape Tomorrow
           </h1>
@@ -711,7 +721,7 @@ export default function Landingpage() {
               className="font-semibold text-3xl md:text-[22px] sm:text-[18px]
                 xl:text-[30px] xl:leading-[36px] leading-[36px] md:leading-[28px]
                 lg:text-[21px] lg:leading-[25px] tracking-[-0.09px] pt-[26px] sm:pt-[20px]
-               2xl:text-[55px] 2xl:leading-[55px] 2xl:px-[10px] 2xl:py-[30px]
+               2xl:text-[55px] 2xl:leading-[55px] 2xl:px-[10px] 2xl:py-[30px] 
               "
             >
               Join My EdSkills <br /> to activate your <br /> learning
@@ -817,11 +827,11 @@ export default function Landingpage() {
       </div>
 
       {/* Section Title */}
-      <div className="mt-[107px] relative flex justify-center">
+      <div className="mt-[107px] relative flex justify-center max-[640px]:m-0 max-[640px]:mt-[50px]">
         <img
           src="/public/images/subjects/icons.svg"
           alt=""
-          className="w-full  h-auto 2xl:w-[1800px]"
+          className="w-full  h-auto 2xl:w-[1800px] max-[640px]:hidden"
         />
 
         <h1
@@ -833,7 +843,7 @@ export default function Landingpage() {
             sm:text-[28px] sm:leading-[32px] 
             xs:text-[22px] xs:leading-[26px]
             xl:text-[50px] xl:leading-[60px]
-            px-4 2xl:text-[70px] 2xl:leading-[80px]
+            px-4 2xl:text-[70px] 2xl:leading-[80px] max-[640px]:text-[34px] max-[640px]:leading-[35px]
           "
         >
           Where Questions <br /> Meet Answers
@@ -857,13 +867,13 @@ export default function Landingpage() {
           className="relative w-full lg:w-1/2 flex justify-center 
           md:justify-center md:items-center
           2xl:flex 2xl:justify-center 2xl:items-center 
-          
+            max-[640px]:mt-[0px] max-[640px]:gap-[0px]
           "
         >
           <img
             src="/public/images/Cart2/backimg.svg"
             alt="background"
-            className="w-full max-w-[700px] sm:max-w-[450px] h-auto"
+            className="w-full max-w-[700px] sm:max-w-[450px] h-auto max-[640px]:h-[408px]"
           />
 
           <div
@@ -873,7 +883,8 @@ export default function Landingpage() {
              lg:items-start lg:justify-center 
              md:items-center md:justify-center 
              top-[120px] sm:top-[80px] lg:top-[170px] 
-             xl:left-[35px] 2xl:left-[350px] 2xl:top-[70px]
+             xl:left-[35px] 2xl:left-[350px] 2xl:top-[70px]   max-[640px]:items-center max-[640px]:justify-start max-[640px]:content-start max-[640px]:top-[50px]
+               max-[640px]:h-[382px]
              "
           >
             <h1
@@ -881,7 +892,7 @@ export default function Landingpage() {
                 lg:text-[45px] lg:leading-[50px] lg:text-start
                 md:text-[38px] md:leading-[46px] md:text-center
                 sm:text-[28px] sm:leading-[34px] sm:text-center
-                2xl:text-[70px] 2xl:leading-[70px]
+                2xl:text-[70px] 2xl:leading-[70px] max-[640px]:text-[35px] max-[640px]:leading-[35px] max-[640px]:text-center
                 "
             >
               Experience <br /> Learning Like <br /> Never Before
@@ -892,11 +903,14 @@ export default function Landingpage() {
                   lg:text-[15px] lg:leading-[25px] lg:text-start
                   md:text-[15px] md:leading-[24px] md:text-center
                   sm:text-[13px] sm:leading-[22px] sm:text-center
-                  2xl:text-[22px] 2xl:leading-[30px] 
+                  2xl:text-[22px] 2xl:leading-[30px] max-[640px]:text-center
                   "
             >
-              Discover Personalized, AI-Powered <br /> Learning That Prepares
-              Students for <br /> Success in the Real World
+              Discover Personalized, AI-Powered{' '}
+              <br className=" max-[640px]:hidden inline" /> Learning That
+              Prepares Students for{' '}
+              <br className=" max-[640px]:hidden inline" /> Success in the Real
+              World
             </p>
 
             <button
@@ -975,7 +989,7 @@ export default function Landingpage() {
               <div
                 className="absolute top-[30px] right-[40px]
                sm:top-[20px] sm:right-[20px]
-              
+               max-[640px]:right-[64px] max-[640px]:top-[53px]
                "
               >
                 <h1
@@ -1027,7 +1041,7 @@ export default function Landingpage() {
                     md:text-[24px] sm:text-[20px] sm:left-[20px] lg:text-[21px] lg:leading-[25px]
                     xl:text-[30px] xl:leading-[36px]
                      2xl:text-[40px] 2xl:leading-[40px]
-                    2xl:px-[20px]
+                    2xl:px-[20px]  max-[640px]:text-[24px] max-[640px]:leading-[26px] max-[640px]:left-[27px]
                     "
               >
                 Verified <br /> Credentials
@@ -1046,7 +1060,7 @@ export default function Landingpage() {
                    xl:text-[18px] xl:leading-[24px]
                    sm:text-[13px] sm:left-[20px]
                    2xl:text-[22px] 2xl:leading-[27px]
-                   2xl:px-[20px]
+                   2xl:px-[20px]  max-[640px]:left-[27px]
                    "
               >
                 Secure blockchain certificates <br /> for your achievements
@@ -1069,7 +1083,7 @@ export default function Landingpage() {
           <h1
             className="text-3xl sm:text-4xl md:text-[25px] md:leading-[25px]
              lg:text-[50px] lg:leading-[50px] font-bold  mb-8 leading-[60px]
-             2xl:text-[70px] 2xl:leading-[65px]
+             2xl:text-[70px] 2xl:leading-[65px] max-[640px]:leading-[35px]
              "
           >
             Join Our <br /> Community <br /> Banner
@@ -1079,7 +1093,7 @@ export default function Landingpage() {
             className="py-3 px-8 md:py-2 md:px-6 md:mb-8 bg-[#FF3400]
               rounded-full cursor-pointer text-white text-[18px] md:text-[14px]
               font-semibold  hover:shadow-[0_6px_0_0_#C52800]  transition
-              2xl:text-[22px] 2xl:py-3 2xl:px-[50px]
+              2xl:text-[22px] 2xl:py-3 2xl:px-[50px]  max-[640px]:relative max-[640px]:top-[-31px]
               "
           >
             Join now
