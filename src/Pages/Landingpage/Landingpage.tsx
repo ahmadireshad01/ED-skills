@@ -219,7 +219,7 @@ export default function Landingpage() {
                          flex flex-col justify-center items-center text-center px-4
                          lg:left-[140px] lg:bottom-[80px] xl:left-[210px]
                          xl:bottom-[130px] md:left-[180px] md:bottom-[110px]
-                         2xl:left-[340px] 2xl:top-[-75px] max-[640px]:left-[78px]
+                         2xl:left-[340px] 2xl:top-[-75px] max-[640px]:left-[78px] min-[1052px]:top-[-22px] min-[1052px]:right-[-23px]
                          "
                   >
                     <span
@@ -263,7 +263,7 @@ export default function Landingpage() {
                    min-[1439px]:top-[4px]  xl:gap-[25px] 
                    2xl:top-[-145px] 2xl:left-[20px]
                    min-[1340px]:top-[9px]
-                   min-[1025px]:top-[85px]
+                   min-[1025px]:top-[52px]
                    "
                 >
                   <div className="relative w-full">
@@ -330,7 +330,7 @@ export default function Landingpage() {
                     </div>
                   </div>
 
-                  <div className="relative top-[-8px] max-[640px]:flex max-[640px]:justify-center max-[640px]:mt-[20px]  max-[640px]:w-[full]">
+                  <div className="relative top-[-8px] max-[640px]:flex max-[640px]:justify-center max-[640px]:mt-[20px]  max-[640px]:w-[full] min-[1025px]:mt-[7px] ">
                     {/* Background image */}
                     <img
                       src="/public/images/Banner/img3.svg"
@@ -357,13 +357,13 @@ export default function Landingpage() {
                 <div
                   className="relative flex justify-center 
                 items-center lg:ml-2
-                2xl:top-[-145px] 2xl:left-[-25px]
+                2xl:top-[-145px] 2xl:left-[-25px] min-[1025px]:h-[373px]
                 "
                 >
                   {/* Background image */}
                   <div
                     className="relative w-full  rounded-2xl 
-                  overflow-hidden  min-[1300px]:top-[12px] min-[1430px]:top-0
+                  overflow-hidden  min-[1300px]:top-[12px] min-[1430px]:top-0 min-[1052px]:h-full
                   
                   "
                   >
@@ -384,7 +384,7 @@ export default function Landingpage() {
                        xl:left-[21px] xl:bottom-[15px] lg:bottom-[2px]
                        md:bottom-[24px] flex items-center justify-center
                        px-[28] py-4  min-[1300px]:top-[290px] min-[1439px]:top-[300px]
-                       2xl:left-[80px] 2xl:bottom-[-180px] 2xl:right-[100px] 
+                       2xl:left-[80px] 2xl:bottom-[-180px] 2xl:right-[100px]  min-[1055px]:right-[28px]
                        
                        "
                     >
@@ -392,7 +392,7 @@ export default function Landingpage() {
                       <div
                         className="pl-[21px] md:px-[18px] pr-[28px] 
                       lg:leading-[20px] xl:pl-[21px]  min-[1300px]:bottom-5
-                      2xl:relative 2xl:top-0 2xl:left-[-10px] 2xl:leading-[35px]
+                      2xl:relative 2xl:top-0 2xl:left-[-10px] 2xl:leading-[35px] 
                       "
                       >
                         <span
@@ -436,7 +436,7 @@ export default function Landingpage() {
                          bg-[#DFF25D] text-black rounded-full
                           w-[30px] h-[30px] xl:w-[35px] xl:h-[35px] 
                            2xl:w-[40px] 2xl:h-[40px] 
-                          
+                          min-[1025px]:relative min-[1025px]:right-[5px]
                           "
                         >
                           <FaArrowRight
@@ -933,7 +933,7 @@ export default function Landingpage() {
         {/* Right Section */}
         <div
           className="w-full md:mt-[-30px] lg:w-1/2 flex flex-col items-center
-         lg:items-start px-4 lg:px-0 2xl:flex 2xl:justify-center 2xl:items-center"
+         lg:items-start px-4 lg:px-0 2xl:flex 2xl:justify-center 2xl:items-center min-[1052px]:gap-[20px]"
         >
           <div
             className="relative lg:top-[40px] xl:top-[170px] 
@@ -943,8 +943,8 @@ export default function Landingpage() {
           >
             <div
               className="absolute px-[45px] pt-[123px] md:pt-[40px]
-               md:px-[70px] md:left-0 lg:pt-[110px] lg:px-[0px] *:
-               2xl:left-[250px]
+               md:px-[90px] md:left-0 lg:pt-[110px] lg:px-[0px] *:
+               2xl:left-[250px] 
                "
             >
               <h1
