@@ -374,9 +374,7 @@ export default function Landingpage() {
                   <div
                     className="relative w-full  rounded-2xl 
                   overflow-hidden  min-[1300px]:top-[12px] min-[1430px]:top-0 min-[1052px]:h-full
-                  min-[1340px]:h-[400px] 
-                 
-                  "
+                  min-[1340px]:h-[400px]"
                   >
                     <img
                       src="/public/images/Banner/img4.svg"
@@ -396,7 +394,7 @@ export default function Landingpage() {
                        md:bottom-[24px] flex items-center justify-center
                        px-[28] py-4  min-[1300px]:top-[290px] min-[1439px]:top-[300px]
                        2xl:left-[80px] 2xl:bottom-[-180px] 2xl:right-[100px]  min-[1055px]:right-[28px]
-                       min-[1340px]:right-[50px]
+                       min-[1340px]:right-[50px] min-[1380px]:absolute min-[1380px]:top-[00]
                        "
                     >
                       {/* Left: Course info */}
