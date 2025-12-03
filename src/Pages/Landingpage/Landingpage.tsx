@@ -256,7 +256,10 @@ export default function Landingpage() {
                 </div>
               </div>
 
-              <div className="md:flex md:mt-6 max-[640px]:mt-[10px]">
+              <div
+                className="md:flex md:mt-6 max-[640px]:mt-[10px] 
+                  min-[1340px]:top-[-27px] min-[1340px]:relative"
+              >
                 <div
                   className="flex flex-col md:gap-4 lg:flex lg:gap-3
                  lg:relative top-[85px] min-[1300px]:pt-[15px] min-[1439px]:pt-[0px]
@@ -264,6 +267,7 @@ export default function Landingpage() {
                    2xl:top-[-145px] 2xl:left-[20px]
                    min-[1340px]:top-[9px]
                    min-[1025px]:top-[52px]
+                   
                    "
                 >
                   <div className="relative w-full">
@@ -330,7 +334,11 @@ export default function Landingpage() {
                     </div>
                   </div>
 
-                  <div className="relative top-[-8px] max-[640px]:flex max-[640px]:justify-center max-[640px]:mt-[20px]  max-[640px]:w-[full] min-[1025px]:mt-[7px] ">
+                  <div
+                    className="relative top-[-8px] max-[640px]:flex max-[640px]:justify-center
+                   max-[640px]:mt-[20px]  max-[640px]:w-[full] min-[1025px]:mt-[7px]
+                   min-[1340px]:top-[-15px] min-[1340px]:relative"
+                  >
                     {/* Background image */}
                     <img
                       src="/public/images/Banner/img3.svg"
@@ -341,11 +349,12 @@ export default function Landingpage() {
                     {/* Text on top of the image */}
                     <h1
                       className="absolute md:text-[25px] lg:text-[20px]
-                     lg:leading-[20px] md:leading-[27px] lg:pl-4 xl:text-[26.94px]
-                      xl:leading-[25.67px] xl:tracking-[-2%] inset-0 flex pl-[23px] 
-                       items-start mt-6 font-bold text-[25.67px] leading-[25.67px]
+                        lg:leading-[20px] md:leading-[27px] lg:pl-4 xl:text-[26.94px]
+                        xl:leading-[25.67px] xl:tracking-[-2%] inset-0 flex pl-[23px] 
+                        items-start mt-6 font-bold text-[25.67px] leading-[25.67px]
                         tracking-[-0.02em] 
-                        2xl:text-[45px] 2xl:leading-[40px] 2xl:py-[20px] 2xl:pl-[40px] max-[640px]:ml-[26px] max-[640px]:text-[35px] max-[640px]:leading-[35px]
+                        2xl:text-[45px] 2xl:leading-[40px] 2xl:py-[20px] 2xl:pl-[40px]
+                        max-[640px]:ml-[26px] max-[640px]:text-[35px] max-[640px]:leading-[35px]
                         "
                     >
                       Every child <br /> deserves the <br /> chance to <br />{' '}
@@ -356,15 +365,17 @@ export default function Landingpage() {
 
                 <div
                   className="relative flex justify-center 
-                items-center lg:ml-2
-                2xl:top-[-145px] 2xl:left-[-25px] min-[1025px]:h-[373px]
+                   items-center lg:ml-2
+                   2xl:top-[-145px] 2xl:left-[-25px] min-[1025px]:h-[373px]
+                  min-[1340px]:relative min-[1340px]:top-[15px] 
                 "
                 >
                   {/* Background image */}
                   <div
                     className="relative w-full  rounded-2xl 
                   overflow-hidden  min-[1300px]:top-[12px] min-[1430px]:top-0 min-[1052px]:h-full
-                  
+                  min-[1340px]:h-[400px] 
+                 
                   "
                   >
                     <img
@@ -374,7 +385,7 @@ export default function Landingpage() {
                       md:top-[-10px]  lg:top-[40px] lg:h-[350px]
                        lg:w-[317px] xl:top-0 xl:w-[316.47px] xl:h-[407.44px]
                        2xl:w-[650px] 2xl:h-[660px] max-[640px]:w-full 
-                    
+                       min-[1340px]:relative 
                        "
                     />
 
@@ -385,7 +396,7 @@ export default function Landingpage() {
                        md:bottom-[24px] flex items-center justify-center
                        px-[28] py-4  min-[1300px]:top-[290px] min-[1439px]:top-[300px]
                        2xl:left-[80px] 2xl:bottom-[-180px] 2xl:right-[100px]  min-[1055px]:right-[28px]
-                       
+                       min-[1340px]:right-[50px]
                        "
                     >
                       {/* Left: Course info */}
@@ -437,6 +448,7 @@ export default function Landingpage() {
                           w-[30px] h-[30px] xl:w-[35px] xl:h-[35px] 
                            2xl:w-[40px] 2xl:h-[40px] 
                           min-[1025px]:relative min-[1025px]:right-[5px]
+                          
                           "
                         >
                           <FaArrowRight
