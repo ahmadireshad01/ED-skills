@@ -219,7 +219,7 @@ export default function Landingpage() {
                          flex flex-col justify-center items-center text-center px-4
                          lg:left-[140px] lg:bottom-[80px] xl:left-[210px]
                          xl:bottom-[130px] md:left-[180px] md:bottom-[110px]
-                         2xl:left-[340px] 2xl:top-[-75px] max-[640px]:left-[78px] min-[1052px]:top-[-22px] min-[1052px]:right-[-23px]
+                         2xl:left-[340px] 2xl:top-[-75px] max-[640px]:left-[78px] min-[1052px]:top-[-22px] min-[1052px]:right-[-23px] min-[1300px]:top-[6px] min-[1300px]:right-[14px]
                          "
                   >
                     <span
@@ -492,14 +492,14 @@ export default function Landingpage() {
                   {/* Centered image */}
                   <div
                     className="absolute bottom-[100px] lg:bottom-[70px]
-                   xl:bottom-[100px] inset-0 flex justify-center items-end
+                   xl:bottom-[71px] inset-0 flex justify-center items-end
                     min-[1300px]:mb-[-5px] min-[1439px]:mb-0  
-                    2xl:bottom-[170px] 2xl:right-[-0px]
+                    2xl:bottom-[170px] 2xl:right-[-0px]  
                     "
                   >
                     <img
                       className="bg-[#DFF25D] rounded-full 
-                       lg:w-[30px] xl:w-[41px] 2xl:w-[70px] 2xl:h-[70px] max-[640px]:mb-[12px]
+                       lg:w-[30px] xl:w-[41px] 2xl:w-[70px] 2xl:h-[70px] max-[640px]:mb-[12px] 
                        "
                       src="/public/images/Banner/img7.svg"
                       alt=""
