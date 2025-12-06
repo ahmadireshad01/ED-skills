@@ -394,9 +394,9 @@ export default function Landingpage() {
                       className="absolute bottom-4 left-5 lg:left-1
                        xl:left-[21px] xl:bottom-[15px] lg:bottom-[2px]
                        md:bottom-[24px] flex items-center justify-center
-                       px-[28] py-4  min-[1300px]:top-[290px] min-[1439px]:top-[300px]
+                       px-[28] py-4  min-[1360px]:top-[300px] 
                        2xl:left-[80px] 2xl:bottom-[-180px] 2xl:right-[100px]  min-[1055px]:right-[28px]
-                       min-[1340px]:right-[50px]
+                       min-[1340px]:right-[50px]  min-[1357px]:top-[80px] min-[1439px]:top-[305px] xl:text-nowrap 
                        "
                     >
                       {/* Left: Course info */}
