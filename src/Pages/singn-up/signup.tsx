@@ -31,6 +31,11 @@ export default function Signup() {
     }
   };
 
+
+  const handleClick = () => {
+    navigate('/'); // ← مسیر مقصد
+  };
+
   const validateForm = () => {
     const newErrors: { username?: string; email?: string; password?: string } = {};
     if (!formData.username) newErrors.username = 'Username is required';
@@ -85,7 +90,7 @@ export default function Signup() {
               EDTECH <br /> SKILLS
             </p>
           </div>
-          <div className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3]">
+          <div className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3] cursor-pointer" onClick={handleClick}>
             <X size={18} className="md:size-5" />
           </div>
         </div>
@@ -112,7 +117,7 @@ export default function Signup() {
             {/* Email input */}
             <div className="w-full">
               <input
-                type="text"
+                type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
