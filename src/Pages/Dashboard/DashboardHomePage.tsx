@@ -28,8 +28,8 @@ export default function DashboardHomePage() {
     return (
         <>
 
-            <div className="min-h-screen pb-3 flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
-                <div className="flex lg:fixed lg:h-screen xl:h-screen xl:max-h-screen xl:static pb-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[640px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[640px]">
+            <div className="min-h-screen flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
+                <div className="flex lg:fixed pb-6 lg:h-screen xl:h-screen xl:max-h-screen xl:static [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[640px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[640px]">
                     <DashboardSideBar />
                 </div>
                 <div className=" lg:ml-[120px] xl:ml-0 lg:flex lg:flex-row lg:pt-3 lg:p-0 ml-[-21px] sm:p-[50px] sm:pt-[100px] flex flex-col items-center gap-9 w-full lg:justify-between [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-1">
@@ -44,7 +44,7 @@ export default function DashboardHomePage() {
                         >
                             <p
                                 className="
-                            font-[Roboto] font-bold 
+                            [font-family:'Epilogue',sans-serif] font-bold 
                             text-[21px] sm:text-[30px] lg:text-[40.75px] 
                             leading-[1.2] md:leading-[49.49px] 
                             tracking-[-0.02em] w-full sm:w-auto
@@ -117,7 +117,7 @@ export default function DashboardHomePage() {
                         {/* upComingClassesCards and  inProgressCards*/}
                         <div className="relative [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mb-2">
                             <div className="">
-                                <div className="lg:flex-col lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center justify-center sm:gap-1 xl:gap-8 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4">
+                                <div className="lg:flex-col lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center md:justify-center lg:justify-start  sm:gap-1 xl:gap-8 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4">
                                     {Classes.map((singleClass, index) => (
                                         <div
                                             className={`
@@ -178,7 +178,7 @@ export default function DashboardHomePage() {
 
 
                     </div>
-                    <div className="flex pb-2 lg:hidden xl:flex [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1">
+                    <div className="flex pb-2 lg:hidden xl:flex [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:ml-[-21px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1">
                         <ProfileCard />
                     </div>
                 </div>

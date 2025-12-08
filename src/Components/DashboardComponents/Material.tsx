@@ -4,16 +4,16 @@ export default function Material(props: any) {
   return (
     <div className={`${props.layout === 'list' ? "w-full" : "w-[291px]"} pb-3 bg-white rounded-2xl pt-0.5 
                     shadow-md hover:shadow-xl transition-all duration-500 ease-out 
-                    hover:scale-[1.02] hover:-translate-y-1 cursor-pointer group flex flex-col ${props.layout === "list" ? "md:flex-row md:items-center md:gap-5" : "items-center"}`}>
+                    cursor-pointer group flex flex-col ${props.layout === "list" ? " md:flex-row md:items-center md:gap-5" : "items-center"}`}>
 
       {/* Top image container */}
       {props.layout === 'grid' && (
         <div className={`relative h-[98px] bg-[${props.bg}] w-[95%] rounded-xl m-1 
         overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out
-        hover:brightness-110 hover:shadow-md`}>
+        hover:shadow-md`}>
           <img
             className="absolute top-[1%] transition-transform duration-500 ease-out 
-       group-hover:scale-110 group-hover:rotate-1"
+            group-hover:rotate-1"
             src={props.image}
             alt=""
           />
@@ -29,7 +29,8 @@ export default function Material(props: any) {
 
 
       {/* Text and buttons */}
-      <div className={`p-3 gap-2 flex   ${props.layout === "grid" ? "flex-col" : "flex-row justify-between items-center"}  transition-all duration-300 group-hover:translate-y-[-2px]`}>
+      <div className={`p-3 gap-2 flex ${props.layout === "grid" ? "flex-col" : "flex-col md:flex-row  md:justify-between  md:items-center"}  transition-all duration-300 group-hover:translate-y-[-2px]`}>
+
         <div className={`flex flex-col flex-1`}>
           <div className="flex flex-wrap gap-1 items-center">
             <span className="text-gray-500 flex gap-1 items-center transition-all duration-300 hover:scale-[1.03]">
@@ -49,11 +50,10 @@ export default function Material(props: any) {
 
           </div>
           <p className="font-bold py-3 leading-[20px] text-[16px] transition-all duration-300 
-                        hover:text-gray-700 hover:scale-[1.02]">
+                        ">
             {props.topic}
           </p>
         </div>
-
 
         <div className={`flex gap-3 `}>
           <span className="w-fit h-[24px] rounded-2xl bg-[#EEEEE4] p-2 flex justify-center items-center text-[12px] font-semibold
@@ -61,13 +61,14 @@ export default function Material(props: any) {
             {props.firstRecommendation}
           </span>
           <span className="w-fit h-[24px] rounded-2xl bg-[#EEEEE4] p-2 flex justify-center items-center text-[12px] font-semibold
-                          shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100">
+                          shadow-md transition-all duration-300 ">
             {props.secondRecommendation}
           </span>
         </div>
 
+
         {props.type === "StartedCourse" && (
-          <div className="flex items-center justify-between pt-4">
+          <div className=" flex items-center justify-between pt-4">
             <div className="flex items-center gap-2 px-2 transition-all duration-300 hover:scale-[1.02]">
               <p className="text-gray-500">Progress:</p>
               <div className="transition-transform duration-700 hover:rotate-[360deg]">
@@ -85,7 +86,7 @@ export default function Material(props: any) {
         )}
 
         {props.type === "StartedQuiz" && (
-          <div className="flex items-center justify-between pt-4">
+          <div className=" flex items-center justify-between pt-4">
             <div className="transition-all duration-300 hover:scale-[1.02]">
               <span className="flex gap-1 items-center font-semibold text-[17px]">
                 <img className="w-5 transition-transform duration-500 hover:rotate-6" src="/images/Materials/points.svg" alt="" />
@@ -102,7 +103,7 @@ export default function Material(props: any) {
         )}
 
         {props.type === "NotStartedCourse" && (
-          <div className="flex items-center justify-between pt-4">
+          <div className=" flex items-center justify-between pt-4">
             <p className="text-gray-500">Not Started</p>
             <button className="w-[78px] h-[35px] shadow-[0px_3.33px_0px_0px_#E3E3DE] rounded-[29px] border border-[#E3E3DE] 
                                 font-[roboto] text-[16.66px] font-semibold leading-[35.59px] tracking-[-0.02em] 
@@ -111,6 +112,7 @@ export default function Material(props: any) {
             </button>
           </div>
         )}
+
       </div>
     </div>
   )
