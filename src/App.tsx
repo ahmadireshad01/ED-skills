@@ -42,6 +42,7 @@ function App() {
             </>
           }
         />
+      
         {/* Fallback route */}
         <Route
           path="*"
