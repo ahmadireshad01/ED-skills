@@ -1,0 +1,7 @@
+1: Profile (Certifation, Badge, Change Password, Basic Info)
+2: Course Category (name, icon)
+3: Course (name, description, category_id, picture, )
+4: Course Lesson (name, course_id, content, text, url)
+5: Course Progress (lesson_id, user_id)
+6: Lesson Resources (name, lesson_id, attachment)
+￼
