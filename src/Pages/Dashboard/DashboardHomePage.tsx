@@ -27,7 +27,6 @@ export default function DashboardHomePage() {
     ]
     return (
         <>
-
             <div className="min-h-screen flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
                 <div className="flex lg:fixed pb-6 lg:h-screen xl:h-screen xl:max-h-screen xl:static [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[640px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[640px]">
                     <DashboardSideBar />
@@ -65,6 +64,7 @@ export default function DashboardHomePage() {
                                 leading-[1.8] tracking-[-0.02em]
                                 bg-white
                                 transition-all duration-300 ease-out 
+
                                 hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
                                 active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]
                                 "
@@ -82,7 +82,52 @@ export default function DashboardHomePage() {
                             </button>
                         </div>
                         <div className="relative">
-                            <div className=" shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)] bg-[#f3f3ef]  flex gap-4 mt-8 [@media(max-height:880px)_and_(min-width:1340px)]:mt-6 w-full xl:max-w-[845px] [@media(min-width:1340px)_and_(max-width:1360px)]:gap-4 2xl:max-w-fit h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[80px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
+                            <div
+                                className="
+                                        shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)]
+                                        bg-[#f3f3ef]
+                                        flex gap-4 mt-8
+                                        w-full max-w-[845px] h-[98px]
+                                        overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth
+
+                                        /* NOTHING touched before 1500px */
+
+                                        /* >1500px */
+                                        [@media(min-width:1500px)]:max-w-[900px]
+
+                                        /* >1600px */
+                                        [@media(min-width:1600px)]:max-w-[1000px]
+
+                                        /* >1700px */
+                                        [@media(min-width:1700px)]:max-w-[1080px]
+
+                                        /* >1800px */
+                                        [@media(min-width:1800px)]:max-w-[1150px]
+
+                                        /* >1900px */
+                                        [@media(min-width:1900px)]:max-w-[1280px]
+
+                                        /* >2000px */
+                                        [@media(min-width:2000px)]:max-w-[1300px]
+
+                                        /* >2100px */
+                                        [@media(min-width:2100px)]:max-w-[1420px]
+
+                                        /* >2200px */
+                                        [@media(min-width:2200px)]:max-w-[1550px]
+
+                                        /* >2300px */
+                                        [@media(min-width:2300px)]:max-w-[1670px]
+
+                                        /* >2400px */
+                                        [@media(min-width:2400px)]:max-w-[1900px]
+
+                                        /* >2500px */
+                                        [@media(min-width:2500px)]:max-w-[2120px]
+
+                                        /* >2560px (full 1440p ultrawide) */
+                                        [@media(min-width:2560px)]:max-w-[2200px]">
+
                                 {subjects.map((subject) => (
                                     <div
                                         className="border-[#E3E3DE] border-[1.33px] flex gap-4 bg-white rounded-2xl items-center justify-between 
