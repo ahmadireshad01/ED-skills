@@ -1,27 +1,12 @@
 /* Import Google Fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700&display=swap');
 /* Then import Tailwind */
 @import 'tailwindcss';
 
 /* Custom font classes */
-.recoleta-font {
-  font-family: 'Recoleta', serif;
-}
-
-.recoleta-light {
-  font-family: 'Recoleta', serif;
-  font-weight: 300;
-}
-
-.recoleta-regular {
-  font-family: 'Recoleta', serif;
-  font-weight: 400;
-}
-
-.recoleta-bold {
-  font-family: 'Recoleta', serif;
-  font-weight: 700;
+:root {
+  --font-epilogue: 'Epilogue', sans-serif;
 }
 
 h1,

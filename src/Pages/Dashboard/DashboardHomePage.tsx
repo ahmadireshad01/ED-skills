@@ -27,14 +27,13 @@ export default function DashboardHomePage() {
     ]
     return (
         <>
-
-            <div className="min-h-screen pb-3 flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
-                <div className="flex lg:fixed lg:h-screen xl:h-screen xl:max-h-screen xl:static pb-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[640px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[640px]">
+            <div className="min-h-screen flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
+                <div className="flex lg:fixed pb-6 lg:h-screen xl:h-screen xl:max-h-screen xl:static [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[640px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[640px]">
                     <DashboardSideBar />
                 </div>
                 <div className=" lg:ml-[120px] xl:ml-0 lg:flex lg:flex-row lg:pt-3 lg:p-0 ml-[-21px] sm:p-[50px] sm:pt-[100px] flex flex-col items-center gap-9 w-full lg:justify-between [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-1">
                     {/*middle section*/}
-                    <div className="pt-[52px] mt-0 [@media(max-height:880px)_and_(min-width:1340px)]:mt-[-60px] flex flex-col ml-5 md:ml-0 lg:m-[10px] w-full lg:w-[832px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-3 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[-40px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:overflow-y-auto [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[600px]">
+                    <div className="pt-[52px] mt-0 [@media(max-height:880px)_and_(min-width:1340px)]:mt-[-60px] flex flex-col ml-5 md:ml-0 lg:m-[10px] w-full  [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pt-3 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[-40px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:overflow-y-auto [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:max-h-[600px]">
                         <div
                             className="
                         flex  sm:items-center sm:justify-between items-center sm:pt-0 pt-2  gap-0 sm:gap-4 
@@ -44,7 +43,7 @@ export default function DashboardHomePage() {
                         >
                             <p
                                 className="
-                            font-[Roboto] font-bold 
+                            [font-family:'Epilogue',sans-serif] font-bold 
                             text-[21px] sm:text-[30px] lg:text-[40.75px] 
                             leading-[1.2] md:leading-[49.49px] 
                             tracking-[-0.02em] w-full sm:w-auto
@@ -65,9 +64,8 @@ export default function DashboardHomePage() {
                                 leading-[1.8] tracking-[-0.02em]
                                 bg-white
                                 transition-all duration-300 ease-out 
-                                hover:bg-orange-500 hover:text-white 
+
                                 hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
-                                hover:scale-[1.05] active:scale-95 
                                 active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]
                                 "
                             >
@@ -84,7 +82,52 @@ export default function DashboardHomePage() {
                             </button>
                         </div>
                         <div className="relative">
-                            <div className=" shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)] bg-[#f3f3ef]  flex gap-4 mt-8 [@media(max-height:880px)_and_(min-width:1340px)]:mt-6 w-full max-w-[850px] h-[98px] overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-4 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[80px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
+                            <div
+                                className="
+                                        shadow-[inset_-32px_0_21px_14px_rgba(255,255,255,0.6)]
+                                        bg-[#f3f3ef]
+                                        flex gap-4 mt-8
+                                        w-full max-w-[845px] h-[98px]
+                                        overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth
+
+                                        /* NOTHING touched before 1500px */
+
+                                        /* >1500px */
+                                        [@media(min-width:1500px)]:max-w-[900px]
+
+                                        /* >1600px */
+                                        [@media(min-width:1600px)]:max-w-[1000px]
+
+                                        /* >1700px */
+                                        [@media(min-width:1700px)]:max-w-[1080px]
+
+                                        /* >1800px */
+                                        [@media(min-width:1800px)]:max-w-[1150px]
+
+                                        /* >1900px */
+                                        [@media(min-width:1900px)]:max-w-[1280px]
+
+                                        /* >2000px */
+                                        [@media(min-width:2000px)]:max-w-[1300px]
+
+                                        /* >2100px */
+                                        [@media(min-width:2100px)]:max-w-[1420px]
+
+                                        /* >2200px */
+                                        [@media(min-width:2200px)]:max-w-[1550px]
+
+                                        /* >2300px */
+                                        [@media(min-width:2300px)]:max-w-[1670px]
+
+                                        /* >2400px */
+                                        [@media(min-width:2400px)]:max-w-[1900px]
+
+                                        /* >2500px */
+                                        [@media(min-width:2500px)]:max-w-[2120px]
+
+                                        /* >2560px (full 1440p ultrawide) */
+                                        [@media(min-width:2560px)]:max-w-[2200px]">
+
                                 {subjects.map((subject) => (
                                     <div
                                         className="border-[#E3E3DE] border-[1.33px] flex gap-4 bg-white rounded-2xl items-center justify-between 
@@ -115,9 +158,9 @@ export default function DashboardHomePage() {
                             </button>
                         </div>
                         {/* upComingClassesCards and  inProgressCards*/}
-                        <div className="relative [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mb-2">
-                            <div className="">
-                                <div className="lg:flex-col lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center justify-center sm:gap-1 xl:gap-8 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4">
+                        <div className="flex items-start justify-between [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mb-2">
+                            <div className="w-full">
+                                <div className="lg:flex-col w-full lg:items-start xl:items-center xl:flex-row sm:flex sm:flex-row flex-col items-center md:justify-center lg:justify-start  sm:gap-1 xl:gap-8 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-4">
                                     {Classes.map((singleClass, index) => (
                                         <div
                                             className={`
@@ -137,7 +180,7 @@ export default function DashboardHomePage() {
                                     ))}
                                 </div>
                             </div>
-                            <div className="absolute right-[-21px] top-[-15px] hidden lg:flex xl:hidden">
+                            <div className="max-h-[950px] hidden lg:flex xl:hidden">
                                 <ProfileCard />
                             </div>
                         </div>
@@ -178,7 +221,7 @@ export default function DashboardHomePage() {
 
 
                     </div>
-                    <div className="flex pb-2 lg:hidden xl:flex [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1">
+                    <div className="flex pb-2 lg:hidden xl:flex [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:ml-[-21px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:pb-1">
                         <ProfileCard />
                     </div>
                 </div>

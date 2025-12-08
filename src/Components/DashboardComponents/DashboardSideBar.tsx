@@ -11,14 +11,14 @@ export default function DashboardSideBar() {
     <>
       <div className="fixed z-50  lg:hidden left-0 right-0  h-[60px] m-3 rounded-2xl bg-[#EEEEE4] flex items-center justify-between pl-4">
         <button
-          className="p-2 text-3xl"
+          className="p-2 pl-4 text-3xl"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
           {isOpen ? "✖️" : "☰"}
         </button>
       </div>
-      {isOpen && <div className="absolute top-[9%] left-[3%] w-[100px] flex flex-col items-center justify-center gap-4.5 shadow-2xl rounded-2xl z-50 h-[500px] bg-[#EEEEE4]">
+      {isOpen && <div className="absolute top-[9%] left-[3%] w-[100px] flex flex-col items-center justify-center gap-4.5 shadow-2xl rounded-2xl z-50 h-[47%] bg-[#EEEEE4]">
         <div className="flex flex-col gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible px-2 sm:px-0">
           {/* Home */}
           <button

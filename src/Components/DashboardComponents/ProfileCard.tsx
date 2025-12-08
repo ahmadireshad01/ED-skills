@@ -37,12 +37,12 @@ export default function ProfileCard() {
   ];
   const COLORS = ['#FED216', '#BFE942', '#FD823A', '#AF9EEF'];
   return (
-    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] [@media(max-height:880px)_and_(min-width:1340px)]:lg:mt-[-5px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out hover:shadow-2xl [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:py-[4px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[5px]">
+    <div className="lg:ml-0 max-w-[410px] py-[8px]  lg:mt-[20px] [@media(max-height:880px)_and_(min-width:1340px)]:lg:mt-[-5px] mt-4 lg:mr-3 bg-[#EEEEE4] rounded-2xl flex flex-col justify-between items-center px-3 transition-all duration-300 ease-in-out  [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:py-[4px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:mt-[5px]">
 
       {/* Top Section */}
       <div className="mt-auto flex flex-col gap-[18px] items-center">
         {/* Top bar */}
-        <div className=" relative w-full h-[100px] [@media(max-height:880px)_and_(min-width:1340px)]:h-[50px] bg-white rounded-2xl flex justify-between items-start p-1 hover:shadow-lg transition-shadow duration-300 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[45px]">
+        <div className=" relative w-full h-[100px] [@media(max-height:880px)_and_(min-width:1340px)]:h-[50px] bg-white rounded-2xl flex justify-between items-start p-1  transition-shadow duration-300 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[45px]">
           <button className="p-3 hover:scale-110 transition-transform duration-300">
             <img className="w-[23px]" src="/images/DashBoardSideBar/massage.svg" alt="" />
           </button>
@@ -50,7 +50,7 @@ export default function ProfileCard() {
             <img className="w-[21px]" src="/images/DashBoardSideBar/settings.svg" alt="" />
           </button>
           <img
-            className="absolute top-[42%] left-[35%] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5] hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover:-translate-y-1 hover:rotate-[0.5deg]"
+            className="absolute top-[42%] left-[35%] w-[114px] h-[114px] border-4 border-[#EEEEE4] rounded-full bg-[#a7ced5]  transition-all duration-500 ease-out "
             src="/images/DashBoardSideBar/profileImage.svg"
             alt=""
           />
