@@ -4,16 +4,16 @@ export default function Material(props: any) {
   return (
     <div className={`${props.layout === 'list' ? "w-full" : "w-[291px]"} pb-3 bg-white rounded-2xl pt-0.5 
                     shadow-md hover:shadow-xl transition-all duration-500 ease-out 
-                    hover:scale-[1.02] hover:-translate-y-1 cursor-pointer group flex flex-col ${props.layout === "list" ? " md:flex-row md:items-center md:gap-5" : "items-center"}`}>
+                    cursor-pointer  flex flex-col ${props.layout === "list" ? " md:flex-row md:items-center md:gap-5" : "items-center"}`}>
 
       {/* Top image container */}
       {props.layout === 'grid' && (
         <div className={`relative h-[98px] bg-[${props.bg}] w-[95%] rounded-xl m-1 
         overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out
-        hover:brightness-110 hover:shadow-md`}>
+        hover:shadow-md`}>
           <img
             className="absolute top-[1%] transition-transform duration-500 ease-out 
-       group-hover:scale-110 group-hover:rotate-1"
+            group-hover:rotate-1"
             src={props.image}
             alt=""
           />
@@ -50,7 +50,7 @@ export default function Material(props: any) {
 
           </div>
           <p className="font-bold py-3 leading-[20px] text-[16px] transition-all duration-300 
-                        hover:text-gray-700 hover:scale-[1.02]">
+                        ">
             {props.topic}
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function Material(props: any) {
             {props.firstRecommendation}
           </span>
           <span className="w-fit h-[24px] rounded-2xl bg-[#EEEEE4] p-2 flex justify-center items-center text-[12px] font-semibold
-                          shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100">
+                          shadow-md transition-all duration-300 ">
             {props.secondRecommendation}
           </span>
         </div>
