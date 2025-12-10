@@ -59,7 +59,7 @@ export default function ProfileCard() {
         {/* Profile image */}
 
 
-        <h1 className="[@media(max-height:880px)_and_(min-width:1340px)]:mt-[67px] mt-[54px] font-bold text-2xl font-serif text-black text-center">
+        <h1 className="[@media(max-height:880px)_and_(min-width:1340px)]:mt-[67px] mt-[54px] font-bold text-2xl  text-black text-center">
           Sophia Guesh
         </h1>
 

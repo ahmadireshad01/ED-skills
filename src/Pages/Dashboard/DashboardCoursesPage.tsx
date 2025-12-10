@@ -8,8 +8,8 @@ import Material from "../../Components/DashboardComponents/Material";
 export default function DashboardCoursesPage() {
     
     const ContinueClasses = [
-        { id: 12, materials: 1, bg: "#E3EFFF", image: "/images/dashboardCourses/courseImage.svg", subject: "Geography", topic: "Understand the Land, Oceans and Beyond", progress: "80", dialog: "Increase your knowledge with", recommendation: "Unlock the Power of Place" },
-        { id: 23, materials: 2, bg: "#FAEAFA", image: "/images/dashboardCourses/courseImage2.svg", subject: "Computer & AI", topic: "Unlock the Power of Creativity with Generative AI", progress: "30", dialog: "Next, you can dive into", recommendation: "Create Using Generative AI" },
+        { id: 12, materials: 1, bg: "#E3EFFF", image: "/images/dashboardCourses/courseImage.svg", subject: "Geography", topic: "Understand the Land, Oceans and Beyond", progress: "80", dialog: "Increase your knowledge with", nextStep: "Unlock the Power of Place" },
+        { id: 23, materials: 2, bg: "#FAEAFA", image: "/images/dashboardCourses/courseImage2.svg", subject: "Computer & AI", topic: "Unlock the Power of Creativity with Generative AI", progress: "30", dialog: "Next, you can dive into", nextStep: "Create Using Generative AI" },
     ]
 
     const Materials = [
@@ -87,10 +87,8 @@ export default function DashboardCoursesPage() {
                                 text-[13px] sm:text-[17px] md:text-[14px]
                                 leading-[1.8] tracking-[-0.02em]
                                 bg-white
-                                transition-all duration-300 ease-out 
-                                hover:bg-orange-500 hover:text-white 
-                                hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)] 
-                                hover:scale-[1.05] active:scale-95 
+                                transition-all duration-300 ease-out  
+                                hover:shadow-[0px_8px_20px_0px_rgba(255,52,0,0.4)]  
                                 active:shadow-[0px_3px_10px_0px_rgba(255,52,0,0.3)]
                                 "
                     >
@@ -110,7 +108,7 @@ export default function DashboardCoursesPage() {
                 <div className="py-6 flex flex-col items-center xl:flex-row gap-6">
                     {
                         ContinueClasses.map((continueClass) => (
-                            <ContinueClass key={continueClass.id} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress} dialog={continueClass.dialog} recommendation={continueClass.recommendation} />
+                            <ContinueClass key={continueClass.id} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress} dialog={continueClass.dialog} nextStep={continueClass.nextStep} />
                         ))
                     }
                 </div>
@@ -128,9 +126,9 @@ export default function DashboardCoursesPage() {
                     </div>
                     <div className="flex gap-5 lg:flex-row flex-col w-full xl:w-[105%] justify-between">
                         <div className="transition ease-in-out w-[300px] h-[40px] sm:w-[371px] sm:h-[48px] flex items-center justify-center rounded-3xl bg-[#EEEEE4]">
-                            <button onClick={() => { setActiveTab('allStatus'); setFilter('all') }} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[110px] h-[34px] sm:w-[120px] sm:h-[39px] rounded-3xl  ${activetTab === "allStatus" ? "bg-white" : "bg-[#EEEEE4]"}`}>All Status</button>
-                            <button onClick={() => { setActiveTab('notStarted'); setFilter('notStarted') }} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[110px] h-[34px] sm:w-[120px] sm:h-[39px] rounded-3xl  ${activetTab === "notStarted" ? "bg-white" : "bg-[#EEEEE4]"}`}>Not Started</button>
-                            <button onClick={() => { setActiveTab('inProgress'); setFilter('inProgress') }} className={` transition-all duration-300 ease-in-out ] hover:scale-110 hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[110px] h-[34px] sm:w-[120px] sm:h-[39px] rounded-3xl  ${activetTab === "inProgress" ? "bg-white" : "bg-[#EEEEE4]"}`}>In Progress</button>
+                            <button onClick={() => { setActiveTab('allStatus'); setFilter('all') }} className={` transition-all duration-300 ease-in-out ]  hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[110px] h-[34px] sm:w-[120px] sm:h-[39px] rounded-3xl  ${activetTab === "allStatus" ? "bg-white" : "bg-[#EEEEE4]"}`}>All Status</button>
+                            <button onClick={() => { setActiveTab('notStarted'); setFilter('notStarted') }} className={` transition-all duration-300 ease-in-out ] font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[110px] h-[34px] sm:w-[120px] sm:h-[39px] rounded-3xl  ${activetTab === "notStarted" ? "bg-white" : "bg-[#EEEEE4]"}`}>Not Started</button>
+                            <button onClick={() => { setActiveTab('inProgress'); setFilter('inProgress') }} className={` transition-all duration-300 ease-in-out ] hover:shadow-lg font-[] font-semibold text-[16px] leading-[27.2px] tracking-[-0.01em] w-[110px] h-[34px] sm:w-[120px] sm:h-[39px] rounded-3xl  ${activetTab === "inProgress" ? "bg-white" : "bg-[#EEEEE4]"}`}>In Progress</button>
                         </div>
                         <div className="w-[335px] h-[40px] flex items-center gap-2  rounded-full p-1">
                             <div className="relative">
@@ -203,7 +201,7 @@ export default function DashboardCoursesPage() {
                     <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 [@media_(min-width:1520px)_and_(max-width:1730px)]:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 [@media_(min-width:1270px)_and_(max-width:1370px)]:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6"}   xl:gap-x-8 gap-x-8 lg:gap-x-21 gap-y-6`}>
                         {
                             filteredMaterials.map((singleMaterial: any) => (
-                                <Material key={singleMaterial.id} layout={layout} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subjec} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} isCertified={singleMaterial.isCertified} />
+                                <Material key={singleMaterial.id} layout={layout} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subject} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} isCertified={singleMaterial.isCertified} />
                             ))
                         }
                     </div>

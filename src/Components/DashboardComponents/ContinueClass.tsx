@@ -6,19 +6,18 @@ export default function ContinueClass(props: any) {
                 <div className="p-3 flex flex-col md:flex-row rounded-3xl bg-white gap-2 hover:shadow-lg transition-shadow duration-300">
                     <div className={`relative w-full sm:w-[200px] h-[146px] rounded-3xl bg-[${props.bg}] overflow-hidden group cursor-pointer`}>
                         <img src={props.image} alt="" 
-                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[2deg]" />
+                             className="w-full h-full object-cover transition-transform duration-500 " />
                         <span className="absolute top-[9px] left-[11px] w-fit h-[24px] rounded-2xl bg-white p-2 flex justify-center items-center text-[12px] font-semibold
-                                        shadow-md transition-all duration-300  group-hover:scale-105">
+                                        shadow-md transition-all duration-300  ">
                             {props.materials} Materials
                         </span>
                     </div>
                     <div className="flex flex-col px-5 py-3">
                         <span className="w-fit h-[24px] rounded-2xl bg-[#E4F7EF] p-2 flex justify-center items-center text-[12px] font-semibold
-                                        transition-all duration-300 hover:bg-[#B6F0C4] hover:scale-105">
+                                        transition-all duration-300">
                             {props.subject}
                         </span>
-                        <p className="w-[243px] font-semibold text-[18px] leading-[20.6px] pt-2 tracking-[0em]
-                                      transition-colors duration-300 hover:text-[#4414FC]">
+                        <p className="w-[243px] font-semibold text-[18px] leading-[20.6px] pt-2 tracking-[0em]">
                             {props.topic}
                         </p>
                         <div className="flex sm:flex-row flex-col pt-4 items-center gap-10">
@@ -47,7 +46,7 @@ export default function ContinueClass(props: any) {
                         <img src="/images/dashboardCourses/cup.svg" alt="" className="transition-transform duration-300 group-hover:rotate-[15deg]" />
                     </span>
                     <p className="pr-1 font-normal text-[14px] leading-[24px] tracking-[-0.01em]">
-                        {props.dialog} : <span className="text-[#4414FC] underline group-hover:text-[#6B46C1] transition-colors duration-300">{props.recommendation}</span>
+                        {props.dialog} : <span className="text-[#4414FC] underline group-hover:text-[#6B46C1] transition-colors duration-300">{props.nextStep}</span>
                     </p>
                     <img src="/images/dashboardCourses/arrow.svg" alt="" className="transition-transform duration-300 group-hover:translate-x-1" />
                 </div>

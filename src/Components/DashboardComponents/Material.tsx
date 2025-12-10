@@ -3,7 +3,7 @@ import CircularProgress from "./CircleProgress"
 export default function Material(props: any) {
   return (
     <div className={`${props.layout === 'list' ? "w-full" : "w-[291px]"} ${props.layout === 'grid' ? "min-h-[340px]" : ""} pb-3 bg-white rounded-2xl pt-0.5 
-                    shadow-md hover:shadow-xl transition-all duration-500 ease-out 
+                     transition-transform duration-500 ease-out shadow-lg hover:shadow-2xl 
                     cursor-pointer group flex flex-col ${props.layout === "list" ? " md:flex-row md:items-center md:gap-5" : "items-center"}`}>
 
       {/* Top image container */}
@@ -68,7 +68,7 @@ export default function Material(props: any) {
 
 
         {props.type === "StartedCourse" && (
-          <div className={`w-full lg:w-fit flex items-center ${props.layout === "list" ? "gap-7" : ""} justify-between pt-4`}>
+          <div className={`w-full  flex items-center ${props.layout === "list" ? "gap-7 lg:w-fit" : ""} justify-between pt-4`}>
             <div className="flex items-center gap-2 px-2 transition-all duration-300 hover:scale-[1.02]">
               <p className="text-gray-500">Progress:</p>
               <div className="transition-transform duration-700 hover:rotate-[360deg]">
@@ -86,7 +86,7 @@ export default function Material(props: any) {
         )}
 
         {props.type === "StartedQuiz" && (
-          <div className={`w-full lg:w-fit flex items-center ${props.layout === "list" ? "gap-7" : ""} justify-between pt-4`}>
+          <div className={`w-full  flex items-center ${props.layout === "list" ? "gap-7 lg:w-fit" : ""} justify-between pt-4`}>
             <div className="transition-all duration-300 hover:scale-[1.02]">
               <span className="flex gap-1 items-center font-semibold text-[17px]">
                 <img className="w-5 transition-transform duration-500 hover:rotate-6" src="/images/Materials/points.svg" alt="" />
@@ -103,7 +103,7 @@ export default function Material(props: any) {
         )}
 
         {props.type === "NotStartedCourse" && (
-          <div className={`w-full lg:w-fit flex items-center ${props.layout === "list" ? "gap-7" : ""} justify-between pt-4`}>
+          <div className={`w-full  flex items-center ${props.layout === "list" ? "gap-7 lg:w-fit" : ""} justify-between pt-4`}>
             <p className="text-gray-500">Not Started</p>
             <button className="w-[78px] h-[35px] shadow-[0px_3.33px_0px_0px_#E3E3DE] rounded-[29px] border border-[#E3E3DE] 
                                 font-[roboto] text-[16.66px] font-semibold leading-[35.59px] tracking-[-0.02em] 
