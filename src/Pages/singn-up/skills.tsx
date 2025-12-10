@@ -47,7 +47,7 @@ export default function Skills() {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:2040/users/users', {
+      const response = await fetch('http://172.30.10.42:2040/users/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(finalData),

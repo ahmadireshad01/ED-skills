@@ -6,7 +6,7 @@ import { List } from "lucide-react";
 import Material from "../../Components/DashboardComponents/Material";
 
 export default function DashboardCoursesPage() {
-    const [layout, setLayout] = useState('grid')
+    
     const ContinueClasses = [
         { id: 12, materials: 1, bg: "#E3EFFF", image: "/images/dashboardCourses/courseImage.svg", subject: "Geography", topic: "Understand the Land, Oceans and Beyond", progress: "80", dialog: "Increase your knowledge with", recommendation: "Unlock the Power of Place" },
         { id: 23, materials: 2, bg: "#FAEAFA", image: "/images/dashboardCourses/courseImage2.svg", subject: "Computer & AI", topic: "Unlock the Power of Creativity with Generative AI", progress: "30", dialog: "Next, you can dive into", recommendation: "Create Using Generative AI" },
@@ -39,8 +39,8 @@ export default function DashboardCoursesPage() {
         { isCertified: false, status: 'inProgress', id: 8, type: "StartedCourse", image: "/images/Materials/materialImage.svg", material: "10 Pages", bg: "#E8E2FF", subjec: "Courses", typeImage: "/images/Materials/coursesType.svg", topic: "10 Usability Principles to Enhance Generative AI", firstRecommendation: "Computer", secondRecommendation: "Urgent", progress: 44 },
     ]
     const [filter, setFilter] = useState('all')
+    const [layout, setLayout] = useState('grid')
     const [activetTab, setActiveTab] = useState('allStatus')
-    const [activeList, setActiveList] = useState('grid')
     const [filterInput, setFilterInput] = useState('')
     const [open, setOpen] = useState(false)
     const [isFilterOpen, setIsFilterOpen] = useState(false)
@@ -56,7 +56,7 @@ export default function DashboardCoursesPage() {
     }
     return (
         <div className="flex bg-[#fafaf5] h-screen overflow-hidden">
-            <div className="h-screen z-50 flex pl-1 pb-4 fixed top-0 left-[-3px]">
+            <div className="h-screen z-50 flex pl-1 pb-4 fixed top-0 left-[20px] lg:left-[-3px]  min-h-[630px]">
                 <DashboardSideBar />
             </div>
             <div className="px-[9%] lg:pt-11 pt-[90px] lg:ml-[25px] xl:ml-0 w-full overflow-y-auto overflow-x-hidden scrollbar-hide">
@@ -199,7 +199,7 @@ export default function DashboardCoursesPage() {
                 </div>
 
 
-                <div className={`relative flex flex-col w-full ${layout === 'list' ? 'items-start' : 'items-center'}`}>
+                <div className={`relative flex flex-col w-full  ${layout === 'list' ? 'items-start' : 'items-center'} ${layout === 'grid' ? 'ml-[6%] md:ml-0' : 'ml-0'}`}>
                     <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 [@media_(min-width:1520px)_and_(max-width:1730px)]:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 [@media_(min-width:1270px)_and_(max-width:1370px)]:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6"}   xl:gap-x-8 gap-x-8 lg:gap-x-21 gap-y-6`}>
                         {
                             filteredMaterials.map((singleMaterial: any) => (
