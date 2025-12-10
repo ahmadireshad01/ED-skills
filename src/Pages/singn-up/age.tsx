@@ -8,38 +8,57 @@ import star from '../../../public/images/signup/star.svg';
 
 export default function Agepage() {
   const [age, setAge] = useState('');
+  const [error, setError] = useState(''); // 🔥 NEW
   const navigate = useNavigate();
 
-  // Load previous signup data if exists
   useEffect(() => {
     const signupData = localStorage.getItem('signupData');
     if (!signupData) {
-      navigate('/signup'); // redirect if no signup data
+      navigate('/signup');
     }
   }, [navigate]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!age) return;
 
-    // ✅ Get previous signup data
+    // Convert to number
+    const ageNum = Number(age);
+
+    // ---------- 🔥 FRONTEND VALIDATION ----------
+    if (!age) {
+      setError("Age is required");
+      return;
+    }
+    if (isNaN(ageNum)) {
+      setError("Age must be a number");
+      return;
+    }
+    if (ageNum < 1) {
+      setError("Age must be at least 1");
+      return;
+    }
+    if (ageNum > 150) {
+      setError("Age cannot exceed 150");
+      return;
+    }
+
+    // If everything is OK: clear error
+    setError(""); // 🔥 CLEAR
+
+    // Save to localStorage
     const signupData = JSON.parse(localStorage.getItem('signupData') || '{}');
-    // Add age to it
-    const updatedData = { ...signupData, age: Number(age) };
-    // Save back to localStorage
+    const updatedData = { ...signupData, age: ageNum };
     localStorage.setItem('signupData', JSON.stringify(updatedData));
 
-    // Navigate to the interests page
     navigate('/interests');
   };
 
   return (
     <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white">
-      {/* Decorative images */}
       <img
         src={left}
         alt="left decoration"
-        className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0￼ max-[450px]:hidden"
+        className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden"
       />
       <img
         src={right}
@@ -47,45 +66,50 @@ export default function Agepage() {
         className="absolute right-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden"
       />
 
-      {/* Progress bar */}
       <div className="absolute top-0 left-0 w-full px-4 pt-6">
         <ProgressBar progress={65} />
       </div>
 
-      {/* Content */}
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center w-full max-w-[450px] px-6 text-center"
       >
         <img src={flower} alt="flower" className="mb-6" />
 
-        <h1 className="font-semibold text-2xl sm:text-3xl leading-snug text-[#1D1D1F]">
+        <h1 className="font-semibold text-2xl sm:text-3xl text-[#1D1D1F] leading-snug">
           Tell us your age to create <br /> the best experience for you.
         </h1>
 
-        {/* Divider */}
         <div className="flex w-full items-center justify-center gap-2 mt-6">
-          <img src={star} alt="star" className="w-5 h-5" />
+          <img src={star} className="w-5 h-5" />
           <div className="border-t border-[#DFE1E6] flex-1" />
-          <img src={star} alt="star" className="w-5 h-5" />
+          <img src={star} className="w-5 h-5" />
         </div>
 
-        {/* Input + Continue button */}
         <div className="flex flex-col w-full mt-6">
+
+          {/* ---------- 🔥 ERROR MESSAGE UI ---------- */}
+          {error && (
+            <p className="text-red-500 text-sm mb-2 text-left">
+              {error}
+            </p>
+          )}
+
           <input
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
-            className="border border-[#DEE0E3] rounded-lg py-3 px-4 text-base focus:outline-none focus:ring-2 focus:ring-[#FF613E] transition"
+            className={`border rounded-lg py-3 px-4 text-base transition 
+              ${error ? 'border-red-500' : 'border-[#DEE0E3]'}
+              focus:outline-none focus:ring-2 focus:ring-[#FF613E]`}
             placeholder="Enter your age..."
           />
+
           <button
             type="submit"
-            className={`py-3 mt-6 rounded-2xl w-full font-medium text-white transition-colors ${
-              age
-                ? 'bg-[#FF613E] hover:bg-[#e55532]'
-                : 'bg-gray-300 cursor-not-allowed'
-            }`}
+            className={`py-3 mt-6 rounded-2xl w-full font-medium text-white transition-colors 
+              ${age ? 'bg-[#FF613E] hover:bg-[#e55532]' : 'bg-gray-300 cursor-not-allowed'}
+            `}
             disabled={!age}
           >
             Continue
