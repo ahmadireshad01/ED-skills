@@ -5,7 +5,6 @@ import left from '../../../public/images/signup/Group 2 (1).png';
 import right from '../../../public/images/signup/Group 3.png';
 import ProgressBar from '../../Components/progress';
 
-// Icons
 import box from '../../../public/images/signup/box.svg';
 import brain from '../../../public/images/signup/brain.svg';
 import time from '../../../public/images/signup/time.svg';
@@ -28,75 +27,76 @@ const interests = [
 
 export default function Interestpage() {
   const [selected, setSelected] = useState<string[]>([]);
+  const [error, setError] = useState(''); // 🔥 NEW validation state
   const navigate = useNavigate();
 
-  // ✅ Ensure user has gone through signup & age
   useEffect(() => {
     const signupData = localStorage.getItem('signupData');
     if (!signupData) {
-      navigate('/signup'); // redirect if no signup data
+      navigate('/signup');
     }
   }, [navigate]);
 
   const toggleInterest = (interest: string) => {
+    setError(""); // 🔥 clear errors on click
+
     if (selected.includes(interest)) {
       setSelected(selected.filter(item => item !== interest));
     } else {
       if (selected.length < 4) {
         setSelected([...selected, interest]);
       } else {
-        alert('You can only pick up to 4 interests.');
+        setError("You can choose at most 4 interests."); // 🔥 NEW
       }
     }
   };
 
   const handleContinue = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 🔥 FRONTEND VALIDATION EXACTLY LIKE JOI
     if (selected.length < 2) {
-      alert('Please select at least 2 interests.');
+      setError("You must choose at least 2 interests.");
+      return;
+    }
+    if (selected.length > 4) {
+      setError("You can choose at most 4 interests.");
       return;
     }
 
-    // ✅ Save selected interests to localStorage
+    setError(""); // clear error
+
     const existingData = JSON.parse(localStorage.getItem('signupData') || '{}');
     const updatedData = { ...existingData, interests: selected };
     localStorage.setItem('signupData', JSON.stringify(updatedData));
 
-    // Navigate to the next page (Skills)
     navigate('/skills');
   };
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-white">
-      {/* Decorative images */}
-      <img
-        src={left}
-        alt="left decoration"
-        className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden"
-      />
-      <img
-        src={right}
-        alt="right decoration"
-        className="absolute right-0 top-[62%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden"
-      />
+      <img src={left} className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden" />
+      <img src={right} className="absolute right-0 top-[62%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden" />
 
-      {/* Progress bar */}
       <div className="absolute top-0 left-0 w-full px-4 pt-6">
         <ProgressBar progress={75} />
       </div>
 
-      {/* Form */}
       <form
         onSubmit={handleContinue}
-        className="flex flex-col items-center justify-center w-full max-w-[700px] px-6 text-center mt-20 z-10 "
+        className="flex flex-col items-center justify-center w-full max-w-[700px] px-6 text-center mt-20 z-10"
       >
-        <img src={flower} alt="flower" className="mb-6 z-0" />
+        <img src={flower} className="mb-6 z-0" />
 
-        <h1 className="font-semibold text-2xl sm:text-3xl leading-snug text-[#1D1D1F]">
+        <h1 className="font-semibold text-2xl sm:text-3xl text-[#1D1D1F] leading-snug">
           Pick your interests from the <br /> list above and start learning
         </h1>
 
-        {/* Interest buttons */}
+        {/* 🔥 ERROR MESSAGE */}
+        {error && (
+          <p className="text-red-500 text-sm mt-4">{error}</p>
+        )}
+
         <div className="flex flex-col items-center gap-4 mt-8 w-full">
           {/* Row 1 */}
           <div className="flex flex-wrap gap-3 justify-center">
@@ -112,7 +112,7 @@ export default function Interestpage() {
                       : 'border-[#DFE1E6] text-gray-700 hover:bg-gray-100'
                   }`}
               >
-                <img src={icon} alt={label} className="w-4 h-4" />
+                <img src={icon} className="w-4 h-4" />
                 {label}
               </button>
             ))}
@@ -132,7 +132,7 @@ export default function Interestpage() {
                       : 'border-[#DFE1E6] text-gray-700 hover:bg-gray-100'
                   }`}
               >
-                <img src={icon} alt={label} className="w-4 h-4" />
+                <img src={icon} className="w-4 h-4" />
                 {label}
               </button>
             ))}
@@ -152,14 +152,13 @@ export default function Interestpage() {
                       : 'border-[#DFE1E6] text-gray-700 hover:bg-gray-100'
                   }`}
               >
-                <img src={icon} alt={label} className="w-4 h-4" />
+                <img src={icon} className="w-4 h-4" />
                 {label}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Continue button */}
         <button
           type="submit"
           disabled={selected.length < 2}
@@ -170,7 +169,6 @@ export default function Interestpage() {
           Continue
         </button>
 
-        {/* Helper text */}
         <p className="text-sm text-gray-500 mt-3">
           Please select between 2 and 4 interests.
         </p>

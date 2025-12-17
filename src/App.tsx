@@ -11,6 +11,7 @@ import ClearLocalStorage from './Pages/singn-up/local';
 import DashboardHomePage from './Pages/Dashboard/DashboardHomePage';
 import DashboardCoursesPage from './Pages/Dashboard/DashboardCoursesPage';
 import Footer from './Components/Footer';
+import Profile from './Pages/Profile/Profile';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
         <Route path="/interests" element={<Interestpage />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/local" element={<ClearLocalStorage />} />
+        <Route path="/dashboard/profile" element={<Profile />} />
+
         {/* Pages WITH Nav */}
         <Route
           path="/"
@@ -42,7 +45,7 @@ function App() {
             </>
           }
         />
-      
+
         {/* Fallback route */}
         <Route
           path="*"
