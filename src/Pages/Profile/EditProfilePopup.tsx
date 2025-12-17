@@ -29,7 +29,7 @@ export default function EditProfilePopup({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-end bg-black/40">
-      <div className="bg-[#F7F6F0] h-screen overflow-y-auto rounded-2xl p-6 shadow-2xl max-w-lg w-full animate-fadeIn">
+      <div className="bg-[#F7F6F0] h-screen overflow-y-auto  p-6 shadow-2xl max-w-lg w-full animate-fadeIn">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div
