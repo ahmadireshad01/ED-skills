@@ -2,18 +2,13 @@ import DashboardSideBar from "../../Components/DashboardComponents/DashboardSide
 import ProfileCard from "../../Components/DashboardComponents/ProfileCard";
 import ClassCard from "../../Components/DashboardComponents/ClassCard";
 import InprogressCourse from "../../Components/DashboardComponents/InProgressCourse";
+import { Materials } from "../../data/Materials";
+import { useNavigate } from "react-router-dom";
+import { subjects } from "../../data/subjects"
 
 export default function DashboardHomePage() {
-    const subjects = [
-        { id: 1, icon: 'allSubjectIcon', label: "All Subjects", color: '#FFD5CA' },
-        { id: 2, icon: 'englishIcon', label: "English", color: '#FAEAFA' },
-        { id: 3, icon: 'businessIcon', label: "Business", color: '#E9F3AA' },
-        { id: 4, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
-        { id: 5, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
-        { id: 6, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
-        { id: 7, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' },
-        { id: 8, icon: 'mathematicsIcon', label: "Business", color: '#E9F3AA' }
-    ]
+    const navigate = useNavigate()
+    
 
     const Classes = [{ id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
     { id: 2, bg: '#FAEAFA', image: "/images/ClassCard/classBgImage2.svg", startingTime: "1:00", subject: "Chemistry", topic: "Cordination Chemistry", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
@@ -21,10 +16,6 @@ export default function DashboardHomePage() {
     { id: 1, bg: '#FFD5CA', image: "/images/ClassCard/classBgImage.svg", startingTime: "11:30", subject: "Goegraphy", topic: "The Secrets of the nature", participants: { first: "/images/ClassCard/firstPersonImage.svg", second: "/images/ClassCard/firstPersonImage.svg", third: "/images/ClassCard/thirdPersonImage.svg" } },
     ]
 
-    const InProgressClasses = [{ id: 4, icon: "/images/dashBoard/physicsIcon.svg", bg: "#b0d7c7", subject: "Physics", topic: "Unlock the Laws of Nature", content: "5 Material", progress: 44, duration: "1 day" },
-    { id: 5, icon: "/images/dashBoard/englishIcon.svg", bg: "#FAEAFA", subject: "English", topic: "Learn the National language", content: "5 Material", progress: 60, duration: "5 day" },
-    { id: 6, icon: "/images/dashBoard/businessIcon.svg", bg: "#E9F3AA", subject: "Business", topic: "Learn to Business here at Ed", content: "5 Material", progress: 28, duration: "2 day" }
-    ]
     return (
         <>
             <div className="min-h-screen flex bg-[#fafaf5] gap-6 w-full [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-3">
@@ -128,7 +119,7 @@ export default function DashboardHomePage() {
                                         /* >2560px (full 1440p ultrawide) */
                                         [@media(min-width:2560px)]:max-w-[2200px]">
 
-                                {subjects.map((subject) => (
+                                {subjects.map((subject:any) => (
                                     <div
                                         className="border-[#E3E3DE] border-[1.33px] flex gap-4 bg-white rounded-2xl items-center justify-between 
                                         w-[168px]
@@ -137,9 +128,9 @@ export default function DashboardHomePage() {
                                         [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:w-[150px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[60px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:p-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2"
                                     >
                                         <span
-                                            className={`rounded-lg flex items-center ml-[-5px] justify-center w-[54px] sm:w-[65px] h-[54px] sm:h-[54px] bg-[${subject.color}] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:w-[45px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[45px]`}
+                                            className={`rounded-lg flex items-center ml-[-5px] justify-center w-[54px] sm:w-[65px] h-[54px] sm:h-[54px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:w-[45px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:h-[45px]`}
                                         >
-                                            <img src={`/images/dashBoard/${subject.icon}.svg`} alt="" />
+                                            <img src={`/images/dashBoard/subjects/${subject.icon}.svg`} alt="" />
                                         </span>
                                         <p className="font-roboto font-semibold text-[15.99px] sm:text-[18px] leading-[24.65px] tracking-[0%] text-center [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:text-[14px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:leading-[18px]">
                                             {subject.label}
@@ -197,23 +188,37 @@ export default function DashboardHomePage() {
 
                             {/* List of in-progress courses */}
                             <div className="flex flex-col lg:items-start items-center gap-4 lg:ml-0 md:ml-[7%] ml-3 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2">
-                                {InProgressClasses.map((inProgressClass, index) => (
-                                    <div
-                                        key={inProgressClass.id}
-                                        className={`w-full ${index > 0 ? "[@media(max-height:880px)_and_(min-width:1340px)]:hidden [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:hidden" : ""}`}
-                                    >
-                                        <InprogressCourse
-                                            icon={inProgressClass.icon}
-                                            bg={inProgressClass.bg}
-                                            subject={inProgressClass.subject}
-                                            topic={inProgressClass.topic}
-                                            content={inProgressClass.content}
-                                            progress={inProgressClass.progress}
-                                            duration={inProgressClass.duration}
-                                        />
-                                    </div>
-                                ))}
+                                {Materials
+                                    .filter(item => (item.progress ?? 0) > 0) // Treat undefined as 0
+                                    .slice(0, 3) // Limit to 3 items for big screens
+                                    .map((inProgressClass, index) => (
+                                        <div
+                                            key={inProgressClass.id}
+                                            className={`w-full ${index > 0
+                                                    ? "[@media(max-height:880px)_and_(min-width:1340px)]:hidden [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:hidden"
+                                                    : ""
+                                                }`}
+                                        >
+                                            <InprogressCourse
+                                                icon={inProgressClass.icon}
+                                                subject={inProgressClass.subject}
+                                                topic={inProgressClass.topic}
+                                                content={inProgressClass.content}
+                                                progress={inProgressClass.progress}
+                                                duration={inProgressClass.duration}
+                                                onClick={() => {
+                                                    const isQuiz = inProgressClass.subject?.toLowerCase() === "quiz";
+                                                    if (isQuiz) {
+                                                        navigate(`/singlequiz/${inProgressClass.id}`);
+                                                    } else {
+                                                        navigate(`/singlecourse/${inProgressClass.id}`);
+                                                    }
+                                                }}
+                                            />
+                                        </div>
+                                    ))}
                             </div>
+
 
                         </div>
 

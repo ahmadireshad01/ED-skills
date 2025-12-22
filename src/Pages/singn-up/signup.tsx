@@ -31,15 +31,44 @@ export default function Signup() {
     }
   };
 
+  const handleClick = () => {
+    navigate('/'); // ← مسیر مقصد
+  };
+
+  // ✅ VALIDATION USING YOUR JOI RULES
   const validateForm = () => {
     const newErrors: { username?: string; email?: string; password?: string } = {};
-    if (!formData.username) newErrors.username = 'Username is required';
+
+    // Username validation
+    if (!formData.username) {
+      newErrors.username = 'Username is required';
+    } else if (formData.username.length < 2) {
+      newErrors.username = 'Username must be at least 2 characters long';
+    } else if (formData.username.length > 30) {
+      newErrors.username = 'Username cannot exceed 30 characters';
+    } else if (!/^[a-zA-Z0-9_]+$/.test(formData.username)) {
+      newErrors.username = 'Username can only contain letters, numbers, and underscores';
+    }
+
+    // Email validation
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please provide a valid email address';
     }
-    if (!formData.password) newErrors.password = 'Password is required';
+
+    // Password validation
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters long';
+    } else if (formData.password.length > 30) {
+      newErrors.password = 'Password cannot exceed 30 characters';
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/.test(formData.password)) {
+      newErrors.password =
+        'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&).';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -50,7 +79,7 @@ export default function Signup() {
 
     setLoading(true);
     try {
-      // Save signup data to loca lStorage
+      // Save signup data to localStorage
       localStorage.setItem('signupData', JSON.stringify(formData));
       navigate('/age'); // Move to Age page
     } catch (error) {
@@ -85,7 +114,7 @@ export default function Signup() {
               EDTECH <br /> SKILLS
             </p>
           </div>
-          <div className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3]">
+          <div className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3] cursor-pointer" onClick={handleClick}>
             <X size={18} className="md:size-5" />
           </div>
         </div>
@@ -112,7 +141,7 @@ export default function Signup() {
             {/* Email input */}
             <div className="w-full">
               <input
-                type="text"
+                type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}

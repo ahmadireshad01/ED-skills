@@ -11,13 +11,19 @@ import ClearLocalStorage from './Pages/singn-up/local';
 import DashboardHomePage from './Pages/Dashboard/DashboardHomePage';
 import DashboardCoursesPage from './Pages/Dashboard/DashboardCoursesPage';
 import Footer from './Components/Footer';
-import SingleCoursePage from './Pages/SingleCourse/SingleCourse';
+
+import SingleCourse from './Pages/SingleMaterial/SingleCourse';
+
+import Profile from './Pages/Profile/Profile';
+import SingleQuiz from './Pages/SingleMaterial/SingleQuiz';
+
 
 function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Routes>
-        <Route path="/singlecourse" element={<SingleCoursePage />} />
+        <Route path="/singlequiz/:id" element={<SingleQuiz />} />
+        <Route path="/singlecourse/:id" element={<SingleCourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
@@ -33,6 +39,8 @@ function App() {
         <Route path="/interests" element={<Interestpage />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/local" element={<ClearLocalStorage />} />
+        <Route path="/dashboard/profile" element={<Profile />} />
+
         {/* Pages WITH Nav */}
         <Route
           path="/"
@@ -44,7 +52,7 @@ function App() {
             </>
           }
         />
-      
+
         {/* Fallback route */}
         <Route
           path="*"

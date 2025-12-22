@@ -8,7 +8,7 @@ import star from '../../../public/images/signup/star.svg';
 
 export default function Skills() {
   const [selected, setSelected] = useState<
-    'parent' | 'teacher' | 'learner' | null
+    'parent' | 'teachers' | 'learner' | null
   >(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -18,11 +18,11 @@ export default function Skills() {
     const signupData = localStorage.getItem('signupData');
     if (!signupData) {
       // If no signupData, start from signup page
-      navigate('/signup');
+      navigate('signup');
     }
   }, [navigate]);
 
-  const handleSelect = (role: 'parent' | 'teacher' | 'learner') => {
+  const handleSelect = (role: 'parent' | 'teachers' | 'learner') => {
     setSelected(role);
   };
 
@@ -47,7 +47,7 @@ export default function Skills() {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:2040/users/users', {
+      const response = await fetch('http://172.30.10.42:2040/users/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(finalData),
@@ -68,7 +68,7 @@ export default function Skills() {
       localStorage.setItem('user', JSON.stringify(data.user));
 
       alert('🎉 Signup complete! You can signup again if needed.');
-      navigate('/signup'); // redirect back to signup page if needed
+      navigate('/dashboard/home'); // redirect back to signup page if needed
     } catch (error) {
       console.error('Signup error:', error);
       alert('Network error. Please try again.');
@@ -84,12 +84,12 @@ export default function Skills() {
         <img
           src={left}
           alt="left decoration"
-          className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
+          className="absolute left-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden"
         />
         <img
           src={right}
           alt="right decoration"
-          className="absolute right-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-50 max-[450px]:hidden"
+          className="absolute right-0 top-[60%] -translate-y-1/2 max-[1170px]:opacity-0 max-[450px]:hidden"
         />
       </div>
       <div className="mt-[57px]">
@@ -131,9 +131,9 @@ export default function Skills() {
 
             <button
               type="button"
-              onClick={() => handleSelect('teacher')}
+              onClick={() => handleSelect('teachers')}
               className={`p-[16px] text-left border rounded-[14px] transition-all ${
-                selected === 'teacher'
+                selected === 'teachers'
                   ? 'border-[#FF613E] shadow-md shadow-[#FF613E]/40'
                   : 'border-[#DFE1E6] hover:shadow-sm hover:shadow-[#FF613E]/30'
               }`}

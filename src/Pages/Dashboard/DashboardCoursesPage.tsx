@@ -4,6 +4,7 @@ import { Materials } from "../../data/Materials.ts";
 import { useState } from "react";
 import { List } from "lucide-react";
 import Material from "../../Components/DashboardComponents/Material";
+import { useNavigate } from "react-router-dom";
 
 export default function DashboardCoursesPage() {
 
@@ -12,6 +13,8 @@ export default function DashboardCoursesPage() {
         { id: 23, materials: 2, bg: "#FAEAFA", image: "/images/dashboardCourses/courseImage2.svg", subject: "Computer & AI", topic: "Unlock the Power of Creativity with Generative AI", progress: "30", dialog: "Next, you can dive into", nextStep: "Create Using Generative AI" },
     ]
 
+
+    const navigate = useNavigate()
 
     const [filter, setFilter] = useState('all')
     const [layout, setLayout] = useState('grid')
@@ -23,10 +26,10 @@ export default function DashboardCoursesPage() {
 
     let filteredMaterials = (filter === "all" ? Materials : Materials.filter(material => material.status === filter))
         .filter(material => material.topic.toLowerCase().includes(filterInput.toLowerCase()))
-        .filter(material => subjectFilter === '' || material.subjec.toLowerCase() === subjectFilter.toLowerCase())
+        .filter(material => subjectFilter === '' || material.subject.toLowerCase() === subjectFilter.toLowerCase())
 
     const addFilterBtn = () => {
-        filteredMaterials = Materials.filter(material => material.subjec.toLowerCase() === subjectFilter.toLowerCase())
+        filteredMaterials = Materials.filter(material => material.subject.toLowerCase() === subjectFilter.toLowerCase())
         console.log(filteredMaterials)
     }
     return (
@@ -81,13 +84,32 @@ export default function DashboardCoursesPage() {
                 </div>
 
                 <div className="py-6 flex flex-col items-center xl:flex-row gap-6">
-                    {
-                        ContinueClasses.map((continueClass) => (
-                            <ContinueClass key={continueClass.id} materials={continueClass.materials} bg={continueClass.bg} image={continueClass.image} subject={continueClass.subject} topic={continueClass.topic} progress={continueClass.progress} dialog={continueClass.dialog} nextStep={continueClass.nextStep} />
-                        ))
-                    }
+                    {Materials
+                        .filter(item => (item.progress ?? 0) > 0) // Only include items with progress
+                        .slice(0, 2) // Limit to 2 items
+                        .map((continueClass) => (
+                            <ContinueClass
+                                key={continueClass.id}
+                                content={continueClass.content}
+                                image={continueClass.image}
+                                subject={continueClass.subject}
+                                topic={continueClass.topic}
+                                progress={continueClass.progress}
+                                dialog={continueClass.dialog}
+                                nextStep={continueClass.nextStep}
+                                onClick={() => {
+                                    const isQuiz = continueClass.subject?.toLowerCase() === "quiz";
+                                    if (isQuiz) {
+                                        navigate(`/singlequiz/${continueClass.id}`);
+                                    } else {
+                                        navigate(`/singlecourse/${continueClass.id}`);
+                                    }
+                                }}
+                            />
+                        ))}
                 </div>
-                <div className="py-4 relative items-center sm:items-start flex flex-col">
+
+                <div className="py-4 relative w-full items-center sm:items-start flex flex-col">
                     <div className="relative mb-6">
                         <p className="flex gap-3 items-center  font-[] font-semibold text-[24px] leading-[32px] tracking-[-0.01em]">All Materials <span className="text-center rounded-lg font-semibold text-[13.6px] leading-[27.2px] tracking-[-0.01em] w-[34px] h-[28px] bg-[#EEEEE4]">{Materials.length}</span> <button onClick={() => setOpen(!open)}>{open ? '⏶' : '⏷'}</button></p>
                         {open && (
@@ -173,10 +195,34 @@ export default function DashboardCoursesPage() {
 
 
                 <div className={`relative flex flex-col w-full  ${layout === 'list' ? 'items-start' : 'items-center'} ${layout === 'grid' ? 'ml-[6%] md:ml-0' : 'ml-0'}`}>
-                    <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 [@media_(min-width:1520px)_and_(max-width:1730px)]:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 [@media_(min-width:1270px)_and_(max-width:1370px)]:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6"}   xl:gap-x-8 gap-x-8 lg:gap-x-21 gap-y-6`}>
+                    <div className={`w-full grid items-center ${layout === "list" ? "grid-cols-1" : "grid-cols-1  sm:grid-cols-2 md:grid-cols-2 [@media_(min-width:1520px)_and_(max-width:1730px)]:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 [@media_(min-width:1270px)_and_(max-width:1370px)]:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6"}   xl:gap-x-13 gap-x-8 lg:gap-x-21 gap-y-6`}>
                         {
                             filteredMaterials.map((singleMaterial: any) => (
-                                <Material key={singleMaterial.id} layout={layout} image={singleMaterial.image} typeImage={singleMaterial.typeImage} subject={singleMaterial.subject} bg={singleMaterial.bg} materials={singleMaterial.material} type={singleMaterial.type} topic={singleMaterial.topic} firstRecommendation={singleMaterial.firstRecommendation} secondRecommendation={singleMaterial.secondRecommendation} points={singleMaterial.points} passingPoints={singleMaterial.passingPoints} progress={singleMaterial.progress} isCertified={singleMaterial.isCertified} />
+                                <Material
+                                    key={singleMaterial.id}
+                                    layout={layout}
+                                    image={singleMaterial.image}
+                                    typeImage={singleMaterial.typeImage}
+                                    subject={singleMaterial.subject}
+                                    bg={singleMaterial.bg}
+                                    content={singleMaterial.content}
+                                    type={singleMaterial.type}
+                                    topic={singleMaterial.topic}
+                                    firstRecommendation={singleMaterial.firstRecommendation}
+                                    secondRecommendation={singleMaterial.secondRecommendation}
+                                    points={singleMaterial.points}
+                                    passingPoints={singleMaterial.passingPoints}
+                                    progress={singleMaterial.progress}
+                                    isCertified={singleMaterial.isCertified}
+                                    onClick={() => {
+                                        const isQuiz = singleMaterial.subject?.toLowerCase() === "quiz";
+                                        if (isQuiz) {
+                                            navigate(`/singlequiz/${singleMaterial.id}`);
+                                        } else {
+                                            navigate(`/singlecourse/${singleMaterial.id}`);
+                                        }
+                                    }}
+                                />
                             ))
                         }
                     </div>

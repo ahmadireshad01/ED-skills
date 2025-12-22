@@ -5,8 +5,10 @@ import starb from '../../../public/images/login/starb.svg';
 import apple from '../../../public/images/login/apple.svg';
 import google from '../../../public/images/login/google.svg';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
@@ -35,6 +37,11 @@ export default function Login() {
     }
   };
 
+  const handleClick = () => {
+    navigate('/'); // ← مسیر مقصد
+  };
+
+  // ✅ Joi-based validation (design untouched)
   const validateForm = () => {
     const newErrors: {
       username?: string;
@@ -43,13 +50,17 @@ export default function Login() {
       submit?: string;
     } = {};
 
-    if (!formData.username) newErrors.username = 'Username is required';
-    if (!formData.email) {
+    // EMAIL (Joi)
+    if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = 'Please provide a valid email address';
     }
-    if (!formData.password) newErrors.password = 'Password is required';
+
+    // PASSWORD (Joi)
+    if (!formData.password.trim()) {
+      newErrors.password = 'Password is required';
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -65,19 +76,26 @@ export default function Login() {
       const response = await fetch('http://localhost:2040/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
       });
 
       const data = await response.json();
       if (!response.ok) {
-        if (data.error) setErrors({ submit: data.error });
-        else if (data.details) {
+        // ✅ Backend Joi error support
+        if (data.details) {
           const backendErrors: { [key: string]: string } = {};
           data.details.forEach((detail: any) => {
             backendErrors[detail.path[0]] = detail.message;
           });
           setErrors(backendErrors);
-        } else setErrors({ submit: 'Login failed. Please try again.' });
+        } else if (data.error) {
+          setErrors({ submit: data.error });
+        } else {
+          setErrors({ submit: 'Login failed. Please try again.' });
+        }
         return;
       }
 
@@ -121,7 +139,10 @@ export default function Login() {
               EDTECH <br /> SKILLS
             </p>
           </div>
-          <div className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3]">
+          <div
+            className="border-[2px] rounded-full flex items-center justify-center p-2 md:p-[14px] border-[#DEE0E3] cursor-pointer"
+            onClick={handleClick}
+          >
             <X size={18} className="md:size-5" />
           </div>
         </div>
@@ -138,7 +159,7 @@ export default function Login() {
             {/* Email input */}
             <div className="w-full">
               <input
-                type="text"
+                type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
