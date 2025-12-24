@@ -28,8 +28,8 @@ export default function EditProfilePopup({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-end bg-black/40">
-      <div className="bg-[#F7F6F0] h-screen overflow-y-auto  p-6 shadow-2xl max-w-lg w-full animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center md:justify-end bg-black/40 px-4">
+      <div className="bg-[#F7F6F0] max-h-[90vh] md:h-screen overflow-y-auto p-4 sm:p-6 shadow-2xl w-full max-w-md sm:max-w-lg animate-fadeIn rounded-2xl md:rounded-none">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div
@@ -47,7 +47,7 @@ export default function EditProfilePopup({
           </button>
         </div>
 
-        <h2 className="text-[32px] font-bold leading-9 mt-[40px]">
+        <h2 className="text-2xl sm:text-[32px] font-bold leading-8 sm:leading-9 mt-6 sm:mt-[40px]">
           Change Account <br /> Information
         </h2>
         <p className="text-gray-600 text-sm mb-6">
@@ -158,11 +158,10 @@ export default function EditProfilePopup({
               <span>Male</span>
               <span
                 className={`w-5 h-5 rounded-full border flex items-center justify-center
-            ${
-              gender === 'male'
-                ? 'border-orange-500 bg-orange-500'
-                : 'border-gray-300'
-            }`}
+            ${gender === 'male'
+                    ? 'border-orange-500 bg-orange-500'
+                    : 'border-gray-300'
+                  }`}
               ></span>
             </div>
 

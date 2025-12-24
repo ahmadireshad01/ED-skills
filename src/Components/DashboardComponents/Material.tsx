@@ -2,14 +2,17 @@ import CircularProgress from './CircleProgress';
 
 export default function Material(props: any) {
   return (
-    <div className={`${props.layout === 'list' ? "w-full" : "w-[291px]"} ${props.layout === 'grid' ? "min-h-[340px]" : ""} pb-3 bg-white rounded-2xl pt-0.5 
+    <div
+      onClick={props.onClick}
+      className={`${props.layout === 'list' ? "w-full" : "w-[291px]"} ${props.layout === 'grid' ? "min-h-[340px]" : ""} pb-3 bg-white rounded-2xl pt-0.5 
                      transition-transform duration-500 ease-out shadow-lg hover:shadow-2xl 
-                    cursor-pointer group flex flex-col ${props.layout === "list" ? " md:flex-row md:items-center md:gap-5" : "items-center"}`}>
+                    cursor-pointer group flex flex-col ${props.layout === "list" ? " md:flex-row md:items-center md:gap-5" : "items-center"}`}
+    >
 
       {/* Top image container */}
       {props.layout === 'grid' && (
         <div
-          className={`relative h-[98px] bg-[${props.bg}] w-[95%] rounded-xl m-1 
+          className={`relative h-[104px] w-[95%] rounded-xl m-1 
         overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out
         hover:shadow-md`}
         >
@@ -26,18 +29,17 @@ export default function Material(props: any) {
           text-center bg-white shadow-sm transition-all duration-300
           hover:bg-gray-100 hover:scale-105"
           >
-            {props.materials}
+            {props.content}
           </span>
         </div>
       )}
 
       {/* Text and buttons */}
       <div
-        className={`w-full p-3 gap-2 flex ${
-          props.layout === 'grid'
-            ? 'flex-col'
-            : 'flex-col lg:flex-row  md:justify-between lg:gap-10   md:items-center'
-        }  transition-all duration-300 group-hover:translate-y-[-2px]`}
+        className={`w-full p-3 gap-2 flex ${props.layout === 'grid'
+          ? 'flex-col'
+          : 'flex-col lg:flex-row  md:justify-between lg:gap-10   md:items-center'
+          }  transition-all duration-300 group-hover:translate-y-[-2px]`}
       >
         <div className={`flex flex-col flex-1 w-full`}>
           <div className="flex flex-wrap gap-1 items-center">

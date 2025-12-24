@@ -11,14 +11,17 @@ import ClearLocalStorage from './Pages/singn-up/local';
 import DashboardHomePage from './Pages/Dashboard/DashboardHomePage';
 import DashboardCoursesPage from './Pages/Dashboard/DashboardCoursesPage';
 import Footer from './Components/Footer';
+import SingleQuiz from './Pages/SingleMaterial/SingleQuiz';
+import SingleCourse from './Pages/SingleMaterial/SingleCourse';
+
 import Profile from './Pages/Profile/Profile';
-import SingleCoursePage from './Pages/SingleCourse/SingleCourse';
 
 function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Routes>
-        <Route path="/singlecourse" element={<SingleCoursePage />} />
+        <Route path="/singlequiz/:id" element={<SingleQuiz />} />
+        <Route path="/singlecourse/:id" element={<SingleCourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />

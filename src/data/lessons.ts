@@ -1,0 +1,10 @@
+export const lessons = [{ lessonName: "Introduction to Investing", lessonNumber: "1", id: "1" },
+    { lessonName: "Understanding Stocks", lessonNumber: "2", id: "2" },
+    { lessonName: "Understanding Bonds", lessonNumber: "3", id: "3" },
+    { lessonName: "Introduction to Investing", lessonNumber: "4", id: "4" },
+    { lessonName: "Understanding Bonds", lessonNumber: "5", id: "5" },
+    { lessonName: "How to Build a Diversified Investment Portfolio", lessonNumber: "6", id: "6" },
+    { lessonName: "Getting Started with Investing", lessonNumber: "7", id: "7" },
+    { lessonName: "Understanding Stocks", lessonNumber: "8", id: "8" },
+    { lessonName: "Getting Started with Investing", lessonNumber: "9", id: "9" },
+    ]

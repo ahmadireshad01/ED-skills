@@ -21,7 +21,7 @@ export default function ProfilePopup({
   const [isEditOpen, setIsEditOpen] = useState(false);
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end">
+    <div className="fixed inset-0 z-50 flex justify-center md:justify-end">
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/70"
@@ -30,8 +30,8 @@ export default function ProfilePopup({
 
       {/* Sidebar popup */}
       <div
-        className="relative bg-white h-full shadow-xl p-6 animate-slideLeft"
-        style={{ width }}
+        className="relative bg-white h-full shadow-xl p-4 sm:p-6 w-full max-w-md sm:max-w-lg md:max-w-none animate-slideLeft"
+        style={{ width: '100%', maxWidth: width }}
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-4">

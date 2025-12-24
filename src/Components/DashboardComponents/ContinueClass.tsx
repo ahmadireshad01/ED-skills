@@ -1,7 +1,7 @@
 export default function ContinueClass(props: any) {
     return (
         <>
-            <div className="flex flex-col bg-[#EEEEE4] max-w-[600px] rounded-3xl 
+            <div onClick={props.onClick} className="flex flex-col bg-[#EEEEE4] max-w-[600px] rounded-3xl 
                             hover:scale-[1.02] transition-transform duration-500 ease-out shadow-lg hover:shadow-2xl">
                 <div className="p-3 flex flex-col md:flex-row rounded-3xl bg-white gap-2 hover:shadow-lg transition-shadow duration-300">
                     <div className={`relative w-full sm:w-[200px] h-[146px] rounded-3xl bg-[${props.bg}] overflow-hidden group cursor-pointer`}>
@@ -9,7 +9,7 @@ export default function ContinueClass(props: any) {
                              className="w-full h-full object-cover transition-transform duration-500 " />
                         <span className="absolute top-[9px] left-[11px] w-fit h-[24px] rounded-2xl bg-white p-2 flex justify-center items-center text-[12px] font-semibold
                                         shadow-md transition-all duration-300  ">
-                            {props.materials} Materials
+                            {props.content}
                         </span>
                     </div>
                     <div className="flex flex-col px-5 py-3">

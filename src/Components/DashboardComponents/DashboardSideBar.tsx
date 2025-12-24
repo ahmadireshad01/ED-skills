@@ -1,44 +1,38 @@
-import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate, useLocation, } from "react-router-dom";
 import ProfilePopup from '../../Pages/Profile/Profile';
 
 export default function DashboardSideBar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const isActive = (path: string) => location.pathname.includes(path);
+  const isActive = (path: any) => location.pathname.includes(path);
 
   return (
     <>
-      {/* Mobile Top Bar */}
-      <div className="fixed z-50 lg:hidden left-0 right-0 h-[60px] m-3 rounded-2xl bg-[#EEEEE4] flex items-center justify-between pl-4">
+      <div className="fixed z-30 lg:hidden left-0 right-0  h-[60px] m-3 rounded-2xl bg-[#EEEEE4] flex items-center justify-between px-4">
         <button
           className="p-2 pl-4 text-3xl"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? '✖️' : '☰'}
+          {isOpen ? "✖️" : "☰"}
         </button>
       </div>
-
-      {/* Mobile Sidebar */}
       {isOpen && (
-        <div className="absolute top-[9%] left-[3%] w-[100px] flex flex-col items-center justify-center gap-4.5 shadow-2xl rounded-2xl z-50 h-[47%] bg-[#EEEEE4]">
+        <div className="fixed top-[72px] left-3 w-[90px] flex flex-col items-center justify-between gap-6 p-4 shadow-2xl rounded-2xl z-40 bg-[#EEEEE4]">
           <div className="flex flex-col gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible px-2 sm:px-0">
             {/* Home */}
             <button
-              onClick={() => navigate('/dashboard/home')}
-              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-                isActive('/dashboard/home') ? 'bg-[#1d37ff]' : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+              onClick={() => navigate("/dashboard/home")}
+              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+                ${isActive("/dashboard/home") ? "bg-[#1d37ff]" : "bg-white"} 
+                flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg`}
             >
               <img
-                className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                  isActive('/dashboard/home')
-                    ? 'invert brightness-0'
-                    : 'invert brightness-100'
-                }`}
+                className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+                  ${isActive("/dashboard/home") ? "invert brightness-0" : "invert brightness-100"}`}
                 src="/images/DashBoardSideBar/home.svg"
                 alt="Home"
               />
@@ -46,17 +40,14 @@ export default function DashboardSideBar() {
 
             {/* Courses */}
             <button
-              onClick={() => navigate('/dashboard/courses')}
-              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-                isActive('/dashboard/courses') ? 'bg-[#1d37ff]' : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+              onClick={() => navigate("/dashboard/courses")}
+              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+                ${isActive("/dashboard/courses") ? "bg-[#1d37ff]" : "bg-white"} 
+                flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
             >
               <img
-                className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                  isActive('/dashboard/courses')
-                    ? 'invert brightness-0'
-                    : 'invert-0 brightness-100'
-                }`}
+                className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+                  ${isActive("/dashboard/courses") ? "invert brightness-0" : "invert-0 brightness-100"}`}
                 src="/images/DashBoardSideBar/courses.svg"
                 alt="Courses"
               />
@@ -64,17 +55,14 @@ export default function DashboardSideBar() {
 
             {/* Medals */}
             <button
-              onClick={() => navigate('/dashboard/medals')}
-              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-                isActive('/dashboard/medals') ? 'bg-[#1d37ff]' : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+              onClick={() => navigate("/dashboard/medals")}
+              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+                ${isActive("/dashboard/medals") ? "bg-[#1d37ff]" : "bg-white"} 
+                flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
             >
               <img
-                className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                  isActive('/dashboard/medals')
-                    ? 'invert brightness-0'
-                    : 'invert-0 brightness-100'
-                }`}
+                className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+                  ${isActive("/dashboard/medals") ? "invert brightness-0" : "invert-0 brightness-100"}`}
                 src="/images/DashBoardSideBar/midals.svg"
                 alt="Medals"
               />
@@ -82,40 +70,32 @@ export default function DashboardSideBar() {
 
             {/* Achievements */}
             <button
-              onClick={() => navigate('/dashboard/achievements')}
-              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-                isActive('/dashboard/achievements')
-                  ? 'bg-[#1d37ff]'
-                  : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+              onClick={() => navigate("/dashboard/achievements")}
+              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+                ${isActive("/dashboard/achievements") ? "bg-[#1d37ff]" : "bg-white"} 
+                flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
             >
               <img
-                className={`w-[22px] sm:w-[26px] lg:w-[29px] ${
-                  isActive('/dashboard/achievements')
-                    ? 'invert brightness-0'
-                    : 'invert-0 brightness-100'
-                }`}
+                className={`w-[22px] sm:w-[26px] lg:w-[29px] 
+                  ${isActive("/dashboard/achievements") ? "invert brightness-0" : "invert-0 brightness-100"}`}
                 src="/images/DashBoardSideBar/hat.svg"
                 alt="Achievements"
               />
             </button>
           </div>
 
-          {/* Bottom Buttons (Mobile) */}
+          {/* --- Bottom Section --- */}
           <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center sm:mb-2">
             {/* Settings */}
             <button
-              onClick={() => navigate('/dashboard/settings')}
-              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-                isActive('/dashboard/settings') ? 'bg-[#1d37ff]' : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+              onClick={() => navigate("/dashboard/settings")}
+              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+                ${isActive("/dashboard/settings") ? "bg-[#1d37ff]" : "bg-white"} 
+                flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
             >
               <img
-                className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                  isActive('/dashboard/settings')
-                    ? 'invert brightness-0'
-                    : 'invert-0 brightness-100'
-                }`}
+                className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+                  ${isActive("/dashboard/settings") ? "invert brightness-0" : "invert-0 brightness-100"}`}
                 src="/images/DashBoardSideBar/settings.svg"
                 alt="Settings"
               />
@@ -141,30 +121,41 @@ export default function DashboardSideBar() {
         </div>
       )}
 
-      {/* Desktop Sidebar */}
-      <div className="hidden lg:flex flex-col justify-between items-center py-5 lg:w-[90px] ml-1 sm:ml-2 mt-3 sm:mt-5 pb-4 sm:pb-5 rounded-[19px] bg-[#EEEEE4] flex-shrink-0 transition-all duration-300 ease-in-out hover:shadow-2xl left-0 top-0 sm:top-auto sm:h-auto z-40">
-        {/* Logo and Notification */}
+
+      <div
+        className="
+        hidden
+        lg:flex flex-col justify-between items-center py-5
+         lg:w-[90px]
+        ml-1 sm:ml-2 mt-3 sm:mt-5 pb-4 sm:pb-5
+        rounded-[19px] bg-[#EEEEE4]
+        flex-shrink-0
+        transition-all duration-300 ease-in-out
+        hover:shadow-2xl
+        left-0 top-0 sm:top-auto
+        sm:h-auto
+        z-30
+      "
+      >
+        {/* --- Top section --- */}
         <div className="flex sm:flex-col gap-3 sm:gap-6 sm:pt-4 sm:items-center items-center justify-center">
           <img
             className="z-10 w-[45%] sm:w-[60%] md:w-[68%] lg:w-[72%]"
             src="/images/DashBoardSideBar/logo.svg"
             alt="Logo"
           />
+
+          {/* Notification */}
           <div className="relative group hidden sm:block">
             <button
               onClick={() => navigate('/dashboard/notifications')}
-              className={`w-[40px] sm:w-[46px] lg:w-[50px] h-[40px] sm:h-[46px] lg:h-[50px] rounded-xl ${
-                isActive('/dashboard/notifications')
-                  ? 'bg-[#1d37ff]'
-                  : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+              className={`w-[40px] sm:w-[46px] lg:w-[50px] h-[40px] sm:h-[46px] lg:h-[50px] rounded-xl
+              ${isActive('/dashboard/notifications') ? 'bg-[#1d37ff]' : 'bg-white'}
+              flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg`}
             >
               <img
-                className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                  isActive('/dashboard/notifications')
-                    ? 'invert brightness-0'
-                    : 'invert-0 brightness-100'
-                }`}
+                className={`w-[18px] sm:w-[21px] lg:w-[23px]
+                ${isActive('/dashboard/notifications') ? 'invert brightness-0' : 'invert-0 brightness-100'}`}
                 src="/images/DashBoardSideBar/notificationImage.svg"
                 alt="Notifications"
               />
@@ -173,47 +164,81 @@ export default function DashboardSideBar() {
           </div>
         </div>
 
-        {/* Middle Buttons */}
+        {/* --- Middle buttons --- */}
         <div className="flex sm:flex-col gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible px-2 sm:px-0">
-          {/* Reuse same buttons as mobile */}
-          {['home', 'courses', 'medals', 'achievements'].map(item => (
-            <button
-              key={item}
-              onClick={() => navigate(`/dashboard/${item}`)}
-              className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-                isActive(`/dashboard/${item}`) ? 'bg-[#1d37ff]' : 'bg-white'
-              } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
-            >
-              <img
-                className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                  isActive(`/dashboard/${item}`)
-                    ? 'invert brightness-0'
-                    : 'invert-0 brightness-100'
-                }`}
-                src={`/images/DashBoardSideBar/${
-                  item === 'medals' ? 'midals' : item
-                }.svg`}
-                alt={item}
-              />
-            </button>
-          ))}
+          {/* Home */}
+          <button
+            onClick={() => navigate("/dashboard/home")}
+            className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+            ${isActive("/dashboard/home") ? "bg-[#1d37ff]" : "bg-white"} 
+            flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+          >
+            <img
+              className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+              ${isActive("/dashboard/home") ? "invert brightness-0" : "invert brightness-100"}`}
+              src="/images/DashBoardSideBar/home.svg"
+              alt="Home"
+            />
+          </button>
+
+          {/* Courses */}
+          <button
+            onClick={() => navigate("/dashboard/courses")}
+            className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+            ${isActive("/dashboard/courses") ? "bg-[#1d37ff]" : "bg-white"} 
+            flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+          >
+            <img
+              className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+              ${isActive("/dashboard/courses") ? "invert brightness-0" : "invert-0 brightness-100"}`}
+              src="/images/DashBoardSideBar/courses.svg"
+              alt="Courses"
+            />
+          </button>
+
+          {/* Medals */}
+          <button
+            onClick={() => navigate("/dashboard/medals")}
+            className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+            ${isActive("/dashboard/medals") ? "bg-[#1d37ff]" : "bg-white"} 
+            flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+          >
+            <img
+              className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+              ${isActive("/dashboard/medals") ? "invert brightness-0" : "invert-0 brightness-100"}`}
+              src="/images/DashBoardSideBar/midals.svg"
+              alt="Medals"
+            />
+          </button>
+
+          {/* Achievements */}
+          <button
+            onClick={() => navigate("/dashboard/achievements")}
+            className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+            ${isActive("/dashboard/achievements") ? "bg-[#1d37ff]" : "bg-white"} 
+            flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+          >
+            <img
+              className={`w-[22px] sm:w-[26px] lg:w-[29px] 
+              ${isActive("/dashboard/achievements") ? "invert brightness-0" : "invert-0 brightness-100"}`}
+              src="/images/DashBoardSideBar/hat.svg"
+              alt="Achievements"
+            />
+          </button>
         </div>
 
-        {/* Bottom Section */}
+        {/* --- Bottom Section --- */}
         <div className="flex sm:flex-col gap-3 sm:gap-4 items-center justify-center sm:mb-2">
           {/* Settings */}
           <button
-            onClick={() => navigate('/dashboard/settings')}
-            className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl ${
-              isActive('/dashboard/settings') ? 'bg-[#1d37ff]' : 'bg-white'
-            } flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
+            onClick={() => navigate("/dashboard/settings")}
+            className={`w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[50px] lg:h-[50px] rounded-xl 
+            ${isActive("/dashboard/settings") ? "bg-[#1d37ff]" : "bg-white"} 
+            flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md`}
           >
             <img
-              className={`w-[18px] sm:w-[21px] lg:w-[23px] ${
-                isActive('/dashboard/settings')
-                  ? 'invert brightness-0'
-                  : 'invert-0 brightness-100'
-              }`}
+              className={`w-[18px] sm:w-[21px] lg:w-[23px] 
+              ${isActive("/dashboard/settings") ? "invert brightness-0" : "invert-0 brightness-100"}`}
               src="/images/DashBoardSideBar/settings.svg"
               alt="Settings"
             />
@@ -238,5 +263,7 @@ export default function DashboardSideBar() {
         </div>
       </div>
     </>
+
   );
 }
+

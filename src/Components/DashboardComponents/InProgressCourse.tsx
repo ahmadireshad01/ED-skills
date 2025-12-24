@@ -5,24 +5,20 @@ import CircularProgress from "../../Components/DashboardComponents/CircleProgres
 export default function InprogressCourse(props: any) {
     return (
         <>
-            <div className=" flex flex-col lg:flex-row justify-between sm:ml-0  items-center w-[90%] lg:w-full  max-w-full h-auto lg:h-[85px] sm:h-[228px] rounded-2xl bg-white px-3 py-3 sm:py-4 lg:py-0 gap-3 sm:gap-1.5
+            <div onClick={props.onClick} className=" flex flex-col lg:flex-row justify-between sm:ml-0  items-center w-[90%] lg:w-full  max-w-full h-auto lg:h-[85px] sm:h-[228px] rounded-2xl bg-white px-3 py-3 sm:py-4 lg:py-0 gap-3 sm:gap-1.5
                              sm:shadow-md shadow-lg hover:shadow-xl transition-all duration-500 ease-out hover:scale-[1.02] hover:-translate-y-1 cursor-pointer
                              [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:lg:h-[70px] [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:py-2 [@media(min-width:1340px)_and_(max-width:1360px)_and_(max-height:650px)]:gap-2">
 
                 {/* Left section: icon + subject/topic */}
                 <div className="flex items-start sm:items-center w-full sm:w-[320px] gap-3 sm:gap-5">
-                    <span className={`rounded-lg w-[54px] h-[54px] bg-[${props.bg}] flex items-center justify-center 
-            transition-transform duration-500 hover:rotate-6 hover:scale-110 hover:shadow-md`}>
-                        <img className="w-[27px] transition-transform duration-500 group-hover:scale-110" src={props.icon} alt="" />
-                    </span>
-
+                    <img className="w-[54px] transition-transform  duration-500 group-hover:scale-110" src={props.icon} alt="" />
                     <div className="flex flex-col gap-1 transition-all duration-300">
                         <span className="flex items-center justify-center font-pp-mori font-semibold text-[11.63px] leading-[15.09px] 
-                tracking-[0%] w-fit px-1 h-[24px] border border-gray-400 rounded-2xl text-center 
-                transition-all duration-300 hover:bg-gray-100 hover:scale-105">
+                                        tracking-[0%] w-fit px-1 h-[24px] border border-gray-400 rounded-2xl text-center 
+                                        transition-all duration-300 hover:bg-gray-100 hover:scale-105">
                             {props.subject}
                         </span>
-                        <p className="font-inter-tight font-semibold text-[17.33px] leading-[31.99px]">
+                        <p className=" font-semibold text-[17.33px] leading-[31.99px]">
                             {props.topic}
                         </p>
                     </div>
