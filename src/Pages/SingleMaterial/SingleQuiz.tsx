@@ -70,7 +70,7 @@ export default function SingleQuiz() {
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 xl:ml-2">
                             <span className="flex flex-col">
                                 <p className="font-semibold text-[18px] sm:text-[20px] leading-6 tracking-[-0.002em]">{selectedMaterial.subject} Content</p>
-                                <p className="font-medium text-xs sm:text-sm leading-5 tracking-normal align-bottom">{selectedMaterial.material}</p>
+                                <p className="font-medium text-xs sm:text-sm leading-5 tracking-normal align-bottom">{selectedMaterial.content}</p>
                             </span>
                             <button className="text-start bg-orange-500 w-[130px] rounded-3xl flex items-center justify-center h-[40px] text-white text-sm sm:text-base">Get Started</button>
                         </div>
