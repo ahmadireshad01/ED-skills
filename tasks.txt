@@ -5,3 +5,10 @@
 5: Course Progress (lesson_id, user_id)
 6: Lesson Resources (name, lesson_id, attachment)
 ￼
+
+S3:
+1: services 3:
+    connect with minio
+    exose a upload function
+    that fucntion return a public url
+    store public url in db
