@@ -37,7 +37,9 @@ function App() {
         <Route path="/interests" element={<Interestpage />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/local" element={<ClearLocalStorage />} />
-        <Route path="/dashboard/profile" element={<Profile />} />
+        <Route path="/dashboard/profile" element={<Profile open={false} setOpen={function (open: boolean): void {
+          throw new Error('Function not implemented.');
+        } } />} />
 
         {/* Pages WITH Nav */}
         <Route
