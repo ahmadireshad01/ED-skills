@@ -62,7 +62,7 @@ export default function Section2() {
           </p>
 
           <button
-            onClick={() => navigate('/login')}
+            onClick={() => window.location.href = '/login'}
             className="py-3 px-8 mt-[32px] bg-[#FF3400] rounded-full text-white text-[18px]
                     font-semibold cursor-pointer hover:shadow-[0_6px_0_0_#C52800] transition
                     md:text-[16px] sm:text-[14px] sm:px-6 sm:py-2 2xl:text-[25px] 2xl:px-[30px] 2xl:py-[15px]"
